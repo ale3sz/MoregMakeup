@@ -58,9 +58,9 @@ const Booking = () => {
         <div className="flex flex-col lg:flex-row gap-16 lg:gap-24">
           
           <div className="w-full lg:w-5/12 flex flex-col justify-center">
-            <span className="text-sm uppercase tracking-widest text-rosy-brown font-bold block mb-4">Agenda Abierta</span>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-6 leading-tight">Reservá tu <br/>Experiencia</h2>
-            <div className="w-20 h-1 bg-rosy-brown mb-8"></div>
+            <span className="text-xs uppercase tracking-[0.25em] text-rosy-brown font-bold block mb-3">Agenda Abierta</span>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-4 leading-tight">Reservá tu <br className="hidden sm:block" />Experiencia</h2>
+            <div className="w-24 h-0.5 bg-gradient-to-r from-rosy-brown to-transparent mb-8"></div>
             <p className="text-lg text-surface-dim mb-8 font-light leading-relaxed">
               Completá el formulario con los detalles de tu evento para consultar disponibilidad. Te responderé personalmente a la brevedad vía WhatsApp para coordinar los próximos pasos.
             </p>

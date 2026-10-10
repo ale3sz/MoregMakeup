@@ -32,9 +32,9 @@ const FAQ = () => {
     <section id="faq" className="py-24 bg-surface-container-low border-t border-moss-green/10">
       <div className="max-w-4xl mx-auto px-6 md:px-12 lg:px-20">
         <div className="text-center mb-16">
-          <span className="text-sm uppercase tracking-widest text-moss-green font-bold block mb-4">Dudas Comunes</span>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-dark-green mb-6">Preguntas Frecuentes</h2>
-          <div className="w-20 h-1 bg-rosy-brown mx-auto"></div>
+          <span className="text-xs uppercase tracking-[0.25em] text-moss-green font-bold block mb-3">Dudas Comunes</span>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-dark-green mb-4">Preguntas Frecuentes</h2>
+          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-rosy-brown to-transparent mx-auto"></div>
         </div>
 
         <div className="space-y-4">
