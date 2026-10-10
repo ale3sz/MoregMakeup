@@ -8,13 +8,19 @@ const Portfolio = () => {
 
   const categories = ['Todos', 'Social', 'Novias', 'Eventos'];
   
-  // Use the cropped images from the python script
-  const images = Array.from({ length: 15 }, (_, i) => ({
-    id: i + 1,
-    src: `/assets/cropped/work_${i + 1}.jpg`,
-    category: i % 3 === 0 ? 'Novias' : i % 2 === 0 ? 'Eventos' : 'Social',
-    alt: `Trabajo de maquillaje ${i + 1}`
-  }));
+  const images = [
+    { id: 1, src: '/assets/quinceaniera.jpeg', category: 'Eventos', alt: 'Maquillaje Quinceañera' },
+    { id: 2, src: '/assets/model_9_0.jpg', category: 'Novias', alt: 'Trabajo Novias 1' },
+    { id: 3, src: '/assets/model_9_1.jpg', category: 'Eventos', alt: 'Trabajo Eventos 1' },
+    { id: 4, src: '/assets/model_10_0.jpg', category: 'Social', alt: 'Trabajo Social 1' },
+    { id: 5, src: '/assets/model_10_1.jpg', category: 'Social', alt: 'Trabajo Social 2' },
+    { id: 6, src: '/assets/model_11_0.jpg', category: 'Novias', alt: 'Trabajo Novias 2' },
+    { id: 7, src: '/assets/model_11_1.jpg', category: 'Eventos', alt: 'Trabajo Eventos 2' },
+    { id: 8, src: '/assets/model_11_2.jpg', category: 'Social', alt: 'Trabajo Social 3' },
+    { id: 9, src: '/assets/model_11_3.jpg', category: 'Novias', alt: 'Trabajo Novias 3' },
+    { id: 10, src: '/assets/model_11_4.jpg', category: 'Social', alt: 'Trabajo Social 4' },
+    { id: 11, src: '/assets/model_11_5.jpg', category: 'Eventos', alt: 'Trabajo Eventos 3' },
+  ];
 
   const filteredImages = filter === 'Todos' 
     ? images 
@@ -56,7 +62,7 @@ const Portfolio = () => {
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.4 }}
                 key={img.id}
-                className="masonry-item cursor-pointer group relative rounded-2xl overflow-hidden shadow-sm border border-moss-green/10"
+                className="masonry-item cursor-pointer group relative rounded-2xl overflow-hidden shadow-sm border border-moss-green/10 mb-6 break-inside-avoid"
                 onClick={() => setSelectedImage(img)}
               >
                 <img 

@@ -5,7 +5,7 @@ import { Leaf, Sparkles } from 'lucide-react';
 const About = () => {
   return (
     <section id="about" className="py-24 bg-surface overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           
           <motion.div 
@@ -15,19 +15,22 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="w-full lg:w-1/2 relative"
           >
-            <div className="relative rounded-[2rem] overflow-hidden shadow-2xl aspect-[4/5] group border-4 border-white">
-              <div className="absolute inset-0 bg-dark-green/10 group-hover:bg-transparent transition-colors duration-700 z-10"></div>
-              <img 
-                src="/assets/experiencia_tv.jpeg" 
-                alt="Morena Garnica trabajando" 
-                className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-1000"
-              />
+            {/* Grid of working photos */}
+            <div className="grid grid-cols-2 gap-4">
+              <div className="space-y-4 mt-8">
+                <img src="/assets/working_1.jpeg" alt="Morena trabajando" className="w-full h-48 object-cover rounded-[2rem] shadow-lg border-4 border-white" />
+                <img src="/assets/working_5_0.jpg" alt="Morena trabajando" className="w-full h-64 object-cover rounded-[2rem] shadow-lg border-4 border-white" />
+              </div>
+              <div className="space-y-4">
+                <img src="/assets/working_6_0.jpg" alt="Morena trabajando" className="w-full h-64 object-cover rounded-[2rem] shadow-lg border-4 border-white" />
+                <img src="/assets/working_3.jpeg" alt="Morena trabajando" className="w-full h-48 object-cover rounded-[2rem] shadow-lg border-4 border-white" />
+              </div>
             </div>
             
             {/* Experience Badge */}
-            <div className="absolute -bottom-8 -right-8 bg-white p-6 rounded-2xl shadow-[0_20px_40px_rgba(10,51,35,0.1)] z-20 border border-beige max-w-xs hidden sm:block">
-              <p className="text-rosy-brown font-serif italic text-xl mb-1">Experiencia en</p>
-              <p className="text-dark-green font-bold text-lg leading-tight">Telefe, La Capital + &amp; Producciones</p>
+            <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-[0_20px_40px_rgba(10,51,35,0.1)] z-20 border border-beige max-w-[200px] hidden sm:block">
+              <p className="text-rosy-brown font-serif italic text-xl mb-1">Experiencia</p>
+              <p className="text-dark-green font-bold text-sm leading-tight">Telefe, La Capital + &amp; Producciones</p>
             </div>
           </motion.div>
           
@@ -38,7 +41,7 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="w-full lg:w-1/2"
           >
-            <span className="text-xs uppercase tracking-widest text-moss-green font-bold block mb-4">Sobre Mí</span>
+            <span className="text-sm uppercase tracking-widest text-moss-green font-bold block mb-4">Sobre Mí</span>
             <h2 className="text-4xl md:text-5xl font-serif font-bold text-dark-green mb-6 leading-tight">Conocé un poco <br/>sobre mi trabajo</h2>
             <div className="w-20 h-1 bg-rosy-brown mb-10"></div>
             
@@ -51,12 +54,12 @@ const About = () => {
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="bg-surface-container-lowest p-6 rounded-2xl border border-beige shadow-sm">
+              <div className="bg-surface-container-lowest p-6 rounded-2xl border border-beige shadow-sm hover:shadow-md transition-shadow">
                 <Leaf className="text-moss-green mb-4" size={32} />
                 <h3 className="font-serif font-bold text-dark-green text-xl mb-2">Cuidado de la Piel</h3>
                 <p className="text-midnight-green text-sm">Preparación dermatológica y protocolo clínico antes de cada maquillaje.</p>
               </div>
-              <div className="bg-surface-container-lowest p-6 rounded-2xl border border-beige shadow-sm">
+              <div className="bg-surface-container-lowest p-6 rounded-2xl border border-beige shadow-sm hover:shadow-md transition-shadow">
                 <Sparkles className="text-rosy-brown mb-4" size={32} />
                 <h3 className="font-serif font-bold text-dark-green text-xl mb-2">Acabado Prolijo</h3>
                 <p className="text-midnight-green text-sm">Texturas sedosas, luminosidad orgánica y fijación de larga duración.</p>

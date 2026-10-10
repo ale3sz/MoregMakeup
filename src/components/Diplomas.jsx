@@ -3,9 +3,8 @@ import { motion } from 'framer-motion';
 
 const Diplomas = () => {
   const diplomas = [
-    { id: 1, src: '/assets/cropped_diploma1.jpeg', alt: 'Título de Maquilladora Profesional' },
-    { id: 2, src: '/assets/cropped_diploma2.jpeg', alt: 'Certificación de Especialización' },
-    { id: 3, src: '/assets/cropped_diploma3.jpeg', alt: 'Certificación Masterclass' }
+    { id: 1, src: '/assets/real_diploma_0.jpg', alt: 'Certificado de Profesional' },
+    { id: 2, src: '/assets/real_diploma_1.jpg', alt: 'Perfeccionamiento' }
   ];
 
   return (
@@ -32,7 +31,7 @@ const Diplomas = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
           {diplomas.map((diploma, index) => (
             <motion.div
               key={diploma.id}
@@ -40,13 +39,13 @@ const Diplomas = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-surface-container-lowest p-3 rounded-2xl border border-beige shadow-lg hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2"
+              className="bg-surface-container-lowest p-4 rounded-[2rem] border border-beige shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
             >
-              <div className="overflow-hidden rounded-xl h-full border border-moss-green/10">
+              <div className="overflow-hidden rounded-2xl h-full border border-moss-green/10 bg-surface flex items-center justify-center p-2">
                 <img 
                   src={diploma.src} 
                   alt={diploma.alt} 
-                  className="w-full h-full object-cover object-center grayscale-[20%] hover:grayscale-0 transition-all duration-500"
+                  className="w-full h-auto object-contain hover:scale-[1.02] transition-all duration-500 rounded-lg shadow-sm"
                   onError={(e) => { e.target.style.display = 'none'; }}
                 />
               </div>
