@@ -1,10 +1,25 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X, ZoomIn } from 'lucide-react';
 
 const Diplomas = () => {
+  const [selectedDiploma, setSelectedDiploma] = useState(null);
+
   const diplomas = [
-    { id: 1, src: `${import.meta.env.BASE_URL}assets/real_diploma_0.jpg`, alt: 'Certificado de Profesional' },
-    { id: 2, src: `${import.meta.env.BASE_URL}assets/real_diploma_1.jpg`, alt: 'Perfeccionamiento' }
+    { 
+      id: 1, 
+      src: `${import.meta.env.BASE_URL}assets/real_diploma_0.jpg`, 
+      alt: 'Certificado de Perfeccionamiento en Maquillaje - ISEM',
+      title: 'Perfeccionamiento en Maquillaje',
+      institution: 'Instituto Superior de Estética y Moda (ISEM)'
+    },
+    { 
+      id: 2, 
+      src: `${import.meta.env.BASE_URL}assets/real_diploma_1.jpg`, 
+      alt: 'Certificado de Maquillaje Profesional - ISEM',
+      title: 'Maquillaje Profesional',
+      institution: 'Instituto Superior de Estética y Moda (ISEM)'
+    }
   ];
 
   return (
@@ -39,20 +54,69 @@ const Diplomas = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="bg-surface-container-lowest p-4 rounded-[2rem] border border-beige shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2"
+              onClick={() => setSelectedDiploma(diploma)}
+              className="bg-surface-container-lowest p-4 rounded-[2rem] border border-beige shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 cursor-pointer group relative"
             >
-              <div className="overflow-hidden rounded-2xl h-full border border-moss-green/10 bg-surface flex items-center justify-center p-2">
+              <div className="overflow-hidden rounded-2xl h-full border border-moss-green/10 bg-surface flex items-center justify-center p-2 relative">
                 <img 
                   src={diploma.src} 
                   alt={diploma.alt} 
-                  className="w-full h-auto object-contain hover:scale-[1.02] transition-all duration-500 rounded-lg shadow-sm"
+                  className="w-full h-auto object-contain group-hover:scale-[1.02] transition-all duration-500 rounded-lg shadow-sm"
                   onError={(e) => { e.target.style.display = 'none'; }}
                 />
+                
+                {/* Overlay prompt on hover */}
+                <div className="absolute inset-0 bg-dark-green/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl flex items-center justify-center backdrop-blur-xs">
+                  <span className="bg-surface/90 text-dark-green px-5 py-2.5 rounded-full font-semibold text-sm flex items-center gap-2 shadow-lg">
+                    <ZoomIn size={16} /> Ver certificado completo
+                  </span>
+                </div>
+              </div>
+              <div className="mt-4 px-2 text-center">
+                <h3 className="font-serif font-bold text-dark-green text-lg">{diploma.title}</h3>
+                <p className="text-xs uppercase tracking-wider text-moss-green font-medium mt-1">{diploma.institution}</p>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
+
+      {/* Lightbox Modal for Diplomas */}
+      <AnimatePresence>
+        {selectedDiploma && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-dark-green/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
+            onClick={() => setSelectedDiploma(null)}
+          >
+            <button 
+              className="absolute top-6 right-6 text-surface-dim hover:text-white transition-colors p-3 bg-white/10 hover:bg-white/20 rounded-full"
+              onClick={() => setSelectedDiploma(null)}
+              aria-label="Cerrar vista previa"
+            >
+              <X size={26} />
+            </button>
+            
+            <div className="max-w-4xl max-h-[90vh] flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
+              <motion.img
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                src={selectedDiploma.src}
+                alt={selectedDiploma.alt}
+                className="max-w-full max-h-[75vh] object-contain rounded-xl shadow-2xl border border-white/20 bg-white"
+              />
+              <div className="mt-4 text-center">
+                <h4 className="text-white font-serif text-xl font-bold">{selectedDiploma.title}</h4>
+                <p className="text-surface-dim text-sm mt-1">{selectedDiploma.institution}</p>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

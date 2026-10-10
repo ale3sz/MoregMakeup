@@ -1,8 +1,17 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Leaf, Sparkles } from 'lucide-react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Leaf, Sparkles, X, ZoomIn } from 'lucide-react';
 
 const About = () => {
+  const [selectedPhoto, setSelectedPhoto] = useState(null);
+
+  const photos = [
+    { src: `${import.meta.env.BASE_URL}assets/working_1.jpeg`, alt: 'Morena maquillando - Detalle de ojos' },
+    { src: `${import.meta.env.BASE_URL}assets/working_5_0.jpg`, alt: 'Morena en sesión de maquillaje' },
+    { src: `${import.meta.env.BASE_URL}assets/working_2.jpeg`, alt: 'Morena preparando piel' },
+    { src: `${import.meta.env.BASE_URL}assets/working_3.jpeg`, alt: 'Morena en backstage' }
+  ];
+
   return (
     <section id="about" className="py-24 bg-surface overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
@@ -18,12 +27,44 @@ const About = () => {
             {/* Grid of working photos */}
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4 mt-8">
-                <img src={`${import.meta.env.BASE_URL}assets/working_1.jpeg`} alt="Morena trabajando" className="w-full h-48 object-cover rounded-[2rem] shadow-lg border-4 border-white" />
-                <img src={`${import.meta.env.BASE_URL}assets/working_5_0.jpg`} alt="Morena trabajando" className="w-full h-64 object-cover rounded-[2rem] shadow-lg border-4 border-white" />
+                <div 
+                  className="relative group cursor-pointer overflow-hidden rounded-[2rem] shadow-lg border-4 border-white"
+                  onClick={() => setSelectedPhoto(photos[0])}
+                >
+                  <img src={photos[0].src} alt={photos[0].alt} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-dark-green/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <ZoomIn className="text-white drop-shadow-md" size={24} />
+                  </div>
+                </div>
+                <div 
+                  className="relative group cursor-pointer overflow-hidden rounded-[2rem] shadow-lg border-4 border-white"
+                  onClick={() => setSelectedPhoto(photos[1])}
+                >
+                  <img src={photos[1].src} alt={photos[1].alt} className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-dark-green/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <ZoomIn className="text-white drop-shadow-md" size={24} />
+                  </div>
+                </div>
               </div>
               <div className="space-y-4">
-                <img src={`${import.meta.env.BASE_URL}assets/working_6_0.jpg`} alt="Morena trabajando" className="w-full h-64 object-cover rounded-[2rem] shadow-lg border-4 border-white" />
-                <img src={`${import.meta.env.BASE_URL}assets/working_3.jpeg`} alt="Morena trabajando" className="w-full h-48 object-cover rounded-[2rem] shadow-lg border-4 border-white" />
+                <div 
+                  className="relative group cursor-pointer overflow-hidden rounded-[2rem] shadow-lg border-4 border-white"
+                  onClick={() => setSelectedPhoto(photos[2])}
+                >
+                  <img src={photos[2].src} alt={photos[2].alt} className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-dark-green/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <ZoomIn className="text-white drop-shadow-md" size={24} />
+                  </div>
+                </div>
+                <div 
+                  className="relative group cursor-pointer overflow-hidden rounded-[2rem] shadow-lg border-4 border-white"
+                  onClick={() => setSelectedPhoto(photos[3])}
+                >
+                  <img src={photos[3].src} alt={photos[3].alt} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute inset-0 bg-dark-green/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <ZoomIn className="text-white drop-shadow-md" size={24} />
+                  </div>
+                </div>
               </div>
             </div>
             
@@ -68,6 +109,40 @@ const About = () => {
           </motion.div>
         </div>
       </div>
+
+      {/* Lightbox for About photos */}
+      <AnimatePresence>
+        {selectedPhoto && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[100] bg-dark-green/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
+            onClick={() => setSelectedPhoto(null)}
+          >
+            <button 
+              className="absolute top-6 right-6 text-surface-dim hover:text-white transition-colors p-3 bg-white/10 hover:bg-white/20 rounded-full"
+              onClick={() => setSelectedPhoto(null)}
+              aria-label="Cerrar vista previa"
+            >
+              <X size={26} />
+            </button>
+            
+            <div className="max-w-4xl max-h-[90vh] flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
+              <motion.img
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                src={selectedPhoto.src}
+                alt={selectedPhoto.alt}
+                className="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl border border-white/20"
+              />
+              <p className="text-surface-dim text-sm mt-3">{selectedPhoto.alt}</p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

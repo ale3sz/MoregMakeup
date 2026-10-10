@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X } from 'lucide-react';
+import { X, ZoomIn } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Portfolio = () => {
@@ -9,17 +9,18 @@ const Portfolio = () => {
   const categories = ['Todos', 'Social', 'Novias', 'Eventos'];
   
   const images = [
-    { id: 1, src: `${import.meta.env.BASE_URL}assets/quinceaniera.jpeg`, category: 'Eventos', alt: 'Maquillaje Quinceañera' },
-    { id: 2, src: `${import.meta.env.BASE_URL}assets/model_9_0.jpg`, category: 'Novias', alt: 'Trabajo Novias 1' },
-    { id: 3, src: `${import.meta.env.BASE_URL}assets/model_9_1.jpg`, category: 'Eventos', alt: 'Trabajo Eventos 1' },
-    { id: 4, src: `${import.meta.env.BASE_URL}assets/model_10_0.jpg`, category: 'Social', alt: 'Trabajo Social 1' },
-    { id: 5, src: `${import.meta.env.BASE_URL}assets/model_10_1.jpg`, category: 'Social', alt: 'Trabajo Social 2' },
-    { id: 6, src: `${import.meta.env.BASE_URL}assets/model_11_0.jpg`, category: 'Novias', alt: 'Trabajo Novias 2' },
-    { id: 7, src: `${import.meta.env.BASE_URL}assets/model_11_1.jpg`, category: 'Eventos', alt: 'Trabajo Eventos 2' },
-    { id: 8, src: `${import.meta.env.BASE_URL}assets/model_11_2.jpg`, category: 'Social', alt: 'Trabajo Social 3' },
-    { id: 9, src: `${import.meta.env.BASE_URL}assets/model_11_3.jpg`, category: 'Novias', alt: 'Trabajo Novias 3' },
-    { id: 10, src: `${import.meta.env.BASE_URL}assets/model_11_4.jpg`, category: 'Social', alt: 'Trabajo Social 4' },
-    { id: 11, src: `${import.meta.env.BASE_URL}assets/model_11_5.jpg`, category: 'Eventos', alt: 'Trabajo Eventos 3' },
+    { id: 1, src: `${import.meta.env.BASE_URL}assets/foto_1_tiara_ojos_abiertos.png`, category: 'Novias', alt: 'Maquillaje de Novia con Tiara' },
+    { id: 2, src: `${import.meta.env.BASE_URL}assets/foto_2_tiara_ojos_cerrados.png`, category: 'Novias', alt: 'Detalle Sombras Ojos Cerrados' },
+    { id: 3, src: `${import.meta.env.BASE_URL}assets/foto_3_xv_ojos_abiertos.png`, category: 'Eventos', alt: 'Maquillaje Quinceañera Iluminado' },
+    { id: 4, src: `${import.meta.env.BASE_URL}assets/foto_4_xv_ojos_cerrados.png`, category: 'Eventos', alt: 'Detalle Maquillaje de Fiesta' },
+    { id: 5, src: `${import.meta.env.BASE_URL}assets/quinceaniera.jpeg`, category: 'Eventos', alt: 'Producción Quinceañera' },
+    { id: 6, src: `${import.meta.env.BASE_URL}assets/model_10_0.jpg`, category: 'Social', alt: 'Look Social Glamour' },
+    { id: 7, src: `${import.meta.env.BASE_URL}assets/model_10_1.jpg`, category: 'Social', alt: 'Look Social Natural Glow' },
+    { id: 8, src: `${import.meta.env.BASE_URL}assets/model_11_0.jpg`, category: 'Novias', alt: 'Novia Editorial' },
+    { id: 9, src: `${import.meta.env.BASE_URL}assets/model_11_1.jpg`, category: 'Social', alt: 'Make Up para Eventos' },
+    { id: 10, src: `${import.meta.env.BASE_URL}assets/model_11_2.jpg`, category: 'Social', alt: 'Maquillaje de Noche' },
+    { id: 11, src: `${import.meta.env.BASE_URL}assets/model_9_0.jpg`, category: 'Novias', alt: 'Producción Novia Clásica' },
+    { id: 12, src: `${import.meta.env.BASE_URL}assets/model_9_1.jpg`, category: 'Eventos', alt: 'Make Up de Alta Cobertura' },
   ];
 
   const filteredImages = filter === 'Todos' 
@@ -72,8 +73,16 @@ const Portfolio = () => {
                   loading="lazy"
                   onError={(e) => { e.target.style.display = 'none'; }}
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-green/80 via-dark-green/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                  <span className="text-surface font-semibold tracking-widest uppercase text-sm border-b border-rosy-brown pb-1">{img.category}</span>
+                
+                {/* Overlay hover with zoom icon */}
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-green/90 via-dark-green/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
+                  <div className="self-end bg-white/20 p-2 rounded-full backdrop-blur-sm">
+                    <ZoomIn size={18} className="text-white" />
+                  </div>
+                  <div>
+                    <span className="text-xs uppercase tracking-widest text-rosy-brown font-bold block mb-1">{img.category}</span>
+                    <p className="text-surface font-serif text-base font-medium">{img.alt}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -88,28 +97,31 @@ const Portfolio = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-dark-green/95 backdrop-blur-sm flex items-center justify-center p-4 sm:p-8"
+            className="fixed inset-0 z-[100] bg-dark-green/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
             onClick={() => setSelectedImage(null)}
           >
             <button 
-              className="absolute top-6 right-6 text-surface-dim hover:text-white transition-colors p-2 bg-white/10 rounded-full"
+              className="absolute top-6 right-6 text-surface-dim hover:text-white transition-colors p-3 bg-white/10 hover:bg-white/20 rounded-full"
               onClick={() => setSelectedImage(null)}
+              aria-label="Cerrar imagen"
             >
-              <X size={24} />
+              <X size={26} />
             </button>
             
-            <motion.img
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              src={selectedImage.src}
-              alt={selectedImage.alt}
-              className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl border border-white/10"
-              onClick={(e) => e.stopPropagation()}
-            />
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-surface font-semibold tracking-widest uppercase text-sm bg-black/50 px-6 py-2 rounded-full backdrop-blur-md">
-              {selectedImage.category}
+            <div className="max-w-4xl max-h-[90vh] flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
+              <motion.img
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                src={selectedImage.src}
+                alt={selectedImage.alt}
+                className="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl border border-white/20"
+              />
+              <div className="mt-4 text-center">
+                <span className="text-rosy-brown text-xs uppercase tracking-widest font-semibold">{selectedImage.category}</span>
+                <p className="text-white font-serif text-lg font-medium mt-1">{selectedImage.alt}</p>
+              </div>
             </div>
           </motion.div>
         )}
