@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"dark-green":"#0A3323","moss-green":"#839958","beige-base":"#F7F4D5","rosy-brown":"#D3968C","midnight-green":"#105666","surface":"#F7F4D5","surface-bright":"#FCFBF0","surface-dim":"#EDE9C3","surface-container":"#F0ECC4","surface-container-low":"#F4F0CB","surface-container-high":"#E9E5BD","surface-container-highest":"#E2DEB4","surface-container-lowest":"#FAF8E3","on-surface":"#0A3323","on-surface-variant":"#385448","on-background":"#0A3323","background":"#F7F4D5","primary":"#0A3323","on-primary":"#F7F4D5","primary-container":"#D3968C","on-primary-container":"#0A3323","secondary":"#839958","on-secondary":"#ffffff","secondary-container":"#CDE0B8","tertiary":"#105666","on-tertiary":"#ffffff","accent":"#D3968C","outline":"#72867B","outline-variant":"#CFD6C8"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin":"4rem","space-md":"1.5rem","space-lg":"2.5rem","gutter":"2rem","margin-mobile":"1.25rem","gutter-mobile":"1rem","margin-tablet":"2.5rem","space-xs":"0.375rem","space-xl":"4.5rem","space-sm":"0.75rem"},"fontFamily":{"label-sm":["Plus Jakarta Sans","Manrope"],"headline-md":["Playfair Display"],"body-sm":["Plus Jakarta Sans","Manrope"],"label-lg":["Plus Jakarta Sans","Manrope"],"body-lg":["Plus Jakarta Sans","Manrope"],"headline-sm":["Playfair Display"],"display-lg-mobile":["Playfair Display"],"display-lg":["Playfair Display"],"headline-lg-mobile":["Playfair Display"],"headline-lg":["Playfair Display"],"body-md":["Plus Jakarta Sans","Manrope"],"label-md":["Plus Jakarta Sans","Manrope"],"display-xl":["Playfair Display"],"display-xl-mobile":["Playfair Display"]},"fontSize":{"label-sm":["10px",{"lineHeight":"12px","letterSpacing":"0.2em","fontWeight":"500"}],"headline-md":["30px",{"lineHeight":"38px","fontWeight":"500"}],"body-sm":["13px",{"lineHeight":"20px","fontWeight":"400"}],"label-lg":["13px",{"lineHeight":"16px","letterSpacing":"0.14em","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"300"}],"headline-sm":["22px",{"lineHeight":"30px","fontWeight":"500"}],"display-lg-mobile":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"400"}],"display-lg":["56px",{"lineHeight":"64px","letterSpacing":"-0.02em","fontWeight":"400"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"0em","fontWeight":"400"}],"headline-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.01em","fontWeight":"400"}],"body-md":["15px",{"lineHeight":"24px","fontWeight":"400"}],"label-md":["11px",{"lineHeight":"14px","letterSpacing":"0.18em","fontWeight":"600"}],"display-xl":["72px",{"lineHeight":"80px","letterSpacing":"-0.02em","fontWeight":"400"}],"display-xl-mobile":["44px",{"lineHeight":"52px","letterSpacing":"-0.01em","fontWeight":"400"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-rosy-brown/30 selection:text-dark-green"><header class="fixed top-0 left-0 right-0 z-50 bg-[#F7F4D5]/85 backdrop-blur-xl border-b border-moss-green/15 shadow-[0_1px_8px_rgba(10,51,35,0.04)]"><div class="h-20 max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin flex items-center justify-between"><a class="flex items-center gap-space-sm group" href="#"><img alt="Valentina Mora Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Wm6muEY4_BIfpLRwmEIik3oLeEMiW_dMpV94YuVftCyAE3Dq30EkJlX5aHt93-TJZJyRA_I8SpPJ2A6RYLI46DVD_oKRAcVvGAWX0ec_CuX4CVQlAYxKwLUGhMv9umodHm0hFFLQvQOhR09uaUzvoshV8BPP5q3tzVF_lhMgTYh4_sBdLI0sx7EQ2g5T6xCZg3oJO23C9HKZmTLa9ePEkaqe24EIcTWIMgYOXfps-Ha-0AWG4IabDYUWRL"/><span class="font-headline-sm text-headline-sm tracking-tight text-dark-green uppercase group-hover:text-moss-green transition-colors">Valentina Mora</span></a><nav class="hidden lg:flex items-center gap-space-lg" data-active-classes="text-dark-green font-semibold"><a class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-dark-green transition-colors" data-path="servicios" href="#servicios">Servicios</a><a class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-dark-green transition-colors" data-path="portfolio" href="#portfolio">Portfolio</a><a class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-dark-green transition-colors" data-path="sobre-mi" href="#sobre-mi">Sobre Mí</a><a class="font-label-lg text-label-lg uppercase tracking-wider text-on-surface-variant hover:text-dark-green transition-colors" data-path="preguntas" href="#faq">Preguntas</a></nav><div class="flex items-center gap-space-md"><a class="hidden sm:inline-flex items-center justify-center bg-rosy-brown text-dark-green font-bold font-label-lg text-label-lg uppercase px-space-md py-space-sm rounded-full hover:bg-dark-green hover:text-surface transition-all duration-300 shadow-sm" data-path="reservar-turno" href="#reservar">Reservar Turno</a><a class="flex items-center" href="#reservar"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-rosy-brown/50 hover:ring-midnight-green transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACjw70BFzjIFgr4RDq3Lwgv-bwyhbu_Em7hPYoEGI0YnVcw7LABEhA3XYalGDMUobo_CNw59af1NF-mbd8tKBRHZYtrmgkVgFUXclTxuGQhRYU8ebtvz459ZZpjGoJaJIUY2uDBW4xZcOiEgc99d8FHZN1koehEallW9rW81HsG88B0V1zXHo8dtlR9aKM4AgLRfIuNbN4f8IC4g3in0coHXdjQSQLK2CFIdoTQsdPVG6KPBwYQhrCMg"/></a></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- 1. HERO SECTION -->
+<section class="relative w-full overflow-hidden bg-surface py-space-lg lg:py-space-xl">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Text Column -->
+<div class="lg:col-span-7 flex flex-col items-start space-y-space-md z-10">
+<div class="inline-flex items-center gap-space-xs px-space-sm py-1 bg-surface-container rounded-full border border-moss-green/20 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-moss-green animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-dark-green font-semibold">Atelier Beauté · Buenos Aires &amp; Destination</span>
+</div>
+<h1 class="font-display-xl text-display-xl-mobile lg:text-display-xl text-dark-green leading-tight tracking-tight">
+            Maquillaje Profesional: <span class="italic font-light text-moss-green">Social</span>, Novias &amp; <span class="italic font-light text-midnight-green">Editorial</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl font-light">
+            Especialista en preparación dermatológica de la piel, técnicas de acabado “glow natural” y fijación de larga duración para tus momentos más memorables.
+          </p>
+<div class="pt-space-xs flex flex-wrap items-center gap-space-md w-full sm:w-auto">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs bg-rosy-brown text-dark-green hover:bg-dark-green hover:text-surface font-label-lg text-label-lg uppercase px-space-lg py-4 transition-all duration-300 shadow-md font-bold rounded-lg group" href="#reservar">
+<span>Agendar Cita</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">east</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs bg-surface-container text-dark-green hover:bg-surface-container-high border border-moss-green/25 font-label-lg text-label-lg uppercase px-space-lg py-4 transition-colors duration-300 shadow-sm rounded-lg" href="#portfolio">
+<span>Ver Trabajos</span>
+<span class="material-symbols-outlined text-[18px] text-midnight-green">photo_library</span>
+</a>
+</div>
+<!-- Micro Highlights -->
+<div class="pt-space-sm grid grid-cols-2 sm:grid-cols-3 gap-space-md w-full border-t border-moss-green/15">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-dark-green font-semibold">+8 Años</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Trayectoria Pro</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-moss-green font-semibold">Skin-First</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Protocolo Clínico</span>
+</div>
+<div class="flex flex-col col-span-2 sm:col-span-1">
+<span class="font-headline-md text-headline-md text-dark-green font-semibold">16 Horas</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Fijación Sellada</span>
+</div>
+</div>
+</div>
+<!-- Image & Floating Badge Column -->
+<div class="lg:col-span-5 relative mt-space-lg lg:mt-0">
+<div class="relative mx-auto max-w-[480px] lg:max-w-none">
+<!-- Ambient Glow with botanical tones -->
+<div class="absolute -inset-4 bg-gradient-to-tr from-rosy-brown/30 via-moss-green/20 to-midnight-green/20 rounded-3xl blur-2xl -z-10"></div>
+<!-- Main Hero Image Frame -->
+<div class="relative overflow-hidden rounded-2xl shadow-xl bg-surface-container border border-moss-green/20">
+<img alt="Valentina Mora Atelier Beauty" class="w-full h-[520px] object-cover object-center transform hover:scale-105 transition-transform duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACjw70BFzjIFgr4RDq3Lwgv-bwyhbu_Em7hPYoEGI0YnVcw7LABEhA3XYalGDMUobo_CNw59af1NF-mbd8tKBRHZYtrmgkVgFUXclTxuGQhRYU8ebtvz459ZZpjGoJaJIUY2uDBW4xZcOiEgc99d8FHZN1koehEallW9rW81HsG88B0V1zXHo8dtlR9aKM4AgLRfIuNbN4f8IC4g3in0coHXdjQSQLK2CFIdoTQsdPVG6KPBwYQhrCMg"/>
+<!-- Subtle editorial tag -->
+<div class="absolute bottom-4 left-4 right-4 bg-[#F7F4D5]/90 backdrop-blur-md p-space-sm rounded-xl flex items-center justify-between border border-moss-green/20 shadow-sm">
+<div>
+<p class="font-label-sm text-label-sm uppercase text-midnight-green font-semibold">Firma de Estilo</p>
+<p class="font-body-sm text-body-sm text-dark-green font-medium">Textura Seda &amp; Luminosidad Orgánica</p>
+</div>
+<span class="material-symbols-outlined text-moss-green text-2xl">auto_awesome</span>
+</div>
+</div>
+<!-- Floating Micro-Badge Top Right -->
+<div class="absolute -top-4 -right-4 bg-dark-green text-surface px-space-sm py-2 rounded-xl shadow-lg flex items-center gap-2 border border-rosy-brown/40">
+<span class="material-symbols-outlined text-[18px] text-rosy-brown">workspace_premium</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Atelier Recoleta &amp; Palermo</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. SERVICES & PRICING GRID -->
+<section class="w-full py-space-xl bg-surface-container-low border-y border-moss-green/10" id="servicios">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin">
+<div class="flex flex-col items-center text-center max-w-2xl mx-auto mb-space-xl space-y-space-xs">
+<span class="font-label-md text-label-md uppercase tracking-widest text-moss-green font-semibold">Servicios Exclusivos</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-dark-green">Experiencias de Belleza a Medida</h2>
+<p class="font-body-md text-body-md text-on-surface-variant font-light">
+          Cada servicio incluye un diagnóstico cutáneo previo y selección meticulosa de activos botánicos para lograr el acabado exacto que soñás.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter items-stretch">
+<!-- Service Card 1 -->
+<div class="flex flex-col justify-between bg-surface-container-lowest p-space-lg rounded-2xl border border-moss-green/20 shadow-sm hover:shadow-md transition-shadow">
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-moss-green font-semibold">Social &amp; Fiestas</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-1 rounded-full">60-75 min</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-dark-green">Maquillaje Social &amp; Eventos</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Diseño integral de ojos, piel aterciopelada y labios que acompañan armónicamente tu vestuario e iluminación del evento.
+            </p>
+<div class="pt-2">
+<div class="font-display-lg text-[34px] leading-tight text-dark-green font-semibold">$45.000 <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">ARS</span></div>
+</div>
+<div class="space-y-2 pt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-moss-green">check_circle</span>
+<span>Preparación dermocosmética con sueros antioxidantes</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-moss-green">check_circle</span>
+<span>Pestañas individuales personalizadas pelo por pelo</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-moss-green">check_circle</span>
+<span>Fijación 16h y sellado térmico anti-transferencia</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md">
+<button class="w-full py-3 px-space-md bg-surface-container text-dark-green hover:bg-dark-green hover:text-surface transition-colors font-label-md text-label-md uppercase tracking-wider rounded-lg shadow-sm font-semibold border border-moss-green/20" onclick="selectServiceFromCard('social')">
+              Seleccionar Servicio
+            </button>
+</div>
+</div>
+<!-- Service Card 2 (Signature Bridal - Featured) -->
+<div class="relative flex flex-col justify-between bg-surface-bright p-space-lg rounded-2xl shadow-xl -mt-2 md:-mt-4 border-2 border-rosy-brown">
+<div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-midnight-green text-surface px-space-md py-1 rounded-full shadow-md border border-rosy-brown">
+<span class="font-label-sm text-label-sm uppercase tracking-widest font-semibold text-rosy-brown">Signature Atelier · Recomendado</span>
+</div>
+<div class="space-y-space-sm pt-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-midnight-green font-semibold">Novias &amp; Quinceañeras</span>
+<span class="font-label-sm text-label-sm text-dark-green bg-rosy-brown/25 px-2.5 py-1 rounded-full font-medium">Protocolo VIP</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-dark-green">Servicio Bridal Signature</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Acompañamiento holístico para la novia contemporánea. Calma, precisión estética y atención exclusiva en suite o locación.
+            </p>
+<div class="pt-2">
+<div class="font-display-lg text-[34px] leading-tight text-dark-green font-semibold">$110.000 <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">ARS</span></div>
+</div>
+<div class="space-y-2 pt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-midnight-green">check_circle</span>
+<span>Cita de prueba previa completa (2.5h) con registro fotográfico</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-midnight-green">check_circle</span>
+<span>Asesoría cromática acorde al vestido, ramo e iluminación</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-midnight-green">check_circle</span>
+<span>Kit de retoque exclusivo con polvo traslúcido y labial exacto</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-midnight-green">check_circle</span>
+<span>Atención on-location en hotel o quinta el día de la boda</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md">
+<button class="w-full py-3 px-space-md bg-rosy-brown text-dark-green hover:bg-dark-green hover:text-surface transition-colors font-label-md text-label-md uppercase tracking-wider rounded-lg shadow-md font-bold" onclick="selectServiceFromCard('novias')">
+              Seleccionar Servicio
+            </button>
+</div>
+</div>
+<!-- Service Card 3 -->
+<div class="flex flex-col justify-between bg-surface-container-lowest p-space-lg rounded-2xl border border-moss-green/20 shadow-sm hover:shadow-md transition-shadow">
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-moss-green font-semibold">Capacitación Personal</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2 py-1 rounded-full">2.5 Horas</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-dark-green">Clases de Automaquillaje (1-on-1)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Descubrí tu belleza cotidiana sin complicaciones ni excesos. Una clase práctica y personalizada en el atelier.
+            </p>
+<div class="pt-2">
+<div class="font-display-lg text-[34px] leading-tight text-dark-green font-semibold">$55.000 <span class="font-body-sm text-body-sm text-on-surface-variant font-normal">ARS</span></div>
+</div>
+<div class="space-y-2 pt-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-moss-green">check_circle</span>
+<span>Auditoría de tu neceser actual (qué conservar y qué renovar)</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-moss-green">check_circle</span>
+<span>Técnicas según tu morfología de ojos y tono cutáneo</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-moss-green">check_circle</span>
+<span>Dossier digital descargable con guía de productos recomendados</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md">
+<button class="w-full py-3 px-space-md bg-surface-container text-dark-green hover:bg-dark-green hover:text-surface transition-colors font-label-md text-label-md uppercase tracking-wider rounded-lg shadow-sm font-semibold border border-moss-green/20" onclick="selectServiceFromCard('automaquillaje')">
+              Seleccionar Servicio
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. PORTFOLIO & INTERACTIVE GALLERY + BEFORE/AFTER SLIDER -->
+<section class="w-full py-space-xl bg-surface" id="portfolio">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-lg gap-space-md">
+<div class="space-y-space-xs max-w-xl">
+<span class="font-label-md text-label-md uppercase tracking-widest text-moss-green font-semibold">Portfolio &amp; Transformaciones</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-dark-green">El Arte de Resaltar tu Belleza Auténtica</h2>
+<p class="font-body-md text-body-md text-on-surface-variant font-light">
+            Explorá trabajos recientes en producciones fotográficas, alfombras rojas y novias que confiaron en nuestro criterio estético.
+          </p>
+</div>
+<!-- Filter Pills -->
+<div class="flex flex-wrap items-center gap-2" id="portfolioFilterContainer">
+<button class="filter-btn active-filter px-4 py-2 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-dark-green text-surface shadow-sm transition-all" onclick="filterGallery('todos', this)">Todos</button>
+<button class="filter-btn px-4 py-2 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-surface-container text-on-surface-variant hover:text-dark-green hover:bg-surface-container-high transition-all" onclick="filterGallery('novias', this)">Novias</button>
+<button class="filter-btn px-4 py-2 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-surface-container text-on-surface-variant hover:text-dark-green hover:bg-surface-container-high transition-all" onclick="filterGallery('social', this)">Social</button>
+<button class="filter-btn px-4 py-2 rounded-full font-label-sm text-label-sm uppercase tracking-wider bg-surface-container text-on-surface-variant hover:text-dark-green hover:bg-surface-container-high transition-all" onclick="filterGallery('editorial', this)">Editorial / Artístico</button>
+</div>
+</div>
+<!-- BEFORE & AFTER SLIDER COMPONENT -->
+<div class="mb-space-xl bg-surface-container-low p-space-md md:p-space-lg rounded-3xl shadow-sm border border-moss-green/15">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5 space-y-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-midnight-green font-semibold">Transformación Interactiva</span>
+<h3 class="font-headline-md text-headline-md text-dark-green">Transparencia &amp; Perfección de Piel</h3>
+<p class="font-body-md text-body-md text-on-surface-variant font-light">
+              Deslizá la barra central para comparar la preparación previa de hidratación profunda frente al look nupcial sellado final. Sin filtros que distorsionen la textura real de los poros.
+            </p>
+<div class="bg-surface-bright p-space-sm rounded-xl space-y-1 shadow-sm border border-moss-green/20">
+<p class="font-label-md text-label-md text-midnight-green uppercase font-semibold">Caso Real: Novia Sofía</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Iluminación estroboscópica y acabado aterciopelado a prueba de lágrimas en Palacio Sans Souci.</p>
+</div>
+<div class="flex items-center gap-space-sm text-on-surface-variant font-label-sm text-label-sm uppercase">
+<span class="inline-flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-moss-green"></span> Piel Natural Prep</span>
+<span class="inline-flex items-center gap-1"><span class="w-2.5 h-2.5 rounded-full bg-rosy-brown"></span> Acabado Editorial Glam</span>
+</div>
+</div>
+<!-- Interactive Slider Box -->
+<div class="lg:col-span-7">
+<div class="relative w-full h-[400px] md:h-[480px] overflow-hidden rounded-2xl select-none shadow-md bg-surface-container border border-moss-green/20" id="comparisonWrapper">
+<!-- After Image (Base) -->
+<img class="absolute inset-0 w-full h-full object-cover" data-alt="High-fashion bridal makeup finished result, glowing dewy radiant skin, soft bronze metallic eyeshadow, nude glossy sculpted lips, elegant bridal hair ornament, soft daylight studio lighting, warm beige aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg25XjYtq3EIfvg5SDXpj1leFTXNSqHkScG6bUQgu_l7FPQV8BhqB7e3x9JkD2kTte98WyVQwZObuV0nYLYYMaRnH6yKDR6C-b0CZT_9AI_cf-vWyXcVxiqn705jIASgeTK7_5bhlzcShy9ZaoH_R44PGQKFSgc2rQArq-2Fte3C79z1oRj8_3qDzcq8iWQwix_xiFbN9vg7szPUjSYNk7nEfqd8Aw4-Wo__o9NtgAzAcfdzN9IKDOWQ"/>
+<div class="absolute top-4 right-4 bg-dark-green/90 backdrop-blur-md text-surface font-label-sm text-label-sm uppercase px-3 py-1 rounded-full z-10 pointer-events-none border border-rosy-brown/40">
+                Después (Look Final)
+              </div>
+<!-- Before Image (Clipped Overlay) -->
+<div class="absolute inset-0 overflow-hidden" id="beforeImageClip" style="width: 50%;">
+<img class="absolute inset-0 w-full h-full object-cover max-w-none" data-alt="Clean bare face beauty portrait pre-makeup skincare prep, glowing natural hydrated bare skin, relaxed expression, delicate features, clean aesthetic, warm studio lighting matching bridal shoot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZvWDIbP9P6dycUXezKQ3tvqU37_zPhoTf0CuqaUm8MkZu9tn92xiq34r7mOyMya8u8zbwCfxE4Bayha-Q-ibPevsTWwvLBSJ_UURyO3T9Al_oZXpU7wUUDK2cyVPSmp_y85qPgH9sKcN8LPIBRqaQLCY5nuPSJyU45dfvoNozC5E40vFeWSW4kZ6zeMuBJhe6_lBdIK2uP-sVJnQkUneVfD9Wjwul1OShlLjsvvSb6LK7xGOR_idd5Q" style="width: 100%; height: 100%;"/>
+<div class="absolute top-4 left-4 bg-surface-bright/90 backdrop-blur-md text-dark-green font-label-sm text-label-sm uppercase px-3 py-1 rounded-full z-10 pointer-events-none border border-moss-green/30">
+                  Antes (Piel Prep)
+                </div>
+</div>
+<!-- Draggable Divider Line -->
+<div class="absolute top-0 bottom-0 z-20 pointer-events-none" id="sliderDivider" style="left: 50%; transform: translateX(-50%);">
+<div class="w-[2px] h-full bg-rosy-brown shadow-lg"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-surface-bright border border-rosy-brown shadow-xl flex items-center justify-center text-dark-green">
+<span class="material-symbols-outlined text-[20px]">swap_horiz</span>
+</div>
+</div>
+<!-- Hidden Range Control for Accessibility & Touch Dragging -->
+<input aria-label="Comparar antes y después" class="absolute inset-0 w-full h-full opacity-0 cursor-ew-resize z-30" id="beforeAfterRange" max="100" min="0" type="range" value="50"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Masonry Gallery Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter" id="portfolioGallery">
+<!-- Item 1 - Novias -->
+<div class="gallery-item novias relative group overflow-hidden rounded-2xl shadow-sm bg-surface-container aspect-[4/5] border border-moss-green/15">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up photography of an elegant bride with soft radiant bronze skin makeup, fluttery delicate eyelashes, nude satin lipstick, pearl earrings, soft ambient sunlight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuABur9Gau-vDYNTl8iqxX5eVRYs9BA-MamTT8WZYi6Fk_cJwtpO2PVOmhIIXOy0HKVp4xEmMdQQtjHS1Zk1S65eZdQFVqZZhGsiy4ZIxDPjoqAJJmYWDcYqiiWszIi1lRLrx2XHt_HzByvx4_o5j6u-0XkqX9egfDr1eIRRVoZbx6sSATknJVyA5WSrIJVFTr3lhrKanbc9jV4PuFHRtQfDkdG9ThdFQvE_F0CFs6SAy7-y2CzpNXkUeA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-dark-green/90 via-dark-green/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-space-md flex flex-col justify-end text-surface">
+<span class="font-label-sm text-label-sm uppercase text-rosy-brown font-semibold">Novias</span>
+<p class="font-headline-sm text-headline-sm">Novia Sofía · Palacio Sans Souci</p>
+<p class="font-body-sm text-body-sm text-surface/80">Piel estroboscópica y ojos tono champagne</p>
+</div>
+</div>
+<!-- Item 2 - Social -->
+<div class="gallery-item social relative group overflow-hidden rounded-2xl shadow-sm bg-surface-container aspect-[4/5] border border-moss-green/15">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Evening gala social makeup portrait, dramatic soft smokey eye with velvet terracotta lip, luminous cheekbones, sophisticated chic model, golden hour lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCs80ptXZ1sVioF9KmkMGC3nndmNkvMDBxmTDO8mMbEyAAla0IgEOc5CGW9BP9E6KKJuTLGEiFV_YObHuHnHydPTblXRptk9RKK99-MYi1-eV0bT8Z8uKLT08t4KUK_VbmWXOD8FZw_CRLDtRpMUi7P29iUVDhYoOwrSWgAtkzXLzV1yRrEuyYDneKjJOSPHg0wx73m4coeAOnSKYUCbtv1rZHrufLgCUW3yf27qNc-stnw_MfzcCa2vQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-dark-green/90 via-dark-green/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-space-md flex flex-col justify-end text-surface">
+<span class="font-label-sm text-label-sm uppercase text-rosy-brown font-semibold">Social</span>
+<p class="font-headline-sm text-headline-sm">Gala Teatro Colón</p>
+<p class="font-body-sm text-body-sm text-surface/80">Smokey aterciopelado &amp; rubor cálido</p>
+</div>
+</div>
+<!-- Item 3 - Editorial -->
+<div class="gallery-item editorial relative group overflow-hidden rounded-2xl shadow-sm bg-surface-container aspect-[4/5] border border-moss-green/15">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="High editorial fashion magazine cover makeup, glass skin ultra wet look, glossy highlighted eyelids, sculptured minimal eyebrows, neutral studio background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnIJG0dsv69OyjYAcrC7_k_iYcXmBki_-lPjiJDrpLxdlOzqW5KUgq7b2HWpTHftXcxN9g3wq60WDQ0Z4BlePsUucldNBvYvJMxH89PWkgpg6-EQcM4H2UzIVBmratDv3kUwQ2uw5UKXt4eJGakgYseSeCZ5DJd_tVyin8BtdBt4mLdp0JmxKNa8gBI-lWUedMFsJrm91Mu_7aRlIYasbldAeyn4Jk70YhifpUhCYO86mB6xzlZfsmSQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-dark-green/90 via-dark-green/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-space-md flex flex-col justify-end text-surface">
+<span class="font-label-sm text-label-sm uppercase text-rosy-brown font-semibold">Editorial</span>
+<p class="font-headline-sm text-headline-sm">Campaña L'Officiel Argentina</p>
+<p class="font-body-sm text-body-sm text-surface/80">Técnica Glass Skin ultra reflectiva</p>
+</div>
+</div>
+<!-- Item 4 - Novias -->
+<div class="gallery-item novias relative group overflow-hidden rounded-2xl shadow-sm bg-surface-container aspect-[4/5] border border-moss-green/15">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Romantic destination wedding bride portrait, delicate natural glow makeup, warm coral blush, soft defined lashes, outdoor golden hour light in vineyard setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWWaiHRPp11Yfn74QmM2nnR12a2uHXYqPPMWCOJXLRTkmJpZDobEn_o61Nc2RgI4tSLjLj8-GsYGR4p_6niJ40PedXgneAFkgoEPIWHR4hxAXBytO35gHoxKbIo4od-rmsgesQjlQVjF179jCm8PXc-4tJu4xo4MM2fPqkmF_rmR5hdPOpD3QPc6TkZ33mzfdIgC_NhoRFi2Ctome8uag0I89e1xOonqUevOTq712GbLp1tShNTP5N-Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-dark-green/90 via-dark-green/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-space-md flex flex-col justify-end text-surface">
+<span class="font-label-sm text-label-sm uppercase text-rosy-brown font-semibold">Novias</span>
+<p class="font-headline-sm text-headline-sm">Destination Wedding · Mendoza</p>
+<p class="font-body-sm text-body-sm text-surface/80">Resistencia a clima seco y luz directa</p>
+</div>
+</div>
+<!-- Item 5 - Editorial -->
+<div class="gallery-item editorial relative group overflow-hidden rounded-2xl shadow-sm bg-surface-container aspect-[4/5] border border-moss-green/15">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Editorial beauty portrait featuring graphic eyeliner with gold leaf delicate accents, pristine matte skin, neutral lips, warm monochromatic art direction." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6qMcupySv1Z4MPia9QN8nxkuWjqBEWsVGiFxPrT7bH4yt70g3qrnHe9imVI7o2R7D5qX5wS5P9lCUdFS8NW8VBKeFYIeoSsh1wiEvUyB13p6VSlfsSHUa-IsvejIZvti6FQtR2Eu9PX3xWKg6jqQHyvEjD-dgs_IpBh--J8FwtQpsGvi0fIEFfGhlPmZnSHnrPpJcr1qd2O-shYv3y3DNXMONR2hi-Bywu_rkjsR80RC4iloyWgCaCw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-dark-green/90 via-dark-green/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-space-md flex flex-col justify-end text-surface">
+<span class="font-label-sm text-label-sm uppercase text-rosy-brown font-semibold">Editorial / Artístico</span>
+<p class="font-headline-sm text-headline-sm">Bespoke Gold Foliage</p>
+<p class="font-body-sm text-body-sm text-surface/80">Intervención minimalista en pan de oro</p>
+</div>
+</div>
+<!-- Item 6 - Social -->
+<div class="gallery-item social relative group overflow-hidden rounded-2xl shadow-sm bg-surface-container aspect-[4/5] border border-moss-green/15">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Chic evening cocktail makeup on mature skin, luminous satin foundation, lifted defined eye look, flattering plum rose lips, elegant jewelry." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3n5UCA-1pTEa2JbIF8XiIcOseTo6vU4i5WqbzfmZKCPXvmD_vqVZpfNsT3M1SXMs0DwkgyzVL2O3XEdhO83UBU__P_EQcv_RVd7tD5Ka9YSXdvmpWX5cXqjouIrohaiSQusmWq3ptKMg2NDVkVJOdmAdkR6wpuQcOYG2sbJ9STrAx1mUaBrY0vYHYwCU2R4k1x67p1RI-xMLGDAAneeVa5_K_KOqQoOHO5T0_sU4s6-7Sp8JeNeC8Ug"/>
+<div class="absolute inset-0 bg-gradient-to-t from-dark-green/90 via-dark-green/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-space-md flex flex-col justify-end text-surface">
+<span class="font-label-sm text-label-sm uppercase text-rosy-brown font-semibold">Social</span>
+<p class="font-headline-sm text-headline-sm">Madrina de Boda · Alvear Palace</p>
+<p class="font-body-sm text-body-sm text-surface/80">Enfoque Pro-Ageing de máxima frescura</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. ABOUT ME / BIO SECTION -->
+<section class="w-full py-space-xl bg-surface-container-low border-y border-moss-green/10" id="sobre-mi">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Left Column: Portrait & Quote Card -->
+<div class="lg:col-span-5 relative">
+<div class="relative overflow-hidden rounded-2xl shadow-xl bg-surface-bright border border-moss-green/20">
+<img alt="Valentina Mora Maquilladora Profesional" class="w-full h-[580px] object-cover object-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACjw70BFzjIFgr4RDq3Lwgv-bwyhbu_Em7hPYoEGI0YnVcw7LABEhA3XYalGDMUobo_CNw59af1NF-mbd8tKBRHZYtrmgkVgFUXclTxuGQhRYU8ebtvz459ZZpjGoJaJIUY2uDBW4xZcOiEgc99d8FHZN1koehEallW9rW81HsG88B0V1zXHo8dtlR9aKM4AgLRfIuNbN4f8IC4g3in0coHXdjQSQLK2CFIdoTQsdPVG6KPBwYQhrCMg"/>
+<div class="p-space-md bg-surface-bright border-t border-moss-green/15">
+<p class="font-headline-sm text-headline-sm text-dark-green italic">“El mejor maquillaje es aquel que no enmascara quién sos, sino que ilumina tu presencia.”</p>
+<div class="pt-2 flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-moss-green font-semibold">Valentina Mora · Directora</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Atelier Buenos Aires</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Biography & Trust Pillars -->
+<div class="lg:col-span-7 flex flex-col space-y-space-md lg:pl-space-md">
+<div class="space-y-space-xs">
+<span class="font-label-md text-label-md uppercase tracking-widest text-moss-green font-semibold">Sobre Mí &amp; Filosofía</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-dark-green leading-tight">
+              Creer en el poder de una <span class="italic text-midnight-green">piel que respira</span>
+</h2>
+<p class="font-body-md text-body-md text-on-surface-variant font-light leading-relaxed">
+              Formada en academias líderes de Milán y Buenos Aires, desarrollé mi carrera entre pasarelas de alta costura, producciones editoriales y suites nupciales. Concibo el maquillaje como un ritual de cuidado holístico: nunca aplico una base sin antes preparar el tejido con masajes linfáticos y sueros de grado cosmecéutico.
+            </p>
+<p class="font-body-md text-body-md text-on-surface-variant font-light leading-relaxed">
+              Mi misión es que al mirarte al espejo en tu gran día, sientas una versión magnética, refinada y absolutamente auténtica de vos misma.
+            </p>
+</div>
+<!-- 4 Pillars Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm pt-space-xs">
+<!-- Pillar 1 -->
+<div class="p-space-sm bg-surface-bright rounded-xl shadow-sm flex items-start gap-space-xs border border-moss-green/15">
+<span class="material-symbols-outlined text-rosy-brown text-2xl">spa</span>
+<div>
+<h4 class="font-label-lg text-label-lg uppercase text-dark-green font-semibold">Cruelty-Free &amp; Alta Gama</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Kit exclusivo con firmas como Dior Backstage, Charlotte Tilbury, NARS y Hourglass.</p>
+</div>
+</div>
+<!-- Pillar 2 -->
+<div class="p-space-sm bg-surface-bright rounded-xl shadow-sm flex items-start gap-space-xs border border-moss-green/15">
+<span class="material-symbols-outlined text-rosy-brown text-2xl">sanitizer</span>
+<div>
+<h4 class="font-label-lg text-label-lg uppercase text-dark-green font-semibold">Bioseguridad Hospitalaria</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Paletas de acero estériles, espátulas quirúrgicas y aplicadores descartables en cada cita.</p>
+</div>
+</div>
+<!-- Pillar 3 -->
+<div class="p-space-sm bg-surface-bright rounded-xl shadow-sm flex items-start gap-space-xs border border-moss-green/15">
+<span class="material-symbols-outlined text-midnight-green text-2xl">science</span>
+<div>
+<h4 class="font-label-lg text-label-lg uppercase text-dark-green font-semibold">Enfoque Skin-First</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tratamiento previo con ácido hialurónico multimolecular y brumas calmantes botánicas.</p>
+</div>
+</div>
+<!-- Pillar 4 -->
+<div class="p-space-sm bg-surface-bright rounded-xl shadow-sm flex items-start gap-space-xs border border-moss-green/15">
+<span class="material-symbols-outlined text-moss-green text-2xl">verified</span>
+<div>
+<h4 class="font-label-lg text-label-lg uppercase text-dark-green font-semibold">Certificación Pro Makeup</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Especialización continua en técnicas nupciales europeas y colorimetría aplicada.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. SOCIAL PROOF & CLIENT REVIEWS -->
+<section class="w-full py-space-xl bg-surface">
+<div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin">
+<div class="flex flex-col items-center text-center max-w-2xl mx-auto mb-space-lg space-y-space-xs">
+<div class="flex items-center gap-1 text-rosy-brown">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="ml-2 font-label-md text-label-md uppercase text-dark-green font-bold">4.98 / 5.0 (+240 Clientas)</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-dark-green">Voces de Quienes Confiaron</h2>
+<p class="font-body-md text-body-md text-on-surface-variant font-light">
+          La tranquilidad y el resultado impecable de quienes vivieron la experiencia Valentina Mora en sus celebraciones.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Review 1 -->
+<div class="bg-surface-container-low p-space-lg rounded-2xl flex flex-col justify-between shadow-sm border border-moss-green/20">
+<div class="space-y-space-sm">
+<div class="flex items-center gap-1 text-rosy-brown">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-dark-green font-light italic leading-relaxed">
+              “Bailé toda la noche, lloré de emoción en los votos y el maquillaje quedó INTACTO hasta las 6 de la mañana. Valentina me transmitió una paz invaluable durante los preparativos en el hotel.”
+            </p>
+</div>
+<div class="pt-space-md flex items-center justify-between border-t border-moss-green/15">
+<div>
+<p class="font-label-lg text-label-lg uppercase text-dark-green font-bold">Camila Rosales</p>
+<p class="font-label-sm text-label-sm text-moss-green font-semibold">Novia 2024 · San Isidro</p>
+</div>
+<span class="material-symbols-outlined text-moss-green/30 text-3xl">format_quote</span>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="bg-surface-container-low p-space-lg rounded-2xl flex flex-col justify-between shadow-sm border border-moss-green/20">
+<div class="space-y-space-sm">
+<div class="flex items-center gap-1 text-rosy-brown">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-dark-green font-light italic leading-relaxed">
+              “Tengo piel reactiva y siempre temía hacerme maquillaje profesional. El diagnóstico previo de Valen fue perfecto, los productos fueron ultra gentiles y la piel se sintió liviana como una pluma.”
+            </p>
+</div>
+<div class="pt-space-md flex items-center justify-between border-t border-moss-green/15">
+<div>
+<p class="font-label-lg text-label-lg uppercase text-dark-green font-bold">Lucía Menéndez</p>
+<p class="font-label-sm text-label-sm text-moss-green font-semibold">Madrina de Boda · CABA</p>
+</div>
+<span class="material-symbols-outlined text-moss-green/30 text-3xl">format_quote</span>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="bg-surface-container-low p-space-lg rounded-2xl flex flex-col justify-between shadow-sm border border-moss-green/20">
+<div class="space-y-space-sm">
+<div class="flex items-center gap-1 text-rosy-brown">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-md text-body-md text-dark-green font-light italic leading-relaxed">
+              “La puntualidad y pulcritud son superlativas. Nos maquilló a mí y a mis dos hermanas para una gala benéfica internacional y salimos en tiempo récord viéndonos radiantes y elegantes.”
+            </p>
+</div>
+<div class="pt-space-md flex items-center justify-between border-t border-moss-green/15">
+<div>
+<p class="font-label-lg text-label-lg uppercase text-dark-green font-bold">Florencia Di Stefano</p>
+<p class="font-label-sm text-label-sm text-moss-green font-semibold">Gala Internacional · Recoleta</p>
+</div>
+<span class="material-symbols-outlined text-moss-green/30 text-3xl">format_quote</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 6. INTERACTIVE BOOKING FLOW MODULE -->
+<section class="w-full py-space-xl bg-surface-container-low border-y border-moss-green/10" id="reservar">
+<div class="max-w-[1000px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin">
+<div class="bg-surface-bright p-space-md md:p-space-xl rounded-3xl shadow-xl border border-moss-green/20">
+<div class="text-center max-w-xl mx-auto mb-space-md space-y-2">
+<span class="font-label-md text-label-md uppercase tracking-widest text-midnight-green font-semibold">Reserva Tu Experiencia</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-dark-green">Agendar Cita Privada</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-light">
+            Completá los pasos para coordinar tu fecha. La solicitud se confirmará directamente a través de nuestro Concierge de WhatsApp en menos de 2 horas.
+          </p>
+</div>
+<!-- Wizard Progress Bar -->
+<div class="flex items-center justify-between mb-space-lg px-2 max-w-md mx-auto">
+<div class="flex flex-col items-center gap-1">
+<span class="w-8 h-8 rounded-full bg-dark-green text-surface flex items-center justify-center font-label-sm text-label-sm font-bold shadow-sm" id="stepBadge1">1</span>
+<span class="font-label-sm text-label-sm uppercase text-dark-green font-semibold">Servicio</span>
+</div>
+<div class="h-0.5 flex-1 mx-2 bg-moss-green/25"></div>
+<div class="flex flex-col items-center gap-1">
+<span class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm font-bold shadow-sm" id="stepBadge2">2</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Lugar</span>
+</div>
+<div class="h-0.5 flex-1 mx-2 bg-moss-green/25"></div>
+<div class="flex flex-col items-center gap-1">
+<span class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm font-bold shadow-sm" id="stepBadge3">3</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Turno</span>
+</div>
+<div class="h-0.5 flex-1 mx-2 bg-moss-green/25"></div>
+<div class="flex flex-col items-center gap-1">
+<span class="w-8 h-8 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center font-label-sm text-label-sm font-bold shadow-sm" id="stepBadge4">4</span>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Datos</span>
+</div>
+</div>
+<!-- Form Wizard Container -->
+<form class="space-y-space-md" id="bookingWizardForm" onsubmit="handleBookingSubmit(event)">
+<!-- Step 1: Services Selection -->
+<div class="space-y-space-sm" id="stepPanel1">
+<label class="block font-label-lg text-label-lg uppercase tracking-wider text-dark-green">Paso 1: Seleccioná el Servicio</label>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-sm" id="serviceOptionsList">
+<button class="service-chip p-space-sm rounded-xl text-left bg-surface-container border border-moss-green/20 hover:border-rosy-brown transition-all flex flex-col justify-between h-28 shadow-sm" onclick="selectServiceOption('Social &amp; Eventos ($45.000 ARS)', this)" type="button">
+<span class="font-label-md text-label-md uppercase text-dark-green font-semibold">Social &amp; Eventos</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">60-75 min · Piel glow &amp; pestañas</span>
+<span class="font-label-sm text-label-sm text-dark-green font-bold">$45.000 ARS</span>
+</button>
+<button class="service-chip p-space-sm rounded-xl text-left bg-surface-container-low border border-moss-green/20 hover:border-rosy-brown transition-all flex flex-col justify-between h-28 shadow-sm" onclick="selectServiceOption('Novias &amp; Quinceañeras ($110.000 ARS)', this)" type="button">
+<span class="font-label-md text-label-md uppercase text-dark-green font-semibold">Novias Signature</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Prueba previa + kit retoque VIP</span>
+<span class="font-label-sm text-label-sm text-dark-green font-bold">$110.000 ARS</span>
+</button>
+<button class="service-chip p-space-sm rounded-xl text-left bg-surface-container-low border border-moss-green/20 hover:border-rosy-brown transition-all flex flex-col justify-between h-28 shadow-sm" onclick="selectServiceOption('Automaquillaje 1-on-1 ($55.000 ARS)', this)" type="button">
+<span class="font-label-md text-label-md uppercase text-dark-green font-semibold">Automaquillaje</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">2.5 hrs · Clase personalizada</span>
+<span class="font-label-sm text-label-sm text-dark-green font-bold">$55.000 ARS</span>
+</button>
+</div>
+<input id="selectedServiceInput" required="" type="hidden" value="Social &amp; Eventos ($45.000 ARS)"/>
+</div>
+<!-- Step 2: Location -->
+<div class="space-y-space-sm" id="stepPanel2">
+<label class="block font-label-lg text-label-lg uppercase tracking-wider text-dark-green">Paso 2: ¿Dónde te gustaría atenderte?</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<label class="location-radio-label flex items-center gap-space-xs p-space-sm rounded-xl bg-surface-container border border-moss-green/20 cursor-pointer shadow-sm hover:bg-surface-container-high">
+<input checked="" class="w-4 h-4 text-dark-green accent-dark-green" name="serviceLocation" onchange="toggleLocationAddress(false)" type="radio" value="Atelier (Palermo Soho / Recoleta)"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md uppercase font-semibold text-dark-green">En Atelier Privado</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Palermo Soho / Recoleta, CABA</span>
+</div>
+</label>
+<label class="location-radio-label flex items-center gap-space-xs p-space-sm rounded-xl bg-surface-container border border-moss-green/20 cursor-pointer shadow-sm hover:bg-surface-container-high">
+<input class="w-4 h-4 text-dark-green accent-dark-green" name="serviceLocation" onchange="toggleLocationAddress(true)" type="radio" value="A domicilio / Hotel / Evento"/>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md uppercase font-semibold text-dark-green">On-Location</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">A domicilio, hotel o salón de fiesta</span>
+</div>
+</label>
+</div>
+<!-- Dynamic Address input -->
+<div class="hidden pt-2" id="addressInputContainer">
+<input class="w-full p-space-sm bg-surface-container border border-moss-green/30 rounded-xl text-body-sm font-body-sm text-dark-green outline-none focus:border-dark-green shadow-sm" id="customAddressInput" placeholder="Indicá dirección del evento / Hotel / Zona" type="text"/>
+</div>
+</div>
+<!-- Step 3: Date & Slots -->
+<div class="space-y-space-sm" id="stepPanel3">
+<label class="block font-label-lg text-label-lg uppercase tracking-wider text-dark-green">Paso 3: Fecha &amp; Horario Preferido</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm items-center">
+<div>
+<label class="block font-label-sm text-label-sm uppercase text-on-surface-variant mb-1" for="bookingDateInput">Día del Evento</label>
+<input class="w-full p-space-sm bg-surface-container border border-moss-green/30 rounded-xl text-body-sm font-body-sm text-dark-green outline-none focus:border-dark-green shadow-sm" id="bookingDateInput" required="" type="date"/>
+</div>
+<div>
+<label class="block font-label-sm text-label-sm uppercase text-on-surface-variant mb-1">Horario Aproximado</label>
+<div class="grid grid-cols-4 gap-2" id="slotContainer">
+<button class="slot-chip p-2 rounded-lg text-center bg-surface-container text-dark-green font-label-sm text-label-sm hover:bg-surface-container-high shadow-sm border border-moss-green/20" onclick="selectSlot('10:00 AM', this)" type="button">10:00</button>
+<button class="slot-chip p-2 rounded-lg text-center bg-surface-container text-dark-green font-label-sm text-label-sm hover:bg-surface-container-high shadow-sm border border-moss-green/20" onclick="selectSlot('12:30 PM', this)" type="button">12:30</button>
+<button class="slot-chip p-2 rounded-lg text-center bg-dark-green text-surface font-label-sm text-label-sm hover:bg-dark-green shadow-sm border border-dark-green font-semibold" onclick="selectSlot('15:00 PM', this)" type="button">15:00</button>
+<button class="slot-chip p-2 rounded-lg text-center bg-surface-container text-dark-green font-label-sm text-label-sm hover:bg-surface-container-high shadow-sm border border-moss-green/20" onclick="selectSlot('17:30 PM', this)" type="button">17:30</button>
+</div>
+<input id="selectedSlotInput" type="hidden" value="15:00 PM"/>
+</div>
+</div>
+</div>
+<!-- Step 4: Contact Information -->
+<div class="space-y-space-sm" id="stepPanel4">
+<label class="block font-label-lg text-label-lg uppercase tracking-wider text-dark-green">Paso 4: Datos de Contacto</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<div>
+<input class="w-full p-space-sm bg-surface-container border border-moss-green/30 rounded-xl text-body-sm font-body-sm text-dark-green outline-none focus:border-dark-green shadow-sm" id="clientNameInput" placeholder="Nombre y Apellido *" required="" type="text"/>
+</div>
+<div>
+<input class="w-full p-space-sm bg-surface-container border border-moss-green/30 rounded-xl text-body-sm font-body-sm text-dark-green outline-none focus:border-dark-green shadow-sm" id="clientPhoneInput" placeholder="Número de WhatsApp (ej: +54 9 11...) *" required="" type="tel"/>
+</div>
+</div>
+<div>
+<textarea class="w-full p-space-sm bg-surface-container border border-moss-green/30 rounded-xl text-body-sm font-body-sm text-dark-green outline-none focus:border-dark-green shadow-sm" id="clientNotesInput" placeholder="Detalles adicionales: Tipo de evento, vestido, alergias cutáneas o preferencias especiales..." rows="2"></textarea>
+</div>
+</div>
+<!-- Submit CTA button directly linked with WhatsApp engine -->
+<div class="pt-space-sm">
+<button class="w-full py-4 px-space-lg bg-rosy-brown text-dark-green hover:bg-dark-green hover:text-surface font-label-lg text-label-lg uppercase tracking-wider rounded-xl shadow-lg transition-all flex items-center justify-center gap-space-xs font-bold" type="submit">
+<span class="material-symbols-outlined text-2xl">chat</span>
+<span>Confirmar y Enviar a WhatsApp</span>
+</button>
+<p class="text-center font-label-sm text-label-sm text-on-surface-variant uppercase mt-space-xs">
+              Respuesta en menos de 2 horas · Seña del 50% vía transferencia para congelar fecha
+            </p>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- 7. FAQ ACCORDION SECTION -->
+<section class="w-full py-space-xl bg-surface" id="faq">
+<div class="max-w-[900px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin">
+<div class="text-center max-w-xl mx-auto mb-space-lg space-y-space-xs">
+<span class="font-label-md text-label-md uppercase tracking-widest text-moss-green font-semibold">Dudas Frecuentes</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-dark-green">Preguntas Clarificadoras</h2>
+<p class="font-body-md text-body-md text-on-surface-variant font-light">
+          Todo lo que necesitás saber para planificar tu sesión con máxima tranquilidad.
+        </p>
+</div>
+<div class="space-y-space-sm" id="faqAccordion">
+<!-- FAQ 1 -->
+<div class="bg-surface-container rounded-2xl overflow-hidden shadow-sm transition-all border border-moss-green/15">
+<button class="w-full p-space-md text-left flex items-center justify-between gap-space-sm hover:bg-surface-container-high transition-colors" onclick="toggleFaq(this)" type="button">
+<span class="font-headline-sm text-headline-sm text-dark-green">¿Cómo se confirma formalmente el turno?</span>
+<span class="faq-icon material-symbols-outlined text-midnight-green text-2xl transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-space-md pt-0 text-on-surface-variant font-body-md text-body-md font-light leading-relaxed">
+            Para asegurar la disponibilidad en agenda se solicita una seña del 50% del valor total mediante transferencia bancaria. El 50% restante se cancela el día del servicio. Una vez recibida la constancia, te emitimos el voucher de reserva con la ficha técnica.
+          </div>
+</div>
+<!-- FAQ 2 -->
+<div class="bg-surface-container rounded-2xl overflow-hidden shadow-sm transition-all border border-moss-green/15">
+<button class="w-full p-space-md text-left flex items-center justify-between gap-space-sm hover:bg-surface-container-high transition-colors" onclick="toggleFaq(this)" type="button">
+<span class="font-headline-sm text-headline-sm text-dark-green">¿Atendés a domicilio o en hotel el día del evento?</span>
+<span class="faq-icon material-symbols-outlined text-midnight-green text-2xl transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-space-md pt-0 text-on-surface-variant font-body-md text-body-md font-light leading-relaxed">
+            ¡Sí, por supuesto! Brindo servicio on-location en suites de hoteles, estancias y domicilios particulares en toda el Área Metropolitana de Buenos Aires (CABA, Zona Norte, Pilar). También realizo coberturas en Destination Weddings en el interior del país (Punta del Este, Mendoza, Bariloche) con viáticos a cotizar.
+          </div>
+</div>
+<!-- FAQ 3 -->
+<div class="bg-surface-container rounded-2xl overflow-hidden shadow-sm transition-all border border-moss-green/15">
+<button class="w-full p-space-md text-left flex items-center justify-between gap-space-sm hover:bg-surface-container-high transition-colors" onclick="toggleFaq(this)" type="button">
+<span class="font-headline-sm text-headline-sm text-dark-green">¿Cómo debo preparar mi piel antes de la cita?</span>
+<span class="faq-icon material-symbols-outlined text-midnight-green text-2xl transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-space-md pt-0 text-on-surface-variant font-body-md text-body-md font-light leading-relaxed">
+            Recomiendo llegar con el rostro limpio, sin restos de máscara de pestañas ni maquillaje previo. Mantené tu hidratación habitual los días previos y evitá realizarte exfoliaciones químicas profundas, peelings agresivos o depilación facial con cera durante las 48 horas previas a la cita.
+          </div>
+</div>
+<!-- FAQ 4 -->
+<div class="bg-surface-container rounded-2xl overflow-hidden shadow-sm transition-all border border-moss-green/15">
+<button class="w-full p-space-md text-left flex items-center justify-between gap-space-sm hover:bg-surface-container-high transition-colors" onclick="toggleFaq(this)" type="button">
+<span class="font-headline-sm text-headline-sm text-dark-green">¿Con cuánto tiempo de anticipación debo reservar mi fecha para novias?</span>
+<span class="faq-icon material-symbols-outlined text-midnight-green text-2xl transition-transform duration-300">expand_more</span>
+</button>
+<div class="faq-content hidden px-space-md pb-space-md pt-0 text-on-surface-variant font-body-md text-body-md font-light leading-relaxed">
+            Para servicios de bodas en temporada alta (septiembre a mayo) recomiendo congelar la fecha con entre 3 y 6 meses de anticipación. Esto asegura coordinar la prueba de maquillaje con calma y reservar la exclusividad horaria de ese día para vos y tu círculo íntimo.
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- JAVASCRIPT MICRO-INTERACTIONS -->
+<script>
+    // 1. Gallery Filtering System
+    function filterGallery(category, clickedBtn) {
+      const items = document.querySelectorAll('.gallery-item');
+      const filterBtns = document.querySelectorAll('.filter-btn');
+
+      filterBtns.forEach(btn => {
+        btn.classList.remove('bg-dark-green', 'text-surface');
+        btn.classList.add('bg-surface-container', 'text-on-surface-variant');
+      });
+
+      clickedBtn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      clickedBtn.classList.add('bg-dark-green', 'text-surface');
+
+      items.forEach(item => {
+        if (category === 'todos' || item.classList.contains(category)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // 2. Before / After Interactive Drag Slider
+    const rangeControl = document.getElementById('beforeAfterRange');
+    const beforeImageClip = document.getElementById('beforeImageClip');
+    const sliderDivider = document.getElementById('sliderDivider');
+
+    if (rangeControl && beforeImageClip && sliderDivider) {
+      rangeControl.addEventListener('input', (e) => {
+        const val = e.target.value;
+        beforeImageClip.style.width = val + '%';
+        sliderDivider.style.left = val + '%';
+      });
+    }
+
+    // 3. Selection from Service Cards into Booking Form
+    function selectServiceFromCard(serviceKey) {
+      const bookingAnchor = document.getElementById('reservar');
+      if (bookingAnchor) {
+        bookingAnchor.scrollIntoView({ behavior: 'smooth' });
+      }
+
+      let serviceLabel = '';
+      if (serviceKey === 'social') serviceLabel = 'Social & Eventos ($45.000 ARS)';
+      if (serviceKey === 'novias') serviceLabel = 'Novias & Quinceañeras ($110.000 ARS)';
+      if (serviceKey === 'automaquillaje') serviceLabel = 'Automaquillaje 1-on-1 ($55.000 ARS)';
+
+      const chips = document.querySelectorAll('.service-chip');
+      chips.forEach(chip => {
+        if (chip.textContent.includes(serviceKey === 'social' ? 'Social' : serviceKey === 'novias' ? 'Novias' : 'Automaquillaje')) {
+          selectServiceOption(serviceLabel, chip);
+        }
+      });
+    }
+
+    // 4. Booking Wizard Logic
+    function selectServiceOption(val, element) {
+      document.getElementById('selectedServiceInput').value = val;
+      const chips = document.querySelectorAll('.service-chip');
+      chips.forEach(c => {
+        c.classList.remove('border-rosy-brown', 'bg-rosy-brown/15');
+        c.classList.add('border-moss-green/20');
+      });
+      element.classList.remove('border-moss-green/20');
+      element.classList.add('border-rosy-brown', 'bg-rosy-brown/15');
+
+      // Update wizard state badge
+      const b1 = document.getElementById('stepBadge1');
+      b1.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      b1.classList.add('bg-dark-green', 'text-surface');
+    }
+
+    function toggleLocationAddress(show) {
+      const addrContainer = document.getElementById('addressInputContainer');
+      const customAddrInput = document.getElementById('customAddressInput');
+      if (show) {
+        addrContainer.classList.remove('hidden');
+        customAddrInput.setAttribute('required', 'required');
+      } else {
+        addrContainer.classList.add('hidden');
+        customAddrInput.removeAttribute('required');
+      }
+      const b2 = document.getElementById('stepBadge2');
+      b2.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      b2.classList.add('bg-dark-green', 'text-surface');
+    }
+
+    function selectSlot(timeStr, element) {
+      document.getElementById('selectedSlotInput').value = timeStr;
+      const chips = document.querySelectorAll('.slot-chip');
+      chips.forEach(c => {
+        c.classList.remove('bg-dark-green', 'text-surface', 'border-dark-green', 'font-semibold');
+        c.classList.add('bg-surface-container', 'text-dark-green', 'border-moss-green/20');
+      });
+      element.classList.remove('bg-surface-container', 'text-dark-green', 'border-moss-green/20');
+      element.classList.add('bg-dark-green', 'text-surface', 'border-dark-green', 'font-semibold');
+
+      const b3 = document.getElementById('stepBadge3');
+      b3.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      b3.classList.add('bg-dark-green', 'text-surface');
+    }
+
+    // Set default tomorrow date on calendar
+    const dateInput = document.getElementById('bookingDateInput');
+    if (dateInput) {
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 3);
+      dateInput.value = tomorrow.toISOString().split('T')[0];
+      dateInput.min = new Date().toISOString().split('T')[0];
+    }
+
+    // Initial highlight for first service chip
+    const firstServiceChip = document.querySelector('.service-chip');
+    if (firstServiceChip) {
+      firstServiceChip.classList.add('border-rosy-brown', 'bg-rosy-brown/15');
+    }
+
+    // 5. WhatsApp Form Engine
+    function handleBookingSubmit(event) {
+      event.preventDefault();
+
+      const service = document.getElementById('selectedServiceInput').value;
+      const locationRadio = document.querySelector('input[name="serviceLocation"]:checked');
+      const location = locationRadio ? locationRadio.value : 'Atelier';
+      const customAddress = document.getElementById('customAddressInput').value;
+      const date = document.getElementById('bookingDateInput').value;
+      const slot = document.getElementById('selectedSlotInput').value;
+      const name = document.getElementById('clientNameInput').value;
+      const phone = document.getElementById('clientPhoneInput').value;
+      const notes = document.getElementById('clientNotesInput').value;
+
+      let locationText = location;
+      if (customAddress) {
+        locationText += ` (Dirección: ${customAddress})`;
+      }
+
+      const msg = `¡Hola Valentina! Quiero coordinar una cita de maquillaje:%0A%0A` +
+        `✨ *Servicio:* ${encodeURIComponent(service)}%0A` +
+        `📍 *Lugar:* ${encodeURIComponent(locationText)}%0A` +
+        `📅 *Fecha requerida:* ${encodeURIComponent(date)}%0A` +
+        `⏰ *Horario sugerido:* ${encodeURIComponent(slot)}%0A` +
+        `👤 *Nombre:* ${encodeURIComponent(name)}%0A` +
+        `📱 *WhatsApp:* ${encodeURIComponent(phone)}%0A` +
+        (notes ? `📝 *Detalles/Notas:* ${encodeURIComponent(notes)}%0A%0A` : `%0A`) +
+        `¿Podrías confirmarme disponibilidad de agenda? Muchas gracias.`;
+
+      // Official studio concierge WhatsApp phone placeholder (Argentina format)
+      const atelierPhone = '5491155554321';
+      window.open(`https://wa.me/${atelierPhone}?text=${msg}`, '_blank');
+    }
+
+    // 6. Accordion Toggle
+    function toggleFaq(btn) {
+      const content = btn.nextElementSibling;
+      const icon = btn.querySelector('.faq-icon');
+      const isOpen = !content.classList.contains('hidden');
+
+      // Close all others
+      document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+      document.querySelectorAll('.faq-icon').forEach(i => i.classList.remove('rotate-180'));
+
+      if (!isOpen) {
+        content.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      }
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-low pt-space-xl pb-space-lg border-t border-moss-green/15 shadow-[0_-1px_8px_rgba(10,51,35,0.02)]"><div class="max-w-[1440px] mx-auto px-margin-mobile md:px-margin-tablet lg:px-margin"><div class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-space-xl"><div class="md:col-span-5 flex flex-col justify-between"><div class="space-y-space-sm"><div class="flex items-center gap-space-xs"><img alt="Valentina Mora Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Wm6muEY4_BIfpLRwmEIik3oLeEMiW_dMpV94YuVftCyAE3Dq30EkJlX5aHt93-TJZJyRA_I8SpPJ2A6RYLI46DVD_oKRAcVvGAWX0ec_CuX4CVQlAYxKwLUGhMv9umodHm0hFFLQvQOhR09uaUzvoshV8BPP5q3tzVF_lhMgTYh4_sBdLI0sx7EQ2g5T6xCZg3oJO23C9HKZmTLa9ePEkaqe24EIcTWIMgYOXfps-Ha-0AWG4IabDYUWRL"/><span class="font-headline-sm text-headline-sm tracking-tight text-dark-green uppercase">Valentina Mora</span></div><p class="font-body-md text-body-md text-on-surface-variant max-w-sm font-light">Maquillaje de alta costura, producciones editoriales y novias exclusivas. Belleza refinada con atención personalizada en Buenos Aires.</p></div><div class="pt-space-md"><a class="inline-flex items-center gap-space-xs font-label-md text-label-md uppercase tracking-widest text-dark-green hover:text-moss-green group transition-colors font-semibold" data-path="reservar-turno" href="#reservar"><span>Agendar Cita Privada</span><span class="material-symbols-outlined text-[16px] text-rosy-brown group-hover:translate-x-1 transition-transform">arrow_forward</span></a></div></div><div class="md:col-span-4 space-y-space-sm"><h3 class="font-label-md text-label-md uppercase tracking-widest text-dark-green font-semibold">Studio &amp; Cobertura</h3><div class="space-y-space-xs font-body-sm text-body-sm text-on-surface-variant"><p class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-[18px] text-moss-green">location_on</span><span>Atelier Recoleta &amp; Palermo Hollywood, CABA</span></p><p class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-[18px] text-midnight-green">flight_takeoff</span><span>Servicio On-Location: Gran Buenos Aires, Punta del Este e Internacional</span></p><p class="flex items-start gap-space-xs"><span class="material-symbols-outlined text-[18px] text-rosy-brown">schedule</span><span>Lunes a Sábados con cita confirmada</span></p></div></div><div class="md:col-span-3 space-y-space-sm"><h3 class="font-label-md text-label-md uppercase tracking-widest text-dark-green font-semibold">Canales Directos</h3><div class="flex flex-col gap-space-xs font-label-md text-label-md text-on-surface-variant uppercase"><a class="flex items-center gap-space-xs hover:text-dark-green transition-colors" href="#"><span class="material-symbols-outlined text-[18px] text-moss-green">photo_camera</span><span>Instagram Portfolio</span></a><a class="flex items-center gap-space-xs hover:text-dark-green transition-colors" href="#"><span class="material-symbols-outlined text-[18px] text-midnight-green">videocam</span><span>TikTok Masterclass</span></a><a class="flex items-center gap-space-xs hover:text-dark-green transition-colors" href="#"><span class="material-symbols-outlined text-[18px] text-rosy-brown">chat</span><span>WhatsApp Concierge</span></a></div></div></div><div class="pt-space-md border-t border-moss-green/15 flex flex-col md:flex-row items-center justify-between gap-space-sm font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant/80"><p>© 2025 Valentina Mora Atelier. Todos los derechos reservados.</p><p>Buenos Aires · Moda Editorial · Novias</p></div></div></footer></body></html>
