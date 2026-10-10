@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { Menu, X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -69,37 +70,45 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100">
-          <div className="px-4 pt-2 pb-6 space-y-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.to}
-                smooth={true}
-                duration={500}
-                offset={-70}
-                onClick={() => setIsOpen(false)}
-                className="block px-3 py-3 text-base font-medium text-gray-800 hover:bg-primary-50 hover:text-primary-600 rounded-md"
-              >
-                {link.name}
-              </Link>
-            ))}
-            <div className="pt-2">
-              <Link
-                to="booking"
-                smooth={true}
-                duration={500}
-                offset={-70}
-                onClick={() => setIsOpen(false)}
-                className="block text-center w-full bg-primary-600 text-white px-6 py-3 rounded-md font-medium hover:bg-primary-700 transition-colors mt-2"
-              >
-                Reservar Turno
-              </Link>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div 
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.25 }}
+            className="md:hidden absolute top-full left-0 w-full bg-dark-green/95 backdrop-blur-xl border-b border-rosy-brown/20 shadow-2xl"
+          >
+            <div className="px-6 pt-4 pb-8 space-y-3">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.to}
+                  smooth={true}
+                  duration={600}
+                  offset={-70}
+                  onClick={() => setIsOpen(false)}
+                  className="block px-4 py-3 text-base font-serif tracking-wider text-beige/90 hover:text-white hover:bg-white/5 rounded-xl transition-all cursor-pointer"
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <div className="pt-4 border-t border-white/10">
+                <Link
+                  to="booking"
+                  smooth={true}
+                  duration={600}
+                  offset={-70}
+                  onClick={() => setIsOpen(false)}
+                  className="block text-center w-full bg-rosy-brown hover:bg-beige text-dark-green px-6 py-3.5 rounded-full font-bold uppercase tracking-widest text-xs transition-all shadow-[0_0_20px_rgba(211,150,140,0.3)] cursor-pointer"
+                >
+                  Reservar Turno
+                </Link>
+              </div>
             </div>
-          </div>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

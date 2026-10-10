@@ -26,12 +26,12 @@ const Diplomas = () => {
     <section className="py-24 bg-surface-container-low border-y border-moss-green/10">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         <div className="text-center mb-16">
-          <span className="text-sm uppercase tracking-widest text-moss-green font-bold block mb-4">Garantía de Excelencia</span>
+          <span className="text-xs uppercase tracking-[0.25em] text-moss-green font-bold block mb-3">Garantía de Excelencia</span>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-serif font-bold text-dark-green mb-6"
+            className="text-4xl md:text-5xl font-serif font-bold text-dark-green mb-4"
           >
             Formación &amp; Certificaciones
           </motion.h2>
@@ -39,7 +39,7 @@ const Diplomas = () => {
             initial={{ opacity: 0, scale: 0 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="w-20 h-1 bg-rosy-brown mx-auto mb-6"
+            className="w-24 h-0.5 bg-gradient-to-r from-transparent via-rosy-brown to-transparent mx-auto mb-6"
           ></motion.div>
           <p className="text-midnight-green max-w-2xl mx-auto text-lg font-light">
             Para brindarte el mejor servicio, me mantengo en constante capacitación, avalando mis técnicas con las mejores academias e institutos del rubro. Tu rostro está en manos de una profesional certificada.

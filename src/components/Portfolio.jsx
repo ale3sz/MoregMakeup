@@ -31,8 +31,9 @@ const Portfolio = () => {
     <section id="portfolio" className="py-24 bg-surface">
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
         <div className="text-center mb-16">
-          <span className="text-sm uppercase tracking-widest text-moss-green font-semibold block mb-4">Galería de Trabajos</span>
-          <h2 className="text-4xl md:text-5xl font-serif font-bold text-dark-green mb-8">Portfolio</h2>
+          <span className="text-xs uppercase tracking-[0.25em] text-moss-green font-bold block mb-3">Galería de Trabajos</span>
+          <h2 className="text-4xl md:text-5xl font-serif font-bold text-dark-green mb-4">Portfolio</h2>
+          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-rosy-brown to-transparent mx-auto mb-8"></div>
           
           {/* Filters */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">

@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Leaf, Sparkles, X, ZoomIn } from 'lucide-react';
+import { Leaf, Sparkles, X, ZoomIn, Play } from 'lucide-react';
 
 const About = () => {
-  const [selectedPhoto, setSelectedPhoto] = useState(null);
+  const [selectedMedia, setSelectedMedia] = useState(null);
 
-  const photos = [
-    { src: `${import.meta.env.BASE_URL}assets/working_1.jpeg`, alt: 'Morena maquillando - Detalle de ojos' },
-    { src: `${import.meta.env.BASE_URL}assets/working_5_0.jpg`, alt: 'Morena en sesión de maquillaje' },
-    { src: `${import.meta.env.BASE_URL}assets/working_2.jpeg`, alt: 'Morena preparando piel' },
-    { src: `${import.meta.env.BASE_URL}assets/working_3.jpeg`, alt: 'Morena en backstage' }
+  const mediaItems = [
+    { type: 'image', src: `${import.meta.env.BASE_URL}assets/working_1.jpeg`, alt: 'Morena maquillando - Detalle de ojos' },
+    { type: 'image', src: `${import.meta.env.BASE_URL}assets/working_5_0.jpg`, alt: 'Morena en sesión de maquillaje' },
+    { type: 'video', src: `${import.meta.env.BASE_URL}assets/working_video.mp4`, alt: 'Morena en plena acción - Backstage' },
+    { type: 'image', src: `${import.meta.env.BASE_URL}assets/working_3.jpeg`, alt: 'Morena en backstage' }
   ];
 
   return (
@@ -24,43 +24,67 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="w-full lg:w-1/2 relative"
           >
-            {/* Grid of working photos */}
+            {/* Grid of working photos & video */}
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4 mt-8">
+                {/* Photo 1 */}
                 <div 
                   className="relative group cursor-pointer overflow-hidden rounded-[2rem] shadow-lg border-4 border-white"
-                  onClick={() => setSelectedPhoto(photos[0])}
+                  onClick={() => setSelectedMedia(mediaItems[0])}
                 >
-                  <img src={photos[0].src} alt={photos[0].alt} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={mediaItems[0].src} alt={mediaItems[0].alt} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-dark-green/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <ZoomIn className="text-white drop-shadow-md" size={24} />
                   </div>
                 </div>
+                {/* Photo 2 */}
                 <div 
                   className="relative group cursor-pointer overflow-hidden rounded-[2rem] shadow-lg border-4 border-white"
-                  onClick={() => setSelectedPhoto(photos[1])}
+                  onClick={() => setSelectedMedia(mediaItems[1])}
                 >
-                  <img src={photos[1].src} alt={photos[1].alt} className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={mediaItems[1].src} alt={mediaItems[1].alt} className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-dark-green/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <ZoomIn className="text-white drop-shadow-md" size={24} />
                   </div>
                 </div>
               </div>
+
               <div className="space-y-4">
+                {/* Video Reel */}
                 <div 
-                  className="relative group cursor-pointer overflow-hidden rounded-[2rem] shadow-lg border-4 border-white"
-                  onClick={() => setSelectedPhoto(photos[2])}
+                  className="relative group cursor-pointer overflow-hidden rounded-[2rem] shadow-xl border-4 border-white bg-dark-green h-64"
+                  onClick={() => setSelectedMedia(mediaItems[2])}
                 >
-                  <img src={photos[2].src} alt={photos[2].alt} className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <video 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  >
+                    <source src={mediaItems[2].src} type="video/mp4" />
+                  </video>
+                  
+                  {/* Badge 'En acción' */}
+                  <div className="absolute top-3 left-3 bg-dark-green/80 backdrop-blur-md px-3 py-1 rounded-full flex items-center gap-1.5 border border-white/20 shadow-sm pointer-events-none">
+                    <span className="w-2 h-2 rounded-full bg-rosy-brown animate-pulse"></span>
+                    <span className="text-[10px] uppercase tracking-widest text-beige font-bold">En acción</span>
+                  </div>
+
+                  {/* Play icon overlay on hover */}
                   <div className="absolute inset-0 bg-dark-green/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <ZoomIn className="text-white drop-shadow-md" size={24} />
+                    <div className="bg-white/20 backdrop-blur-sm p-3 rounded-full shadow-lg">
+                      <Play className="text-white fill-white ml-0.5" size={22} />
+                    </div>
                   </div>
                 </div>
+
+                {/* Photo 4 */}
                 <div 
                   className="relative group cursor-pointer overflow-hidden rounded-[2rem] shadow-lg border-4 border-white"
-                  onClick={() => setSelectedPhoto(photos[3])}
+                  onClick={() => setSelectedMedia(mediaItems[3])}
                 >
-                  <img src={photos[3].src} alt={photos[3].alt} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={mediaItems[3].src} alt={mediaItems[3].alt} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-dark-green/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <ZoomIn className="text-white drop-shadow-md" size={24} />
                   </div>
@@ -69,9 +93,10 @@ const About = () => {
             </div>
             
             {/* Experience Badge */}
-            <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-[0_20px_40px_rgba(10,51,35,0.1)] z-20 border border-beige max-w-[200px] hidden sm:block">
-              <p className="text-rosy-brown font-serif italic text-xl mb-1">Experiencia</p>
-              <p className="text-dark-green font-bold text-sm leading-tight">Telefe, La Capital + &amp; Producciones</p>
+            <div className="absolute -bottom-6 -left-6 bg-surface-container-lowest/95 backdrop-blur-md p-6 rounded-2xl shadow-[0_20px_50px_rgba(10,51,35,0.15)] z-20 border border-rosy-brown/30 max-w-[220px] hidden sm:block">
+              <span className="text-xs uppercase tracking-widest text-moss-green font-bold block mb-1">Trayectoria</span>
+              <p className="text-rosy-brown font-serif italic text-2xl font-bold mb-1">Experiencia</p>
+              <p className="text-dark-green font-bold text-xs leading-relaxed">Telefe, La Capital + &amp; Producciones</p>
             </div>
           </motion.div>
           
@@ -82,9 +107,9 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="w-full lg:w-1/2"
           >
-            <span className="text-sm uppercase tracking-widest text-moss-green font-bold block mb-4">Sobre Mí</span>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-dark-green mb-6 leading-tight">Conocé un poco <br/>sobre mi trabajo</h2>
-            <div className="w-20 h-1 bg-rosy-brown mb-10"></div>
+            <span className="text-xs uppercase tracking-[0.25em] text-moss-green font-bold block mb-3">Sobre Mí</span>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-dark-green mb-6 leading-tight">Conocé un poco <br className="hidden sm:block" />sobre mi trabajo</h2>
+            <div className="w-24 h-0.5 bg-gradient-to-r from-rosy-brown to-transparent mb-8"></div>
             
             <p className="text-lg text-midnight-green mb-6 leading-relaxed">
               Soy Morena Garnica, maquilladora profesional y experta en belleza radicada en Rosario, especializada en el maquillaje social, producciones fotográficas y diferentes eventos. 
@@ -110,35 +135,46 @@ const About = () => {
         </div>
       </div>
 
-      {/* Lightbox for About photos */}
+      {/* Lightbox Modal for Media (Images & Video) */}
       <AnimatePresence>
-        {selectedPhoto && (
+        {selectedMedia && (
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-[100] bg-dark-green/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
-            onClick={() => setSelectedPhoto(null)}
+            onClick={() => setSelectedMedia(null)}
           >
             <button 
               className="absolute top-6 right-6 text-surface-dim hover:text-white transition-colors p-3 bg-white/10 hover:bg-white/20 rounded-full"
-              onClick={() => setSelectedPhoto(null)}
+              onClick={() => setSelectedMedia(null)}
               aria-label="Cerrar vista previa"
             >
               <X size={26} />
             </button>
             
             <div className="max-w-4xl max-h-[90vh] flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
-              <motion.img
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
-                transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                src={selectedPhoto.src}
-                alt={selectedPhoto.alt}
-                className="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl border border-white/20"
-              />
-              <p className="text-surface-dim text-sm mt-3">{selectedPhoto.alt}</p>
+              {selectedMedia.type === 'video' ? (
+                <video 
+                  controls 
+                  autoPlay 
+                  playsInline 
+                  className="max-w-full max-h-[80vh] rounded-2xl shadow-2xl border border-white/20 bg-black"
+                >
+                  <source src={selectedMedia.src} type="video/mp4" />
+                </video>
+              ) : (
+                <motion.img
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.9, opacity: 0 }}
+                  transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                  src={selectedMedia.src}
+                  alt={selectedMedia.alt}
+                  className="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl border border-white/20"
+                />
+              )}
+              <p className="text-surface-dim text-sm mt-3 font-medium">{selectedMedia.alt}</p>
             </div>
           </motion.div>
         )}
