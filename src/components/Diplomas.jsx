@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 
 const Diplomas = () => {
   const diplomas = [
-    { id: 1, src: '/assets/real_diploma_0.jpg', alt: 'Certificado de Profesional' },
-    { id: 2, src: '/assets/real_diploma_1.jpg', alt: 'Perfeccionamiento' }
+    { id: 1, src: `${import.meta.env.BASE_URL}assets/real_diploma_0.jpg`, alt: 'Certificado de Profesional' },
+    { id: 2, src: `${import.meta.env.BASE_URL}assets/real_diploma_1.jpg`, alt: 'Perfeccionamiento' }
   ];
 
   return (

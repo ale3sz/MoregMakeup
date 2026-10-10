@@ -18,12 +18,12 @@ const About = () => {
             {/* Grid of working photos */}
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4 mt-8">
-                <img src="/assets/working_1.jpeg" alt="Morena trabajando" className="w-full h-48 object-cover rounded-[2rem] shadow-lg border-4 border-white" />
-                <img src="/assets/working_5_0.jpg" alt="Morena trabajando" className="w-full h-64 object-cover rounded-[2rem] shadow-lg border-4 border-white" />
+                <img src={`${import.meta.env.BASE_URL}assets/working_1.jpeg`} alt="Morena trabajando" className="w-full h-48 object-cover rounded-[2rem] shadow-lg border-4 border-white" />
+                <img src={`${import.meta.env.BASE_URL}assets/working_5_0.jpg`} alt="Morena trabajando" className="w-full h-64 object-cover rounded-[2rem] shadow-lg border-4 border-white" />
               </div>
               <div className="space-y-4">
-                <img src="/assets/working_6_0.jpg" alt="Morena trabajando" className="w-full h-64 object-cover rounded-[2rem] shadow-lg border-4 border-white" />
-                <img src="/assets/working_3.jpeg" alt="Morena trabajando" className="w-full h-48 object-cover rounded-[2rem] shadow-lg border-4 border-white" />
+                <img src={`${import.meta.env.BASE_URL}assets/working_6_0.jpg`} alt="Morena trabajando" className="w-full h-64 object-cover rounded-[2rem] shadow-lg border-4 border-white" />
+                <img src={`${import.meta.env.BASE_URL}assets/working_3.jpeg`} alt="Morena trabajando" className="w-full h-48 object-cover rounded-[2rem] shadow-lg border-4 border-white" />
               </div>
             </div>
             

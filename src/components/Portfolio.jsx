@@ -9,17 +9,17 @@ const Portfolio = () => {
   const categories = ['Todos', 'Social', 'Novias', 'Eventos'];
   
   const images = [
-    { id: 1, src: '/assets/quinceaniera.jpeg', category: 'Eventos', alt: 'Maquillaje Quinceañera' },
-    { id: 2, src: '/assets/model_9_0.jpg', category: 'Novias', alt: 'Trabajo Novias 1' },
-    { id: 3, src: '/assets/model_9_1.jpg', category: 'Eventos', alt: 'Trabajo Eventos 1' },
-    { id: 4, src: '/assets/model_10_0.jpg', category: 'Social', alt: 'Trabajo Social 1' },
-    { id: 5, src: '/assets/model_10_1.jpg', category: 'Social', alt: 'Trabajo Social 2' },
-    { id: 6, src: '/assets/model_11_0.jpg', category: 'Novias', alt: 'Trabajo Novias 2' },
-    { id: 7, src: '/assets/model_11_1.jpg', category: 'Eventos', alt: 'Trabajo Eventos 2' },
-    { id: 8, src: '/assets/model_11_2.jpg', category: 'Social', alt: 'Trabajo Social 3' },
-    { id: 9, src: '/assets/model_11_3.jpg', category: 'Novias', alt: 'Trabajo Novias 3' },
-    { id: 10, src: '/assets/model_11_4.jpg', category: 'Social', alt: 'Trabajo Social 4' },
-    { id: 11, src: '/assets/model_11_5.jpg', category: 'Eventos', alt: 'Trabajo Eventos 3' },
+    { id: 1, src: `${import.meta.env.BASE_URL}assets/quinceaniera.jpeg`, category: 'Eventos', alt: 'Maquillaje Quinceañera' },
+    { id: 2, src: `${import.meta.env.BASE_URL}assets/model_9_0.jpg`, category: 'Novias', alt: 'Trabajo Novias 1' },
+    { id: 3, src: `${import.meta.env.BASE_URL}assets/model_9_1.jpg`, category: 'Eventos', alt: 'Trabajo Eventos 1' },
+    { id: 4, src: `${import.meta.env.BASE_URL}assets/model_10_0.jpg`, category: 'Social', alt: 'Trabajo Social 1' },
+    { id: 5, src: `${import.meta.env.BASE_URL}assets/model_10_1.jpg`, category: 'Social', alt: 'Trabajo Social 2' },
+    { id: 6, src: `${import.meta.env.BASE_URL}assets/model_11_0.jpg`, category: 'Novias', alt: 'Trabajo Novias 2' },
+    { id: 7, src: `${import.meta.env.BASE_URL}assets/model_11_1.jpg`, category: 'Eventos', alt: 'Trabajo Eventos 2' },
+    { id: 8, src: `${import.meta.env.BASE_URL}assets/model_11_2.jpg`, category: 'Social', alt: 'Trabajo Social 3' },
+    { id: 9, src: `${import.meta.env.BASE_URL}assets/model_11_3.jpg`, category: 'Novias', alt: 'Trabajo Novias 3' },
+    { id: 10, src: `${import.meta.env.BASE_URL}assets/model_11_4.jpg`, category: 'Social', alt: 'Trabajo Social 4' },
+    { id: 11, src: `${import.meta.env.BASE_URL}assets/model_11_5.jpg`, category: 'Eventos', alt: 'Trabajo Eventos 3' },
   ];
 
   const filteredImages = filter === 'Todos' 

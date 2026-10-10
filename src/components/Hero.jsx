@@ -15,7 +15,7 @@ const Hero = () => {
           playsInline
           className="w-full h-full object-cover object-center opacity-60"
         >
-          <source src="/assets/hero_video.mp4" type="video/mp4" />
+          <source src={`${import.meta.env.BASE_URL}assets/hero_video.mp4`} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-t from-dark-green via-dark-green/50 to-transparent"></div>
         <div className="absolute inset-0 bg-dark-green/30 mix-blend-multiply"></div>
