@@ -1,28 +1,14 @@
 import React from 'react';
 import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
+import { Pencil } from 'lucide-react';
+import { useContent } from '../context/ContentContext';
+import { useAuth } from '../context/AuthContext';
 
 const Services = () => {
-  const services = [
-    {
-      id: 'social',
-      title: 'Maquillaje Social & Eventos',
-      shortTitle: 'Social & Fiestas',
-      time: '60-75 min',
-      description: 'Diseño integral de ojos, piel aterciopelada y labios que acompañan armónicamente tu vestuario e iluminación del evento.',
-      price: 'Consultar',
-      features: ['Preparación de piel', 'Pestañas postizas incluidas', 'Fijación larga duración'],
-    },
-    {
-      id: 'novias',
-      title: 'Maquillaje Novias & XV',
-      shortTitle: 'Novias & Quince',
-      time: '2.5 hrs + Prueba',
-      description: 'Atención exclusiva. Incluye prueba previa, asesoría de imagen, preparación profunda de piel y kit de retoque.',
-      price: 'Consultar',
-      features: ['Prueba previa en estudio', 'Kit de retoque', 'Asesoría de imagen'],
-    }
-  ];
+  const { content } = useContent();
+  const { isEditMode, openAdminModal } = useAuth();
+  const services = content?.services || [];
 
   return (
     <section className="w-full py-24 bg-surface-container-low border-y border-moss-green/10" id="services">
@@ -34,6 +20,17 @@ const Services = () => {
           <p className="text-lg text-on-surface-variant font-light">
             Cada servicio incluye un diagnóstico cutáneo previo y selección meticulosa de productos para lograr el acabado exacto que soñás.
           </p>
+
+          {isEditMode && (
+            <button
+              type="button"
+              onClick={openAdminModal}
+              className="mt-2 bg-rosy-brown hover:bg-rosy-brown-dark text-dark-green hover:text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-all shadow-md cursor-pointer"
+            >
+              <Pencil size={13} />
+              <span>Editar Precios & Servicios</span>
+            </button>
+          )}
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
@@ -45,7 +42,7 @@ const Services = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.2 }}
-                key={service.id} 
+                key={service.id || index} 
                 className={`relative flex flex-col justify-between p-8 md:p-10 rounded-3xl transition-all duration-300 ${
                   isFeatured 
                     ? 'bg-surface-container-lowest border-2 border-rosy-brown shadow-xl hover:shadow-2xl ring-4 ring-rosy-brown/10' 
@@ -75,7 +72,7 @@ const Services = () => {
                   </div>
                   
                   <div className="space-y-3 pt-6 border-t border-moss-green/10 text-on-surface-variant text-sm">
-                    {service.features.map((feature, i) => (
+                    {service.features?.map((feature, i) => (
                       <div key={i} className="flex items-start gap-3">
                         <span className="text-moss-green font-bold mt-0.5">✓</span>
                         <span>{feature}</span>

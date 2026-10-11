@@ -9,10 +9,20 @@ import Testimonials from './components/Testimonials';
 import Booking from './components/Booking';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
-function App() {
+import { AuthProvider, useAuth } from './context/AuthContext';
+import { ContentProvider } from './context/ContentContext';
+import AdminBar from './components/admin/AdminBar';
+import LoginModal from './components/admin/LoginModal';
+import AdminModal from './components/admin/AdminModal';
+
+function MainContent() {
+  const { isLoggedIn } = useAuth();
+
   return (
-    <div className="min-h-screen font-sans">
+    <div className={`min-h-screen font-sans transition-all ${isLoggedIn ? 'pt-12' : ''}`}>
+      <AdminBar />
       <Navbar />
       <main>
         <Hero />
@@ -25,7 +35,22 @@ function App() {
         <FAQ />
       </main>
       <Footer />
+      <FloatingWhatsApp />
+      
+      {/* Editor & Admin Modals */}
+      <LoginModal />
+      <AdminModal />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <AuthProvider>
+      <ContentProvider>
+        <MainContent />
+      </ContentProvider>
+    </AuthProvider>
   );
 }
 

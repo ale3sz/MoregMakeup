@@ -1,28 +1,15 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp, Plus } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useContent } from '../context/ContentContext';
+import { useAuth } from '../context/AuthContext';
 
 const FAQ = () => {
+  const { content } = useContent();
+  const { isEditMode, openAdminModal } = useAuth();
   const [openIndex, setOpenIndex] = useState(null);
 
-  const faqs = [
-    {
-      question: '¿Cómo se confirma el turno?',
-      answer: 'Los turnos se reservan con una seña del 50% del valor total del servicio a través de transferencia bancaria. El 50% restante se abona el día del evento en efectivo o transferencia. Sin la seña, el turno no está confirmado.'
-    },
-    {
-      question: '¿Cuáles son las políticas de cancelación o reprogramación?',
-      answer: 'En caso de cancelar el turno, la seña no es reembolsable ya que ese espacio fue bloqueado exclusivamente para vos. Si necesitas reprogramar, debe ser con al menos 48hs de anticipación y quedará sujeto a disponibilidad en la nueva fecha solicitada.'
-    },
-    {
-      question: '¿Cómo debo preparar mi piel para el día de la cita?',
-      answer: 'Es ideal que vengas con el rostro limpio, sin restos de maquillaje del día anterior. Te recomiendo realizar tu rutina de skincare habitual (limpieza e hidratación). Si tienes alguna condición particular en la piel o alergias a algún producto, por favor avísame con anticipación.'
-    },
-    {
-      question: '¿Atendés a domicilio?',
-      answer: 'Sí, brindo servicio a domicilio para novias, madrinas, quinceañeras y eventos especiales (mínimo de personas o según la zona). El costo de viáticos se calcula en base a la distancia desde el estudio hasta el lugar donde te prepares.'
-    }
-  ];
+  const faqs = content?.faqs || [];
 
   const toggleFaq = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -35,6 +22,17 @@ const FAQ = () => {
           <span className="text-xs uppercase tracking-[0.25em] text-moss-green font-bold block mb-3">Dudas Comunes</span>
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-dark-green mb-4">Preguntas Frecuentes</h2>
           <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-rosy-brown to-transparent mx-auto"></div>
+
+          {isEditMode && (
+            <button
+              type="button"
+              onClick={openAdminModal}
+              className="mt-6 bg-rosy-brown hover:bg-rosy-brown-dark text-dark-green hover:text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider inline-flex items-center gap-1.5 transition-all shadow-md cursor-pointer"
+            >
+              <Plus size={14} />
+              <span>Gestionar Preguntas Frecuentes</span>
+            </button>
+          )}
         </div>
 
         <div className="space-y-4">
@@ -48,7 +46,7 @@ const FAQ = () => {
               className="bg-surface-container-lowest border border-moss-green/20 rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
               <button
-                className="w-full px-8 py-6 text-left flex justify-between items-center focus:outline-none"
+                className="w-full px-8 py-6 text-left flex justify-between items-center focus:outline-none cursor-pointer"
                 onClick={() => toggleFaq(index)}
               >
                 <span className="font-serif font-bold text-lg text-dark-green pr-4">{faq.question}</span>

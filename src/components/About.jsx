@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Leaf, Sparkles, X, ZoomIn, Play } from 'lucide-react';
+import { useContent } from '../context/ContentContext';
+import EditableText from './admin/EditableText';
 
 const About = () => {
+  const { content } = useContent();
+  const about = content?.about || {};
   const [selectedMedia, setSelectedMedia] = useState(null);
 
   const mediaItems = [
@@ -94,8 +98,12 @@ const About = () => {
             
             {/* Experience Badge */}
             <div className="absolute -bottom-6 -left-6 bg-surface-container-lowest/95 backdrop-blur-md p-6 rounded-2xl shadow-[0_20px_50px_rgba(10,51,35,0.15)] z-20 border border-rosy-brown/30 max-w-[220px] hidden sm:block">
-              <span className="text-xs uppercase tracking-widest text-moss-green font-bold block mb-1">Trayectoria</span>
-              <p className="text-rosy-brown font-serif italic text-2xl font-bold mb-1">Experiencia</p>
+              <span className="text-xs uppercase tracking-widest text-moss-green font-bold block mb-1">
+                <EditableText section="about" field="badgeExperienceTitle" value={about.badgeExperienceTitle || 'Trayectoria'} />
+              </span>
+              <p className="text-rosy-brown font-serif italic text-2xl font-bold mb-1">
+                <EditableText section="about" field="badgeExperienceDesc" value={about.badgeExperienceDesc || 'Experiencia'} />
+              </p>
               <p className="text-dark-green font-bold text-xs leading-relaxed">Telefe, La Capital + &amp; Producciones</p>
             </div>
           </motion.div>
@@ -107,28 +115,40 @@ const About = () => {
             transition={{ duration: 0.8 }}
             className="w-full lg:w-1/2"
           >
-            <span className="text-xs uppercase tracking-[0.25em] text-moss-green font-bold block mb-3">Sobre Mí</span>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-dark-green mb-6 leading-tight">Conocé un poco <br className="hidden sm:block" />sobre mi trabajo</h2>
+            <span className="text-xs uppercase tracking-[0.25em] text-moss-green font-bold block mb-3">
+              <EditableText section="about" field="badge" value={about.badge} />
+            </span>
+            <h2 className="text-4xl md:text-5xl font-serif font-bold text-dark-green mb-6 leading-tight">
+              <EditableText section="about" field="title" value={about.title} />
+            </h2>
             <div className="w-24 h-0.5 bg-gradient-to-r from-rosy-brown to-transparent mb-8"></div>
             
             <p className="text-lg text-midnight-green mb-6 leading-relaxed">
-              Soy Morena Garnica, maquilladora profesional y experta en belleza radicada en Rosario, especializada en el maquillaje social, producciones fotográficas y diferentes eventos. 
+              <EditableText section="about" field="p1" value={about.p1} multiline={true} />
             </p>
             
             <p className="text-lg text-midnight-green mb-10 leading-relaxed font-light">
-              Me caracterizo por un trabajo prolijo, el cuidado extremo de la piel y mi capacidad de adaptación a la estética de cada producción. A lo largo de mi carrera, he tenido la oportunidad de trabajar en televisión para canales como <strong>La Capital +</strong> y <strong>Telefe</strong>, y colaborado con agencias como <em>"Hi Management"</em> e <em>"Instituto IESERH"</em>.
+              <EditableText section="about" field="p2" value={about.p2} multiline={true} />
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <div className="bg-surface-container-lowest p-6 rounded-2xl border border-beige shadow-sm hover:shadow-md transition-shadow">
                 <Leaf className="text-moss-green mb-4" size={32} />
-                <h3 className="font-serif font-bold text-dark-green text-xl mb-2">Cuidado de la Piel</h3>
-                <p className="text-midnight-green text-sm">Preparación dermatológica y protocolo clínico antes de cada maquillaje.</p>
+                <h3 className="font-serif font-bold text-dark-green text-xl mb-2">
+                  <EditableText section="about" field="feature1Title" value={about.feature1Title} />
+                </h3>
+                <p className="text-midnight-green text-sm">
+                  <EditableText section="about" field="feature1Desc" value={about.feature1Desc} multiline={true} />
+                </p>
               </div>
               <div className="bg-surface-container-lowest p-6 rounded-2xl border border-beige shadow-sm hover:shadow-md transition-shadow">
                 <Sparkles className="text-rosy-brown mb-4" size={32} />
-                <h3 className="font-serif font-bold text-dark-green text-xl mb-2">Acabado Prolijo</h3>
-                <p className="text-midnight-green text-sm">Texturas sedosas, luminosidad orgánica y fijación de larga duración.</p>
+                <h3 className="font-serif font-bold text-dark-green text-xl mb-2">
+                  <EditableText section="about" field="feature2Title" value={about.feature2Title} />
+                </h3>
+                <p className="text-midnight-green text-sm">
+                  <EditableText section="about" field="feature2Desc" value={about.feature2Desc} multiline={true} />
+                </p>
               </div>
             </div>
           </motion.div>
@@ -146,7 +166,7 @@ const About = () => {
             onClick={() => setSelectedMedia(null)}
           >
             <button 
-              className="absolute top-6 right-6 text-surface-dim hover:text-white transition-colors p-3 bg-white/10 hover:bg-white/20 rounded-full"
+              className="absolute top-6 right-6 text-surface-dim hover:text-white transition-colors p-3 bg-white/10 hover:bg-white/20 rounded-full cursor-pointer"
               onClick={() => setSelectedMedia(null)}
               aria-label="Cerrar vista previa"
             >

@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
 import { Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useAuth } from '../context/AuthContext';
 
 const Navbar = () => {
+  const { isLoggedIn } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -23,12 +25,12 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-surface/95 backdrop-blur-md shadow-sm py-4 border-b border-moss-green/10' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed w-full z-50 transition-all duration-300 ${isLoggedIn ? 'top-11 md:top-12' : 'top-0'} ${scrolled ? 'bg-surface/95 backdrop-blur-md shadow-sm py-4 border-b border-moss-green/10' : 'bg-transparent py-6'}`}>
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0 cursor-pointer">
             <Link to="hero" smooth={true} duration={800} className={`font-serif text-2xl font-bold tracking-tight transition-colors ${scrolled ? 'text-dark-green' : 'text-beige'}`}>
-              Morena G.
+              More G.
             </Link>
           </div>
           

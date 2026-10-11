@@ -1,31 +1,28 @@
 import React, { useState } from 'react';
-import { X, ZoomIn } from 'lucide-react';
+import { X, ZoomIn, Plus, Trash2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useContent } from '../context/ContentContext';
+import { useAuth } from '../context/AuthContext';
 
 const Portfolio = () => {
+  const { content, deleteItem } = useContent();
+  const { isEditMode, openAdminModal } = useAuth();
   const [filter, setFilter] = useState('Todos');
   const [selectedImage, setSelectedImage] = useState(null);
 
   const categories = ['Todos', 'Social', 'Novias', 'Eventos'];
-  
-  const images = [
-    { id: 1, src: `${import.meta.env.BASE_URL}assets/foto_1_tiara_ojos_abiertos.png`, category: 'Novias', alt: 'Maquillaje de Novia con Tiara' },
-    { id: 2, src: `${import.meta.env.BASE_URL}assets/foto_2_tiara_ojos_cerrados.png`, category: 'Novias', alt: 'Detalle Sombras Ojos Cerrados' },
-    { id: 3, src: `${import.meta.env.BASE_URL}assets/foto_3_xv_ojos_abiertos.png`, category: 'Eventos', alt: 'Maquillaje Quinceañera Iluminado' },
-    { id: 4, src: `${import.meta.env.BASE_URL}assets/foto_4_xv_ojos_cerrados.png`, category: 'Eventos', alt: 'Detalle Maquillaje de Fiesta' },
-    { id: 5, src: `${import.meta.env.BASE_URL}assets/quinceaniera.jpeg`, category: 'Eventos', alt: 'Producción Quinceañera' },
-    { id: 6, src: `${import.meta.env.BASE_URL}assets/model_10_0.jpg`, category: 'Social', alt: 'Look Social Glamour' },
-    { id: 7, src: `${import.meta.env.BASE_URL}assets/model_10_1.jpg`, category: 'Social', alt: 'Look Social Natural Glow' },
-    { id: 8, src: `${import.meta.env.BASE_URL}assets/model_11_0.jpg`, category: 'Novias', alt: 'Novia Editorial' },
-    { id: 9, src: `${import.meta.env.BASE_URL}assets/model_11_1.jpg`, category: 'Social', alt: 'Make Up para Eventos' },
-    { id: 10, src: `${import.meta.env.BASE_URL}assets/model_11_2.jpg`, category: 'Social', alt: 'Maquillaje de Noche' },
-    { id: 11, src: `${import.meta.env.BASE_URL}assets/model_9_0.jpg`, category: 'Novias', alt: 'Producción Novia Clásica' },
-    { id: 12, src: `${import.meta.env.BASE_URL}assets/model_9_1.jpg`, category: 'Eventos', alt: 'Make Up de Alta Cobertura' },
-  ];
+  const images = content?.portfolio || [];
 
   const filteredImages = filter === 'Todos' 
     ? images 
     : images.filter(img => img.category === filter);
+
+  const handleDeletePhoto = (e, imgId) => {
+    e.stopPropagation();
+    if (window.confirm('¿Deseas eliminar esta foto del portfolio?')) {
+      deleteItem('portfolio', imgId);
+    }
+  };
 
   return (
     <section id="portfolio" className="py-24 bg-surface">
@@ -35,13 +32,13 @@ const Portfolio = () => {
           <h2 className="text-4xl md:text-5xl font-serif font-bold text-dark-green mb-4">Portfolio</h2>
           <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-rosy-brown to-transparent mx-auto mb-8"></div>
           
-          {/* Filters */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {/* Filters & Add photo button if in edit mode */}
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-8 py-3 rounded-full text-sm font-semibold uppercase tracking-wider transition-all duration-300 ${
+                className={`px-8 py-3 rounded-full text-sm font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
                   filter === cat 
                     ? 'bg-midnight-green text-white shadow-md' 
                     : 'bg-surface-container text-dark-green hover:bg-surface-container-high border border-moss-green/20'
@@ -50,6 +47,17 @@ const Portfolio = () => {
                 {cat}
               </button>
             ))}
+
+            {isEditMode && (
+              <button
+                type="button"
+                onClick={openAdminModal}
+                className="px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider bg-rosy-brown hover:bg-rosy-brown-dark text-dark-green hover:text-white transition-all shadow-md flex items-center gap-2 cursor-pointer"
+              >
+                <Plus size={16} />
+                <span>Gestionar Fotos</span>
+              </button>
+            )}
           </div>
         </div>
 
@@ -75,6 +83,18 @@ const Portfolio = () => {
                   onError={(e) => { e.target.style.display = 'none'; }}
                 />
                 
+                {/* Delete button if in edit mode */}
+                {isEditMode && (
+                  <button
+                    type="button"
+                    onClick={(e) => handleDeletePhoto(e, img.id)}
+                    title="Eliminar foto"
+                    className="absolute top-3 right-3 z-30 bg-red-600/90 hover:bg-red-700 text-white p-2 rounded-full shadow-lg transition-all transform hover:scale-110 cursor-pointer"
+                  >
+                    <Trash2 size={15} />
+                  </button>
+                )}
+
                 {/* Overlay hover with zoom icon */}
                 <div className="absolute inset-0 bg-gradient-to-t from-dark-green/90 via-dark-green/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
                   <div className="self-end bg-white/20 p-2 rounded-full backdrop-blur-sm">
@@ -89,6 +109,19 @@ const Portfolio = () => {
             ))}
           </AnimatePresence>
         </motion.div>
+
+        {/* Ver más en Instagram CTA */}
+        <div className="mt-14 text-center">
+          <a
+            href={content?.contact?.instagramUrl || "https://www.instagram.com/morennagar/"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full border border-moss-green/30 bg-surface-container-lowest hover:bg-rosy-brown hover:text-dark-green text-dark-green transition-all shadow-sm hover:shadow-md font-semibold text-xs uppercase tracking-wider group cursor-pointer"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-rosy-brown group-hover:text-dark-green transition-colors"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            <span>Ver más trabajos en {content?.contact?.instagramHandle || '@morennagar'}</span>
+          </a>
+        </div>
       </div>
 
       {/* Lightbox Modal */}
@@ -102,7 +135,7 @@ const Portfolio = () => {
             onClick={() => setSelectedImage(null)}
           >
             <button 
-              className="absolute top-6 right-6 text-surface-dim hover:text-white transition-colors p-3 bg-white/10 hover:bg-white/20 rounded-full"
+              className="absolute top-6 right-6 text-surface-dim hover:text-white transition-colors p-3 bg-white/10 hover:bg-white/20 rounded-full cursor-pointer"
               onClick={() => setSelectedImage(null)}
               aria-label="Cerrar imagen"
             >

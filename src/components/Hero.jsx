@@ -2,8 +2,13 @@ import React from 'react';
 import { Link } from 'react-scroll';
 import { motion } from 'framer-motion';
 import { Sparkles } from 'lucide-react';
+import { useContent } from '../context/ContentContext';
+import EditableText from './admin/EditableText';
 
 const Hero = () => {
+  const { content } = useContent();
+  const hero = content?.hero || {};
+
   return (
     <section id="hero" className="relative w-full h-screen overflow-hidden bg-dark-green flex items-center">
       {/* Background Video */}
@@ -29,7 +34,8 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <span className="inline-flex items-center gap-2 text-beige font-medium tracking-[0.25em] uppercase mb-6 text-xs md:text-sm border border-rosy-brown/40 rounded-full px-6 py-2 bg-dark-green/50 backdrop-blur-md shadow-[0_0_20px_rgba(211,150,140,0.25)]">
-            <Sparkles size={14} className="text-rosy-brown" /> Make-up Artist Profesional
+            <Sparkles size={14} className="text-rosy-brown" />
+            <EditableText section="hero" field="badge" value={hero.badge} />
           </span>
         </motion.div>
         
@@ -39,7 +45,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-serif font-bold text-beige mb-6 tracking-tight drop-shadow-2xl"
         >
-          Morena Garnica
+          <EditableText section="hero" field="title" value={hero.title} />
         </motion.h1>
 
         <motion.p 
@@ -48,8 +54,11 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-lg md:text-2xl text-beige/90 mb-12 font-light max-w-2xl mx-auto drop-shadow-md leading-relaxed"
         >
-          Especialista en maquillaje social y novias. <br className="hidden md:block" />
-          <span className="text-rosy-brown italic font-serif font-medium drop-shadow">Resaltando tu belleza en los momentos más importantes.</span>
+          <EditableText section="hero" field="tagline" value={hero.tagline} />
+          <br className="hidden md:block" />
+          <span className="text-rosy-brown italic font-serif font-medium drop-shadow block mt-1">
+            <EditableText section="hero" field="highlight" value={hero.highlight} />
+          </span>
         </motion.p>
         
         <motion.div 
@@ -65,7 +74,7 @@ const Hero = () => {
             offset={-70}
             className="cursor-pointer w-full sm:w-auto px-10 py-4 bg-rosy-brown text-dark-green rounded-full font-bold uppercase tracking-wider text-xs md:text-sm transition-all hover:bg-beige shadow-[0_0_30px_rgba(211,150,140,0.45)] hover:shadow-[0_0_40px_rgba(247,244,213,0.6)] transform hover:-translate-y-1"
           >
-            Reservar Turno
+            {hero.ctaBooking || 'Reservar Turno'}
           </Link>
           <Link
             to="portfolio"
@@ -74,7 +83,7 @@ const Hero = () => {
             offset={-70}
             className="cursor-pointer w-full sm:w-auto px-10 py-4 bg-white/5 border border-beige/40 text-beige hover:bg-beige hover:text-dark-green rounded-full font-bold uppercase tracking-wider text-xs md:text-sm transition-all backdrop-blur-md hover:shadow-lg transform hover:-translate-y-0.5"
           >
-            Explorar Portfolio
+            {hero.ctaPortfolio || 'Explorar Portfolio'}
           </Link>
         </motion.div>
       </div>
