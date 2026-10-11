@@ -31,12 +31,25 @@ const Navbar = () => {
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0 cursor-pointer">
-            <Link to="hero" smooth={true} duration={800} className="flex items-center gap-3 group">
-              <img 
-                src={`${import.meta.env.BASE_URL}logos/isologo_horizontal_oro_rosa.svg`}
-                alt="Morena Garnica Makeup"
-                className={`h-8 sm:h-9 md:h-10 w-auto transition-all duration-300 ${scrolled ? 'brightness-90 filter drop-shadow-sm' : 'filter drop-shadow-[0_2px_10px_rgba(0,0,0,0.3)]'}`}
-              />
+            <Link to="hero" smooth={true} duration={800} className="flex items-center gap-3.5 group">
+              {/* MG Monogram Icon */}
+              <div className="relative flex items-center justify-center">
+                <img 
+                  src={`${import.meta.env.BASE_URL}brand/isotipo_mg_rose.svg`}
+                  alt="MG"
+                  className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-sm"
+                />
+              </div>
+
+              {/* Brand Name Typography */}
+              <div className="flex flex-col text-left">
+                <span className={`font-serif text-xl sm:text-2xl font-bold tracking-tight leading-none transition-colors ${scrolled ? 'text-dark-green dark:text-[#F7F4D5]' : 'text-beige'}`}>
+                  Morena Garnica
+                </span>
+                <span className="text-[9px] sm:text-[10px] tracking-[0.28em] uppercase text-rosy-brown font-semibold mt-1">
+                  Make-up Artist
+                </span>
+              </div>
             </Link>
           </div>
           

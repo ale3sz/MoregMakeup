@@ -34,7 +34,7 @@ const TrustBanner = () => {
           {/* Logo badge item */}
           <div className="flex items-center gap-4 flex-shrink-0 border-b lg:border-b-0 lg:border-r border-rosy-brown/20 pb-6 lg:pb-0 lg:pr-8 w-full lg:w-auto justify-center lg:justify-start">
             <img 
-              src={`${import.meta.env.BASE_URL}logos/sello_badge_circular_vector.svg`} 
+              src={`${import.meta.env.BASE_URL}brand/sello_badge_circular_vector.svg`} 
               alt="Morena Garnica Sello de Calidad" 
               className="w-14 h-14 md:w-16 md:h-16 flex-shrink-0 animate-[spin_40s_linear_infinite]"
             />

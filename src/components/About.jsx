@@ -21,7 +21,7 @@ const About = () => {
       {/* Subtle luxury brand watermark in background */}
       <div className="absolute -right-24 -bottom-24 w-96 h-96 opacity-[0.03] pointer-events-none select-none">
         <img 
-          src={`${import.meta.env.BASE_URL}logos/isotipo_completo_dark.svg`} 
+          src={`${import.meta.env.BASE_URL}brand/isotipo_completo_dark.svg`} 
           alt="" 
           className="w-full h-full object-contain"
         />
@@ -108,7 +108,7 @@ const About = () => {
             {/* Experience Badge with Circular Seal */}
             <div className="absolute -bottom-6 -left-6 bg-surface-container-lowest/95 backdrop-blur-md p-5 rounded-2xl shadow-[0_20px_50px_rgba(10,51,35,0.15)] z-20 border border-rosy-brown/30 max-w-[240px] hidden sm:flex items-center gap-4">
               <img 
-                src={`${import.meta.env.BASE_URL}logos/sello_badge_circular_vector.svg`} 
+                src={`${import.meta.env.BASE_URL}brand/sello_badge_circular_vector.svg`} 
                 alt="Sello Oficial Morena Garnica" 
                 className="w-12 h-12 flex-shrink-0 animate-[spin_30s_linear_infinite]"
               />

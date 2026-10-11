@@ -19,11 +19,21 @@ const Footer = () => {
           
           {/* Brand & Social */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <img 
-              src={`${import.meta.env.BASE_URL}logos/isologo_horizontal_oro_rosa.svg`}
-              alt="Morena Garnica Makeup"
-              className="h-10 w-auto mb-4 filter drop-shadow-md"
-            />
+            <div className="flex items-center gap-3.5 mb-4">
+              <img 
+                src={`${import.meta.env.BASE_URL}brand/isotipo_mg_rose.svg`}
+                alt="MG"
+                className="h-12 w-auto object-contain filter drop-shadow-md"
+              />
+              <div className="flex flex-col text-left">
+                <span className="font-serif text-2xl font-bold tracking-tight text-surface leading-none">
+                  Morena Garnica
+                </span>
+                <span className="text-[10px] tracking-[0.28em] uppercase text-rosy-brown font-semibold mt-1">
+                  Make-up Artist
+                </span>
+              </div>
+            </div>
             <p className="text-beige/70 mb-8 max-w-sm font-light leading-relaxed text-sm">
               Maquillaje profesional especializado en resaltar tu belleza auténtica con acabados de alta costura botánica.
             </p>

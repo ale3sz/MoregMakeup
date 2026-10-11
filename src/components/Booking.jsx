@@ -138,7 +138,7 @@ const Booking = () => {
                   Información &amp; Garantía
                 </h3>
                 <img 
-                  src={`${import.meta.env.BASE_URL}logos/sello_badge_circular_vector.svg`} 
+                  src={`${import.meta.env.BASE_URL}brand/sello_badge_circular_vector.svg`} 
                   alt="Sello de Calidad" 
                   className="w-10 h-10 opacity-80"
                 />
