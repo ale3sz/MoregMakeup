@@ -30,18 +30,18 @@ export const defaultContent = {
     }
   ],
   portfolio: [
-    { id: 1, src: `${baseUrl}assets/foto_1_tiara_ojos_abiertos.png`, category: 'Novias', alt: 'Maquillaje de Novia con Tiara' },
-    { id: 2, src: `${baseUrl}assets/foto_2_tiara_ojos_cerrados.png`, category: 'Novias', alt: 'Detalle Sombras Ojos Cerrados' },
-    { id: 3, src: `${baseUrl}assets/foto_3_xv_ojos_abiertos.png`, category: 'Eventos', alt: 'Maquillaje Quinceañera Iluminado' },
-    { id: 4, src: `${baseUrl}assets/foto_4_xv_ojos_cerrados.png`, category: 'Eventos', alt: 'Detalle Maquillaje de Fiesta' },
-    { id: 5, src: `${baseUrl}assets/quinceaniera.jpeg`, category: 'Eventos', alt: 'Producción Quinceañera' },
-    { id: 6, src: `${baseUrl}assets/model_10_0.jpg`, category: 'Social', alt: 'Look Social Glamour' },
-    { id: 7, src: `${baseUrl}assets/model_10_1.jpg`, category: 'Social', alt: 'Look Social Natural Glow' },
-    { id: 8, src: `${baseUrl}assets/model_11_0.jpg`, category: 'Novias', alt: 'Novia Editorial' },
-    { id: 9, src: `${baseUrl}assets/model_11_1.jpg`, category: 'Social', alt: 'Make Up para Eventos' },
-    { id: 10, src: `${baseUrl}assets/model_11_2.jpg`, category: 'Social', alt: 'Maquillaje de Noche' },
-    { id: 11, src: `${baseUrl}assets/model_9_0.jpg`, category: 'Novias', alt: 'Producción Novia Clásica' },
-    { id: 12, src: `${baseUrl}assets/model_9_1.jpg`, category: 'Eventos', alt: 'Make Up de Alta Cobertura' }
+    { id: 1, src: `assets/foto_1_tiara_ojos_abiertos.png`, category: 'Novias', alt: 'Maquillaje de Novia con Tiara' },
+    { id: 2, src: `assets/foto_2_tiara_ojos_cerrados.png`, category: 'Novias', alt: 'Detalle Sombras Ojos Cerrados' },
+    { id: 3, src: `assets/foto_3_xv_ojos_abiertos.png`, category: 'Eventos', alt: 'Maquillaje Quinceañera Iluminado' },
+    { id: 4, src: `assets/foto_4_xv_ojos_cerrados.png`, category: 'Eventos', alt: 'Detalle Maquillaje de Fiesta' },
+    { id: 5, src: `assets/quinceaniera.jpeg`, category: 'Eventos', alt: 'Producción Quinceañera' },
+    { id: 6, src: `assets/model_10_0.jpg`, category: 'Social', alt: 'Look Social Glamour' },
+    { id: 7, src: `assets/model_10_1.jpg`, category: 'Social', alt: 'Look Social Natural Glow' },
+    { id: 8, src: `assets/model_11_0.jpg`, category: 'Novias', alt: 'Novia Editorial' },
+    { id: 9, src: `assets/model_11_1.jpg`, category: 'Social', alt: 'Make Up para Eventos' },
+    { id: 10, src: `assets/model_11_2.jpg`, category: 'Social', alt: 'Maquillaje de Noche' },
+    { id: 11, src: `assets/model_9_0.jpg`, category: 'Novias', alt: 'Producción Novia Clásica' },
+    { id: 12, src: `assets/model_9_1.jpg`, category: 'Eventos', alt: 'Make Up de Alta Cobertura' }
   ],
   about: {
     badge: 'Sobre Mí',

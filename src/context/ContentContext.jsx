@@ -6,12 +6,37 @@ const ContentContext = createContext();
 
 const STORAGE_KEY = 'moreg_site_content_v1';
 
+export const sanitizeAssetSrc = (src) => {
+  if (!src) return '';
+  if (
+    src.startsWith('data:') || 
+    src.startsWith('blob:') || 
+    src.startsWith('http://') || 
+    src.startsWith('https://')
+  ) {
+    return src;
+  }
+  return src.replace(/^\/?(MoregMakeup\/)?/, '').replace(/^\/?assets\//, 'assets/');
+};
+
+export const sanitizeContent = (data) => {
+  if (!data) return data;
+  const clean = { ...data };
+  if (Array.isArray(clean.portfolio)) {
+    clean.portfolio = clean.portfolio.map(img => ({
+      ...img,
+      src: sanitizeAssetSrc(img.src)
+    }));
+  }
+  return clean;
+};
+
 export const ContentProvider = ({ children }) => {
   const [content, setContent] = useState(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
       if (saved) {
-        const parsed = JSON.parse(saved);
+        const parsed = sanitizeContent(JSON.parse(saved));
         // Deep merge with defaultContent to ensure any new keys exist
         return {
           ...defaultContent,
@@ -24,7 +49,7 @@ export const ContentProvider = ({ children }) => {
     } catch (e) {
       console.warn('Error cargando contenido local:', e);
     }
-    return defaultContent;
+    return sanitizeContent(defaultContent);
   });
 
   const [hasUnsavedChanges, setHasUnsavedChanges] = useState(false);
@@ -51,11 +76,12 @@ export const ContentProvider = ({ children }) => {
         }
 
         if (data && data.content_data) {
+          const cleanData = sanitizeContent(data.content_data);
           setContent(prev => ({
             ...prev,
-            ...data.content_data
+            ...cleanData
           }));
-          localStorage.setItem(STORAGE_KEY, JSON.stringify(data.content_data));
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(cleanData));
           setCloudSynced(true);
         }
       } catch (err) {
@@ -148,15 +174,18 @@ export const ContentProvider = ({ children }) => {
     setSaveStatus({ type: '', message: '' });
 
     try {
+      const cleanContent = sanitizeContent(content);
+      setContent(cleanContent);
+
       // 1. Guardar en localStorage siempre
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(content));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(cleanContent));
 
       // 2. Si Supabase está configurado, sincronizar con la nube
       const client = getSupabaseClient();
       if (client) {
         const { error } = await client
           .from('site_content')
-          .upsert({ id: 'main', content_data: content, updated_at: new Date().toISOString() });
+          .upsert({ id: 'main', content_data: cleanContent, updated_at: new Date().toISOString() });
 
         if (error) {
           throw new Error('Guardado local exitoso, pero falló Supabase: ' + error.message);
