@@ -3,6 +3,7 @@ import { X, ZoomIn, Plus, Trash2, Pencil, Camera } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useContent } from '../context/ContentContext';
 import { useAuth } from '../context/AuthContext';
+import { resolveAssetUrl } from '../utils/assets';
 
 const Portfolio = () => {
   const { content, deleteItem, updateItem, processImageFile } = useContent();
@@ -96,11 +97,10 @@ const Portfolio = () => {
                 onClick={() => setSelectedImage(img)}
               >
                 <img 
-                  src={img.src} 
+                  src={resolveAssetUrl(img.src)} 
                   alt={img.alt} 
                   className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   loading="lazy"
-                  onError={(e) => { e.target.style.display = 'none'; }}
                 />
                 
                 {/* Delete button if in edit mode */}
@@ -169,7 +169,7 @@ const Portfolio = () => {
                   animate={{ scale: 1, opacity: 1 }}
                   exit={{ scale: 0.9, opacity: 0 }}
                   transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                  src={selectedImage.src}
+                  src={resolveAssetUrl(selectedImage.src)}
                   alt={selectedImage.alt}
                   className="max-w-full max-h-[70vh] object-contain rounded-2xl shadow-2xl border border-white/20"
                 />

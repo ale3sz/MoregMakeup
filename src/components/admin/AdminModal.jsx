@@ -8,6 +8,7 @@ import {
 import { useAuth } from '../../context/AuthContext';
 import { useContent } from '../../context/ContentContext';
 import { saveSupabaseCredentials, isSupabaseConfigured, clearSupabaseCredentials } from '../../services/supabase';
+import { resolveAssetUrl } from '../../utils/assets';
 
 const AdminModal = () => {
   const { isAdminModalOpen, closeAdminModal, setCustomPassword } = useAuth();
@@ -336,7 +337,7 @@ const AdminModal = () => {
                     {newPhoto.src && (
                       <div className="flex items-center gap-3 pt-2">
                         <span className="text-xs text-midnight-green/70">Vista previa:</span>
-                        <img src={newPhoto.src} alt="Preview" className="w-12 h-12 object-cover rounded-lg border border-moss-green/20" />
+                        <img src={resolveAssetUrl(newPhoto.src)} alt="Preview" className="w-12 h-12 object-cover rounded-lg border border-moss-green/20" />
                       </div>
                     )}
                   </div>
@@ -351,7 +352,7 @@ const AdminModal = () => {
                       {content.portfolio?.map((img) => (
                         <div key={img.id} className="group relative bg-surface rounded-2xl overflow-hidden border border-moss-green/20 shadow-sm flex flex-col justify-between p-3 gap-3">
                           <div className="relative rounded-xl overflow-hidden h-40">
-                            <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
+                            <img src={resolveAssetUrl(img.src)} alt={img.alt} className="w-full h-full object-cover" />
                             <button
                               type="button"
                               onClick={() => deleteItem('portfolio', img.id)}
