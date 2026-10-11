@@ -35,9 +35,9 @@ const Navbar = () => {
               {/* MG Monogram Icon */}
               <div className="relative flex items-center justify-center">
                 <img 
-                  src={`${import.meta.env.BASE_URL}brand/isotipo_mg_rose.svg`}
+                  src={`${import.meta.env.BASE_URL}brand/mg_monograma_transparent.png`}
                   alt="MG"
-                  className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-sm"
+                  className="h-10 sm:h-12 md:h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105 filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.25)]"
                 />
               </div>
 
