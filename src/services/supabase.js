@@ -1,14 +1,22 @@
 import { createClient } from '@supabase/supabase-js';
 
-// Get credentials from Vite env or localStorage (configured via Admin Panel)
-const getCredentials = () => {
-  const envUrl = import.meta.env.VITE_SUPABASE_URL;
-  const envKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-  const localUrl = localStorage.getItem('moreg_supabase_url');
-  const localKey = localStorage.getItem('moreg_supabase_key');
+const cleanUrl = (rawUrl) => {
+  if (!rawUrl) return '';
+  return rawUrl.trim().replace(/\/rest\/v1\/?$/, '').replace(/\/$/, '');
+};
 
-  const url = localUrl || envUrl;
-  const key = localKey || envKey;
+// Default Supabase project credentials
+export const DEFAULT_SUPABASE_URL = 'https://ghyklkelmprcdssvshgl.supabase.co';
+export const DEFAULT_SUPABASE_KEY = 'sb_publishable_vU15iMeLU8mW-AdKbPQcgA_tUS7IDJX';
+
+const getCredentials = () => {
+  const envUrl = typeof import.meta !== 'undefined' && import.meta.env?.VITE_SUPABASE_URL;
+  const envKey = typeof import.meta !== 'undefined' && import.meta.env?.VITE_SUPABASE_ANON_KEY;
+  const localUrl = typeof localStorage !== 'undefined' ? localStorage.getItem('moreg_supabase_url') : null;
+  const localKey = typeof localStorage !== 'undefined' ? localStorage.getItem('moreg_supabase_key') : null;
+
+  const url = cleanUrl(localUrl || envUrl || DEFAULT_SUPABASE_URL);
+  const key = (localKey || envKey || DEFAULT_SUPABASE_KEY)?.trim();
 
   return { url, key };
 };
@@ -32,11 +40,13 @@ export const isSupabaseConfigured = () => {
 };
 
 export const saveSupabaseCredentials = (url, key) => {
-  if (url) localStorage.setItem('moreg_supabase_url', url.trim());
-  if (key) localStorage.setItem('moreg_supabase_key', key.trim());
+  if (url && typeof localStorage !== 'undefined') localStorage.setItem('moreg_supabase_url', cleanUrl(url));
+  if (key && typeof localStorage !== 'undefined') localStorage.setItem('moreg_supabase_key', key.trim());
 };
 
 export const clearSupabaseCredentials = () => {
-  localStorage.removeItem('moreg_supabase_url');
-  localStorage.removeItem('moreg_supabase_key');
+  if (typeof localStorage !== 'undefined') {
+    localStorage.removeItem('moreg_supabase_url');
+    localStorage.removeItem('moreg_supabase_key');
+  }
 };

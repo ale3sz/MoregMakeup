@@ -1,3 +1,5 @@
+const baseUrl = (typeof import.meta !== 'undefined' && import.meta.env?.BASE_URL) || '/';
+
 export const defaultContent = {
   hero: {
     badge: 'Make-up Artist Profesional',
@@ -28,18 +30,18 @@ export const defaultContent = {
     }
   ],
   portfolio: [
-    { id: 1, src: `${import.meta.env.BASE_URL}assets/foto_1_tiara_ojos_abiertos.png`, category: 'Novias', alt: 'Maquillaje de Novia con Tiara' },
-    { id: 2, src: `${import.meta.env.BASE_URL}assets/foto_2_tiara_ojos_cerrados.png`, category: 'Novias', alt: 'Detalle Sombras Ojos Cerrados' },
-    { id: 3, src: `${import.meta.env.BASE_URL}assets/foto_3_xv_ojos_abiertos.png`, category: 'Eventos', alt: 'Maquillaje Quinceañera Iluminado' },
-    { id: 4, src: `${import.meta.env.BASE_URL}assets/foto_4_xv_ojos_cerrados.png`, category: 'Eventos', alt: 'Detalle Maquillaje de Fiesta' },
-    { id: 5, src: `${import.meta.env.BASE_URL}assets/quinceaniera.jpeg`, category: 'Eventos', alt: 'Producción Quinceañera' },
-    { id: 6, src: `${import.meta.env.BASE_URL}assets/model_10_0.jpg`, category: 'Social', alt: 'Look Social Glamour' },
-    { id: 7, src: `${import.meta.env.BASE_URL}assets/model_10_1.jpg`, category: 'Social', alt: 'Look Social Natural Glow' },
-    { id: 8, src: `${import.meta.env.BASE_URL}assets/model_11_0.jpg`, category: 'Novias', alt: 'Novia Editorial' },
-    { id: 9, src: `${import.meta.env.BASE_URL}assets/model_11_1.jpg`, category: 'Social', alt: 'Make Up para Eventos' },
-    { id: 10, src: `${import.meta.env.BASE_URL}assets/model_11_2.jpg`, category: 'Social', alt: 'Maquillaje de Noche' },
-    { id: 11, src: `${import.meta.env.BASE_URL}assets/model_9_0.jpg`, category: 'Novias', alt: 'Producción Novia Clásica' },
-    { id: 12, src: `${import.meta.env.BASE_URL}assets/model_9_1.jpg`, category: 'Eventos', alt: 'Make Up de Alta Cobertura' }
+    { id: 1, src: `${baseUrl}assets/foto_1_tiara_ojos_abiertos.png`, category: 'Novias', alt: 'Maquillaje de Novia con Tiara' },
+    { id: 2, src: `${baseUrl}assets/foto_2_tiara_ojos_cerrados.png`, category: 'Novias', alt: 'Detalle Sombras Ojos Cerrados' },
+    { id: 3, src: `${baseUrl}assets/foto_3_xv_ojos_abiertos.png`, category: 'Eventos', alt: 'Maquillaje Quinceañera Iluminado' },
+    { id: 4, src: `${baseUrl}assets/foto_4_xv_ojos_cerrados.png`, category: 'Eventos', alt: 'Detalle Maquillaje de Fiesta' },
+    { id: 5, src: `${baseUrl}assets/quinceaniera.jpeg`, category: 'Eventos', alt: 'Producción Quinceañera' },
+    { id: 6, src: `${baseUrl}assets/model_10_0.jpg`, category: 'Social', alt: 'Look Social Glamour' },
+    { id: 7, src: `${baseUrl}assets/model_10_1.jpg`, category: 'Social', alt: 'Look Social Natural Glow' },
+    { id: 8, src: `${baseUrl}assets/model_11_0.jpg`, category: 'Novias', alt: 'Novia Editorial' },
+    { id: 9, src: `${baseUrl}assets/model_11_1.jpg`, category: 'Social', alt: 'Make Up para Eventos' },
+    { id: 10, src: `${baseUrl}assets/model_11_2.jpg`, category: 'Social', alt: 'Maquillaje de Noche' },
+    { id: 11, src: `${baseUrl}assets/model_9_0.jpg`, category: 'Novias', alt: 'Producción Novia Clásica' },
+    { id: 12, src: `${baseUrl}assets/model_9_1.jpg`, category: 'Eventos', alt: 'Make Up de Alta Cobertura' }
   ],
   about: {
     badge: 'Sobre Mí',
@@ -56,14 +58,14 @@ export const defaultContent = {
   diplomas: [
     { 
       id: 1, 
-      src: `${import.meta.env.BASE_URL}assets/real_diploma_0.jpg`, 
+      src: `${baseUrl}assets/real_diploma_0.jpg`, 
       alt: 'Certificado de Perfeccionamiento en Maquillaje - ISEM',
       title: 'Perfeccionamiento en Maquillaje',
       institution: 'Instituto Superior de Estética y Moda (ISEM)'
     },
     { 
       id: 2, 
-      src: `${import.meta.env.BASE_URL}assets/real_diploma_1.jpg`, 
+      src: `${baseUrl}assets/real_diploma_1.jpg`, 
       alt: 'Certificado de Maquillaje Profesional - ISEM',
       title: 'Maquillaje Profesional',
       institution: 'Instituto Superior de Estética y Moda (ISEM)'
