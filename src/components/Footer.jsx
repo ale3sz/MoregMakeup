@@ -21,9 +21,9 @@ const Footer = () => {
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <div className="flex items-center gap-3.5 mb-4">
               <img 
-                src={`${import.meta.env.BASE_URL}brand/mg_monograma_transparent.png`}
+                src={`${import.meta.env.BASE_URL}brand/isotipo_mg_rose.svg`}
                 alt="MG"
-                className="h-12 md:h-14 w-auto object-contain filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.3)]"
+                className="h-12 w-auto object-contain filter drop-shadow-md"
               />
               <div className="flex flex-col text-left">
                 <span className="font-serif text-2xl font-bold tracking-tight text-surface leading-none">
