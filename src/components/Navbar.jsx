@@ -19,10 +19,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Servicios', to: 'services' },
-    { name: 'Portfolio', to: 'portfolio' },
-    { name: 'Sobre Mí', to: 'about' },
-    { name: 'FAQ', to: 'faq' },
+    { name: 'Inicio', to: 'hero', offset: 0 },
+    { name: 'Servicios', to: 'services', offset: -70 },
+    { name: 'Portfolio', to: 'portfolio', offset: -70 },
+    { name: 'Sobre Mí', to: 'about', offset: -70 },
+    { name: 'FAQ', to: 'faq', offset: -70 },
   ];
 
   return (
@@ -43,7 +44,7 @@ const Navbar = () => {
                 to={link.to}
                 smooth={true}
                 duration={800}
-                offset={-70}
+                offset={link.offset ?? -70}
                 className={`cursor-pointer text-sm uppercase tracking-wider font-semibold transition-all hover:text-rosy-brown ${scrolled ? 'text-midnight-green dark:text-beige/90' : 'text-beige/90 hover:text-white'}`}
               >
                 {link.name}
@@ -92,7 +93,7 @@ const Navbar = () => {
                   to={link.to}
                   smooth={true}
                   duration={600}
-                  offset={-70}
+                  offset={link.offset ?? -70}
                   onClick={() => setIsOpen(false)}
                   className="block px-4 py-3 text-base font-serif tracking-wider text-beige/90 hover:text-white hover:bg-white/5 rounded-xl transition-all cursor-pointer"
                 >

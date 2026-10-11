@@ -10,6 +10,7 @@ import Booking from './components/Booking';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import ScrollToTop from './components/ScrollToTop';
 
 import { ThemeProvider } from './context/ThemeContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
@@ -37,6 +38,7 @@ function MainContent() {
       </main>
       <Footer />
       <FloatingWhatsApp />
+      <ScrollToTop />
       
       {/* Editor & Admin Modals */}
       <LoginModal />
