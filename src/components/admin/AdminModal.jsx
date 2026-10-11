@@ -347,22 +347,46 @@ const AdminModal = () => {
                       Fotos actuales ({content.portfolio?.length || 0})
                     </h5>
 
-                    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                       {content.portfolio?.map((img) => (
-                        <div key={img.id} className="group relative bg-surface rounded-xl overflow-hidden border border-moss-green/15 shadow-sm">
-                          <img src={img.src} alt={img.alt} className="w-full h-36 object-cover" />
-                          <div className="p-2 text-xs">
-                            <span className="text-[10px] uppercase font-bold text-rosy-brown block">{img.category}</span>
-                            <p className="text-dark-green truncate font-medium">{img.alt}</p>
+                        <div key={img.id} className="group relative bg-surface rounded-2xl overflow-hidden border border-moss-green/20 shadow-sm flex flex-col justify-between p-3 gap-3">
+                          <div className="relative rounded-xl overflow-hidden h-40">
+                            <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
+                            <button
+                              type="button"
+                              onClick={() => deleteItem('portfolio', img.id)}
+                              title="Eliminar foto"
+                              className="absolute top-2 right-2 bg-red-600/90 text-white p-2 rounded-full hover:bg-red-700 cursor-pointer shadow-md transition-transform hover:scale-110"
+                            >
+                              <Trash2 size={14} />
+                            </button>
                           </div>
-                          <button
-                            type="button"
-                            onClick={() => deleteItem('portfolio', img.id)}
-                            title="Eliminar foto"
-                            className="absolute top-2 right-2 bg-red-600/90 text-white p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-red-700 cursor-pointer shadow-md"
-                          >
-                            <Trash2 size={13} />
-                          </button>
+                          
+                          <div className="space-y-2 text-xs">
+                            <div>
+                              <label className="block text-[10px] uppercase tracking-wider font-semibold text-moss-green mb-0.5">Tipo / Categoría:</label>
+                              <select
+                                value={img.category}
+                                onChange={(e) => updateItem('portfolio', img.id, { category: e.target.value })}
+                                className="w-full bg-surface-container-lowest border border-moss-green/20 rounded-lg px-2.5 py-1.5 text-xs font-bold text-dark-green uppercase cursor-pointer focus:outline-none focus:ring-1 focus:ring-rosy-brown"
+                              >
+                                <option value="Novias">Novias</option>
+                                <option value="Social">Social</option>
+                                <option value="Eventos">Eventos</option>
+                              </select>
+                            </div>
+
+                            <div>
+                              <label className="block text-[10px] uppercase tracking-wider font-semibold text-moss-green mb-0.5">Subtítulo / Look:</label>
+                              <input
+                                type="text"
+                                value={img.alt}
+                                onChange={(e) => updateItem('portfolio', img.id, { alt: e.target.value })}
+                                placeholder="Nombre o descripción del look"
+                                className="w-full bg-surface-container-lowest border border-moss-green/20 rounded-lg px-2.5 py-1.5 text-xs text-dark-green font-medium focus:outline-none focus:ring-1 focus:ring-rosy-brown"
+                              />
+                            </div>
+                          </div>
                         </div>
                       ))}
                     </div>
