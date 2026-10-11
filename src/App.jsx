@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import TrustBanner from './components/TrustBanner';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
 import About from './components/About';
@@ -28,6 +29,7 @@ function MainContent() {
       <Navbar />
       <main>
         <Hero />
+        <TrustBanner />
         <Services />
         <Portfolio />
         <About />

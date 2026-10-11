@@ -17,8 +17,17 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-surface overflow-hidden">
-      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20">
+    <section id="about" className="py-24 bg-surface overflow-hidden relative">
+      {/* Subtle luxury brand watermark in background */}
+      <div className="absolute -right-24 -bottom-24 w-96 h-96 opacity-[0.03] pointer-events-none select-none">
+        <img 
+          src={`${import.meta.env.BASE_URL}logos/isotipo_completo_dark.svg`} 
+          alt="" 
+          className="w-full h-full object-contain"
+        />
+      </div>
+
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           
           <motion.div 
@@ -96,15 +105,22 @@ const About = () => {
               </div>
             </div>
             
-            {/* Experience Badge */}
-            <div className="absolute -bottom-6 -left-6 bg-surface-container-lowest/95 backdrop-blur-md p-6 rounded-2xl shadow-[0_20px_50px_rgba(10,51,35,0.15)] z-20 border border-rosy-brown/30 max-w-[220px] hidden sm:block">
-              <span className="text-xs uppercase tracking-widest text-moss-green font-bold block mb-1">
-                <EditableText section="about" field="badgeExperienceTitle" value={about.badgeExperienceTitle || 'Trayectoria'} />
-              </span>
-              <p className="text-rosy-brown font-serif italic text-2xl font-bold mb-1">
-                <EditableText section="about" field="badgeExperienceDesc" value={about.badgeExperienceDesc || 'Experiencia'} />
-              </p>
-              <p className="text-dark-green font-bold text-xs leading-relaxed">Telefe, La Capital + &amp; Producciones</p>
+            {/* Experience Badge with Circular Seal */}
+            <div className="absolute -bottom-6 -left-6 bg-surface-container-lowest/95 backdrop-blur-md p-5 rounded-2xl shadow-[0_20px_50px_rgba(10,51,35,0.15)] z-20 border border-rosy-brown/30 max-w-[240px] hidden sm:flex items-center gap-4">
+              <img 
+                src={`${import.meta.env.BASE_URL}logos/sello_badge_circular_vector.svg`} 
+                alt="Sello Oficial Morena Garnica" 
+                className="w-12 h-12 flex-shrink-0 animate-[spin_30s_linear_infinite]"
+              />
+              <div>
+                <span className="text-[10px] uppercase tracking-widest text-moss-green font-bold block mb-0.5">
+                  <EditableText section="about" field="badgeExperienceTitle" value={about.badgeExperienceTitle || 'Trayectoria'} />
+                </span>
+                <p className="text-rosy-brown font-serif italic text-lg font-bold leading-none mb-1">
+                  <EditableText section="about" field="badgeExperienceDesc" value={about.badgeExperienceDesc || 'Experiencia'} />
+                </p>
+                <p className="text-dark-green font-bold text-[11px] leading-tight">Telefe, La Capital + &amp; Producciones</p>
+              </div>
             </div>
           </motion.div>
           

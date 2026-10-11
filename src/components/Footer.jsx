@@ -19,8 +19,12 @@ const Footer = () => {
           
           {/* Brand & Social */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <h3 className="text-3xl font-serif font-bold text-surface mb-6">Morena G.</h3>
-            <p className="text-beige/70 mb-8 max-w-sm font-light leading-relaxed">
+            <img 
+              src={`${import.meta.env.BASE_URL}logos/isologo_horizontal_oro_rosa.svg`}
+              alt="Morena Garnica Makeup"
+              className="h-10 w-auto mb-4 filter drop-shadow-md"
+            />
+            <p className="text-beige/70 mb-8 max-w-sm font-light leading-relaxed text-sm">
               Maquillaje profesional especializado en resaltar tu belleza auténtica con acabados de alta costura botánica.
             </p>
             <div className="flex items-center space-x-3">

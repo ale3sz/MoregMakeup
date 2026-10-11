@@ -131,11 +131,19 @@ const Booking = () => {
               Podés reservar tu fecha con todos los detalles o enviarme una <strong>consulta rápida</strong> directa a WhatsApp. Te responderé personalmente a la brevedad para asesorarte.
             </p>
             
-            <div className="bg-midnight-green/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm space-y-4">
-              <h3 className="font-serif text-xl font-bold mb-2 flex items-center gap-2">
-                <Sparkles size={20} className="text-rosy-brown" />
-                Información Importante
-              </h3>
+            <div className="bg-midnight-green/30 p-8 rounded-2xl border border-white/10 backdrop-blur-sm space-y-5">
+              <div className="flex items-center justify-between pb-2 border-b border-white/10">
+                <h3 className="font-serif text-xl font-bold flex items-center gap-2">
+                  <Sparkles size={20} className="text-rosy-brown" />
+                  Información &amp; Garantía
+                </h3>
+                <img 
+                  src={`${import.meta.env.BASE_URL}logos/sello_badge_circular_vector.svg`} 
+                  alt="Sello de Calidad" 
+                  className="w-10 h-10 opacity-80"
+                />
+              </div>
+
               <ul className="space-y-4 text-surface-dim text-sm">
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="text-rosy-brown flex-shrink-0 mt-0.5" size={18} />
@@ -147,7 +155,7 @@ const Booking = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <CheckCircle2 className="text-rosy-brown flex-shrink-0 mt-0.5" size={18} />
-                  <p>¿Solo tenés una duda puntual? Elegí la pestaña <strong>Consulta Rápida</strong>.</p>
+                  <p>Productos 100% profesionales de alta gama hipoalergénicos.</p>
                 </li>
               </ul>
             </div>
