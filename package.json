@@ -1,7 +1,8 @@
 {
-  "name": "temp-app",
+  "name": "morena-garnica-makeup",
+  "description": "Sitio web oficial y portfolio profesional de Morena Garnica Makeup Artist",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
