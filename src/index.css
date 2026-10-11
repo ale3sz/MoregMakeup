@@ -9,10 +9,81 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply text-gray-800 antialiased bg-stone-50;
+    @apply antialiased transition-colors duration-300;
   }
 }
 
+/* ==========================================================
+   MODO OSCURO BOTÁNICO (Tonos verdes profundos + alternativas)
+   ========================================================== */
+.dark body {
+  background-color: #061D13;
+  color: #F7F4D5;
+}
+
+/* Fondos en Modo Oscuro */
+.dark .bg-surface {
+  background-color: #061D13 !important;
+}
+
+.dark .bg-surface-container-low {
+  background-color: #082418 !important;
+}
+
+.dark .bg-surface-container-lowest {
+  background-color: #0C2F20 !important;
+}
+
+.dark .bg-surface-container {
+  background-color: #103827 !important;
+}
+
+.dark .bg-surface-container-high {
+  background-color: #14402E !important;
+}
+
+.dark .bg-dark-green {
+  background-color: #04140D !important;
+}
+
+/* Textos principales en Modo Oscuro (Marfil Champagne sobre verde) */
+.dark .text-dark-green {
+  color: #F7F4D5 !important;
+}
+
+.dark .text-midnight-green {
+  color: #B8D3BD !important;
+}
+
+.dark .text-on-surface-variant {
+  color: #B8D3BD !important;
+}
+
+/* Bordes y divisores en Modo Oscuro */
+.dark .border-moss-green\/10,
+.dark .border-moss-green\/15,
+.dark .border-moss-green\/20,
+.dark .border-beige,
+.dark .border-beige\/50,
+.dark .border-beige\/60 {
+  border-color: rgba(211, 150, 140, 0.22) !important;
+}
+
+/* Inputs y Selects en Modo Oscuro */
+.dark input:not([type="checkbox"]):not([type="radio"]),
+.dark select,
+.dark textarea {
+  background-color: #071F15 !important;
+  color: #F7F4D5 !important;
+  border-color: rgba(131, 153, 88, 0.35) !important;
+}
+
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: rgba(184, 211, 189, 0.5) !important;
+}
+
+/* Masonry Layout */
 @layer utilities {
   .masonry {
     column-count: 1;

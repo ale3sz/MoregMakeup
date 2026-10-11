@@ -11,6 +11,7 @@ import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 
+import { ThemeProvider } from './context/ThemeContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { ContentProvider } from './context/ContentContext';
 import AdminBar from './components/admin/AdminBar';
@@ -46,11 +47,13 @@ function MainContent() {
 
 function App() {
   return (
-    <AuthProvider>
-      <ContentProvider>
-        <MainContent />
-      </ContentProvider>
-    </AuthProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <ContentProvider>
+          <MainContent />
+        </ContentProvider>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
 
