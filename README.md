@@ -1,51 +1,61 @@
-# Morena Garnica | Make-up Artist Profesional
+# ✨ Morena Garnica Makeup - Guía Rápida de tu Página Web
 
-Sitio web oficial, portfolio interactivo y plataforma de reservas de **Morena Garnica**, maquilladora profesional radicada en Rosario, Argentina. Especializada en maquillaje social, novias, producciones de moda y televisión (Telefe, La Capital).
-
----
-
-## 💄 Características Principales
-
-- **Identidad Editorial Botánica de Lujo**: Paleta exclusiva inspirada en tonos tierra, verde bosque profundo (`#0A3323`), crema (`#F7F4D5`) y oro rosa (`#D3968C`).
-- **Sistema de Logotipos y Monograma Vectorial**: Monograma minimalista **MG** en SVG de alta resolución con tipografía Playfair Display.
-- **Hero Interactivo con Video en Bucle**: Viñeta cinematográfica y llamados a la acción con estética *frosted glass*.
-- **Franja de Autoridad & Garantía (TrustBanner)**: Sellos oficiales de certificación ISEM, sanitización estricta de herramientas y fijación de larga duración.
-- **Portfolio con Filtro por Categorías & Lightbox**: Visualización ampliada para apreciar la textura y el acabado de cada look.
-- **Backstage Reel**: Video reel integrado en la sección *Sobre Mí* para mostrar el proceso de trabajo real.
-- **Motor de Reservas Doble**:
-  - *Reserva Detallada*: Formulario completo con selección de servicio, modalidad (estudio o domicilio), fecha y horario.
-  - *Consulta Rápida*: Envío instantáneo de consulta pre-formateada directa a WhatsApp.
-- **Botón Flotante de WhatsApp con Estado Activo**: Accesibilidad constante en dispositivos móviles y de escritorio.
-- **Panel de Administración en Vivo (Modo Morena)**:
-  - Edición visual directa de textos en la página.
-  - Subida y gestión de fotos del portfolio desde el navegador.
-  - Sincronización en la nube opcional mediante Supabase o almacenamiento local persistente con exportación/importación de copias de seguridad.
+¡Hola More! Bienvenida a tu página web oficial. Este proyecto fue creado especialmente para mostrar tus trabajos con la elegancia que merecen y ayudarte a conseguir más clientas para eventos, novias y producciones.
 
 ---
 
-## 🛠️ Tecnologías
+## 🌸 ¿Qué tiene tu página?
 
-- **Framework**: React 19 + Vite
-- **Estilos**: Tailwind CSS 3
-- **Animaciones**: Framer Motion
-- **Iconografía**: Lucide React
-- **Nube (Opcional)**: Supabase JS Client
+1. **Tu Portada con Video**:
+   - Muestra tu video de presentación de fondo con un diseño elegante y botones directos para que las clientas te reserven o miren tus fotos.
+
+2. **Cinta de Garantía y Experiencia**:
+   - Destaca tus certificaciones oficiales del ISEM, tu trayectoria en Telefe y La Capital +, la higiene de tus brochas y la duración de 16 horas del maquillaje.
+
+3. **Galería de Trabajos (Portfolio)**:
+   - Tus fotos organizadas por categorías: *Social*, *Novias* y *Eventos*.
+   - Las clientas pueden tocar cualquier foto para verla en pantalla completa con máxima calidad.
+
+4. **Sobre Mí & Video Backstage**:
+   - Cuenta tu historia profesional y tiene tu video trabajando para transmitir confianza inmediata.
+
+5. **Servicios y Precios**:
+   - Muestra tus propuestas principales (*Social & Fiestas* y tu servicio estrella *Novias & XV*).
+
+6. **Formulario de Reservas & WhatsApp Directo**:
+   - Botón flotante de WhatsApp para que te escriban con un solo clic.
+   - Formulario para que elijan servicio, fecha, horario y si es en tu estudio o a domicilio. El mensaje te llega a tu WhatsApp ya ordenado y listo para responder.
 
 ---
 
-## 🚀 Despliegue en Local
+## 👑 ¿Cómo editar tu página en vivo? (Modo Morena)
+
+Puedes cambiar textos, precios y subir fotos nuevas tú misma sin tocar código:
+
+1. Baja hasta el final de la página (en el pie de página / footer).
+2. Toca el candadito pequeño 🔒 que dice **"Acceso Editor"**.
+3. Ingresa tu contraseña:
+   ```text
+   morena2026
+   ```
+4. ¡Listo! Se abrirá una barra superior donde podrás:
+   - **Tocar cualquier texto** de la pantalla para editarlo en el momento.
+   - **Subir fotos nuevas** a tu portfolio directamente desde tu celular o computadora.
+   - **Cambiar precios** y detalles de tus servicios.
+   - Guardar los cambios con un solo botón.
+
+---
+
+## 💻 Comandos básicos (por si necesitas abrirla en la compu)
 
 ```bash
-# Instalar dependencias
-npm install
-
-# Iniciar servidor de desarrollo
+# Para ver la página en tu computadora:
 npm run dev
 
-# Compilar para producción
+# Para guardar cambios y subirlos a internet:
 npm run build
 ```
 
 ---
 
-© 2026 Morena Garnica Makeup. Todos los derechos reservados.
+*Hecho con mucho amor para acompañar tu crecimiento profesional.* 💕
