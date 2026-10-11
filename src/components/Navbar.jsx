@@ -58,18 +58,18 @@ const Navbar = () => {
             >
               Reservar
             </Link>
-            <ThemeToggle />
+            <ThemeToggle scrolled={scrolled} />
           </div>
 
           {/* Mobile Menu Button + Toggle */}
-          <div className="md:hidden flex items-center gap-3">
-            <ThemeToggle />
+          <div className="md:hidden flex items-center gap-2">
+            <ThemeToggle scrolled={scrolled} />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className={`${scrolled ? 'text-dark-green dark:text-[#F7F4D5]' : 'text-beige'} focus:outline-none cursor-pointer`}
+              className={`p-2 rounded-full transition-colors ${scrolled ? 'text-dark-green dark:text-[#F7F4D5]' : 'text-beige hover:text-white'} focus:outline-none cursor-pointer`}
               aria-label="Abrir menú de navegación"
             >
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
+              {isOpen ? <X size={26} /> : <Menu size={26} />}
             </button>
           </div>
         </div>
@@ -100,6 +100,10 @@ const Navbar = () => {
                 </Link>
               ))}
               <div className="pt-4 border-t border-white/10 space-y-3">
+                <div className="flex items-center justify-between px-4 py-2 rounded-xl bg-white/5">
+                  <span className="text-sm font-serif tracking-wider text-beige">Tema de color</span>
+                  <ThemeToggle showLabel={true} scrolled={false} />
+                </div>
                 <Link
                   to="booking"
                   smooth={true}
