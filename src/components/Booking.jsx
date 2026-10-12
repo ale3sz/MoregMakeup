@@ -114,7 +114,7 @@ const Booking = () => {
   return (
     <section id="booking" className="py-24 bg-dark-green text-surface relative">
       <div className="absolute inset-0 opacity-10 mix-blend-overlay">
-        <img src="/assets/paleta.jpeg" alt="Background" className="w-full h-full object-cover grayscale" />
+        <img src={`${import.meta.env.BASE_URL}assets/paleta.jpeg`} alt="Background" className="w-full h-full object-cover grayscale" />
       </div>
       
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-20 relative z-10">
