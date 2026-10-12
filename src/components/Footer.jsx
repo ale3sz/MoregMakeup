@@ -43,7 +43,7 @@ const Footer = () => {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 aria-label="Instagram @morennagar"
-                className="bg-midnight-green p-3 rounded-full text-surface hover:text-dark-green hover:bg-rosy-brown transition-all duration-300 shadow-lg flex items-center justify-center group"
+                className="bg-midnight-green p-3 rounded-full text-surface hover:text-dark-green hover:bg-rosy-brown shadow-lg flex items-center justify-center group btn-press"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
               </a>
@@ -51,7 +51,7 @@ const Footer = () => {
                 href={contact.instagramUrl || "https://www.instagram.com/morennagar/"} 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-beige/80 hover:text-rosy-brown text-sm font-light tracking-wide transition-colors"
+                className="text-beige/80 hover:text-rosy-brown text-sm font-light tracking-wide transition-colors btn-press"
               >
                 {contact.instagramHandle || '@morennagar'}
               </a>
@@ -67,8 +67,8 @@ const Footer = () => {
                   <Link 
                     to={item.toLowerCase() === 'inicio' ? 'hero' : item.toLowerCase().replace(' ', '')} 
                     smooth={true} 
-                    duration={800}
-                    className="text-beige/80 hover:text-surface hover:underline underline-offset-4 decoration-rosy-brown transition-all cursor-pointer font-light"
+                    duration={450}
+                    className="text-beige/80 hover:text-surface hover:underline underline-offset-4 decoration-rosy-brown transition-colors cursor-pointer font-light btn-press"
                   >
                     {item}
                   </Link>
@@ -106,7 +106,7 @@ const Footer = () => {
             <button
               type="button"
               onClick={openLoginModal}
-              className="text-beige/40 hover:text-rosy-brown transition-colors flex items-center gap-1.5 cursor-pointer py-1 px-2 rounded hover:bg-white/5"
+              className="text-beige/40 hover:text-rosy-brown transition-colors flex items-center gap-1.5 cursor-pointer py-1 px-2 rounded hover:bg-white/5 btn-press"
               title="Acceso al panel de administración"
             >
               <Lock size={12} />

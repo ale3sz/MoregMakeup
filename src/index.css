@@ -4,12 +4,51 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
   }
   body {
-    @apply antialiased transition-colors duration-300;
+    @apply antialiased transition-colors duration-200;
+  }
+}
+
+/* Emil Kowalski: Responsive button & press interactions */
+.btn-press {
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 160ms ease, opacity 160ms ease, border-color 160ms ease;
+  will-change: transform;
+}
+.btn-press:active {
+  transform: scale(0.97);
+}
+
+.card-press {
+  transition: transform 200ms cubic-bezier(0.23, 1, 0.32, 1), box-shadow 200ms ease, border-color 200ms ease;
+  will-change: transform;
+}
+.card-press:active {
+  transform: scale(0.985);
+}
+
+/* Gate hover states on touch screens to prevent stuck hovers */
+@media (hover: hover) and (pointer: fine) {
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+}
+
+/* Accessibility: prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 
@@ -21,7 +60,6 @@
   color: #F7F4D5;
 }
 
-/* Fondos en Modo Oscuro */
 .dark .bg-surface {
   background-color: #061D13 !important;
 }
@@ -46,7 +84,6 @@
   background-color: #04140D !important;
 }
 
-/* Textos principales en Modo Oscuro (Marfil Champagne sobre verde) */
 .dark .text-dark-green {
   color: #F7F4D5 !important;
 }
@@ -59,7 +96,6 @@
   color: #B8D3BD !important;
 }
 
-/* Bordes y divisores en Modo Oscuro */
 .dark .border-moss-green\/10,
 .dark .border-moss-green\/15,
 .dark .border-moss-green\/20,
@@ -69,7 +105,6 @@
   border-color: rgba(211, 150, 140, 0.22) !important;
 }
 
-/* Inputs y Selects en Modo Oscuro */
 .dark input:not([type="checkbox"]):not([type="radio"]),
 .dark select,
 .dark textarea {
@@ -87,7 +122,7 @@
 @layer utilities {
   .masonry {
     column-count: 1;
-    column-gap: 1rem;
+    column-gap: 1.25rem;
   }
   @media (min-width: 640px) {
     .masonry {
@@ -101,6 +136,6 @@
   }
   .masonry-item {
     break-inside: avoid;
-    margin-bottom: 1rem;
+    margin-bottom: 1.25rem;
   }
 }

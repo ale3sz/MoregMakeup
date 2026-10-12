@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { X, ZoomIn, Plus, Trash2, Pencil, Camera } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useContent } from '../context/ContentContext';
@@ -18,6 +18,17 @@ const Portfolio = () => {
   const filteredImages = filter === 'Todos' 
     ? images 
     : images.filter(img => img.category === filter);
+
+  // Emil rule: keyboard escape should close modals immediately
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && selectedImage) {
+        setSelectedImage(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedImage]);
 
   const handleDeletePhoto = (e, imgId) => {
     e.stopPropagation();
@@ -59,7 +70,7 @@ const Portfolio = () => {
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-8 py-3 rounded-full text-sm font-semibold uppercase tracking-wider transition-all duration-300 cursor-pointer ${
+                className={`px-8 py-3 rounded-full text-sm font-semibold uppercase tracking-wider cursor-pointer btn-press ${
                   filter === cat 
                     ? 'bg-midnight-green text-white shadow-md' 
                     : 'bg-surface-container text-dark-green hover:bg-surface-container-high border border-moss-green/20'
@@ -73,7 +84,7 @@ const Portfolio = () => {
               <button
                 type="button"
                 onClick={openAdminModal}
-                className="px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider bg-rosy-brown hover:bg-rosy-brown-dark text-dark-green hover:text-white transition-all shadow-md flex items-center gap-2 cursor-pointer"
+                className="px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider bg-rosy-brown hover:bg-rosy-brown-dark text-dark-green hover:text-white shadow-md flex items-center gap-2 cursor-pointer btn-press"
               >
                 <Plus size={16} />
                 <span>Gestionar Fotos</span>
@@ -88,18 +99,18 @@ const Portfolio = () => {
             {filteredImages.map((img) => (
               <motion.div
                 layout
-                initial={{ opacity: 0, scale: 0.9 }}
+                initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.9 }}
-                transition={{ duration: 0.4 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.3, ease: [0.23, 1, 0.32, 1] }}
                 key={img.id}
-                className="masonry-item cursor-pointer group relative rounded-2xl overflow-hidden shadow-sm border border-moss-green/10 mb-6 break-inside-avoid"
+                className="masonry-item cursor-pointer group relative rounded-2xl overflow-hidden shadow-sm border border-moss-green/10 mb-6 break-inside-avoid card-press"
                 onClick={() => setSelectedImage(img)}
               >
                 <img 
                   src={resolveAssetUrl(img.src)} 
                   alt={img.alt} 
-                  className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  className="w-full h-auto object-cover transition-transform duration-500 ease-out sm:group-hover:scale-105"
                   loading="lazy"
                 />
                 
@@ -109,14 +120,14 @@ const Portfolio = () => {
                     type="button"
                     onClick={(e) => handleDeletePhoto(e, img.id)}
                     title="Eliminar foto"
-                    className="absolute top-3 right-3 z-30 bg-red-600/90 hover:bg-red-700 text-white p-2 rounded-full shadow-lg transition-all transform hover:scale-110 cursor-pointer"
+                    className="absolute top-3 right-3 z-30 bg-red-600/90 hover:bg-red-700 text-white p-2 rounded-full shadow-lg transition-transform hover:scale-110 cursor-pointer btn-press"
                   >
                     <Trash2 size={15} />
                   </button>
                 )}
 
                 {/* Overlay hover with zoom icon */}
-                <div className="absolute inset-0 bg-gradient-to-t from-dark-green/90 via-dark-green/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-green/90 via-dark-green/30 to-transparent opacity-0 sm:group-hover:opacity-100 transition-opacity duration-200 flex flex-col justify-between p-6 pointer-events-none">
                   <div className="self-end bg-white/20 p-2 rounded-full backdrop-blur-sm">
                     <ZoomIn size={18} className="text-white" />
                   </div>
@@ -136,7 +147,7 @@ const Portfolio = () => {
             href={content?.contact?.instagramUrl || "https://www.instagram.com/morennagar/"}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full border border-moss-green/30 bg-surface-container-lowest hover:bg-rosy-brown hover:text-dark-green text-dark-green transition-all shadow-sm hover:shadow-md font-semibold text-xs uppercase tracking-wider group cursor-pointer"
+            className="inline-flex items-center gap-3 px-8 py-3.5 rounded-full border border-moss-green/30 bg-surface-container-lowest hover:bg-rosy-brown hover:text-dark-green text-dark-green shadow-sm hover:shadow-md font-semibold text-xs uppercase tracking-wider group cursor-pointer btn-press"
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-rosy-brown group-hover:text-dark-green transition-colors"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
             <span>Ver más trabajos en {content?.contact?.instagramHandle || '@morennagar'}</span>
@@ -151,13 +162,14 @@ const Portfolio = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.18, ease: [0.23, 1, 0.32, 1] }}
             className="fixed inset-0 z-[100] bg-dark-green/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
             onClick={() => setSelectedImage(null)}
           >
             <button 
-              className="absolute top-6 right-6 text-surface-dim hover:text-white transition-colors p-3 bg-white/10 hover:bg-white/20 rounded-full cursor-pointer"
+              className="absolute top-6 right-6 text-surface-dim hover:text-white transition-colors p-3 bg-white/10 hover:bg-white/20 rounded-full cursor-pointer btn-press"
               onClick={() => setSelectedImage(null)}
-              aria-label="Cerrar imagen"
+              aria-label="Cerrar imagen (Esc)"
             >
               <X size={26} />
             </button>
@@ -165,10 +177,10 @@ const Portfolio = () => {
             <div className="max-w-4xl max-h-[90vh] flex flex-col items-center" onClick={(e) => e.stopPropagation()}>
               <div className="relative group max-h-[70vh] flex items-center justify-center">
                 <motion.img
-                  initial={{ scale: 0.9, opacity: 0 }}
+                  initial={{ scale: 0.95, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
-                  exit={{ scale: 0.9, opacity: 0 }}
-                  transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                  exit={{ scale: 0.95, opacity: 0 }}
+                  transition={{ type: "spring", duration: 0.35, bounce: 0.15 }}
                   src={resolveAssetUrl(selectedImage.src)}
                   alt={selectedImage.alt}
                   className="max-w-full max-h-[70vh] object-contain rounded-2xl shadow-2xl border border-white/20"
@@ -177,7 +189,7 @@ const Portfolio = () => {
                 {/* Swap photo button if in edit mode */}
                 {isEditMode && (
                   <label 
-                    className="absolute bottom-4 right-4 bg-dark-green/90 hover:bg-moss-green text-surface px-3 py-2 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-xl border border-rosy-brown/40 cursor-pointer transition-all"
+                    className="absolute bottom-4 right-4 bg-dark-green/90 hover:bg-moss-green text-surface px-3 py-2 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-xl border border-rosy-brown/40 cursor-pointer btn-press"
                     title="Reemplazar esta foto por otra"
                   >
                     <Camera size={14} className="text-rosy-brown" />

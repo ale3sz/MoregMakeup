@@ -37,22 +37,22 @@ const Testimonials = () => {
           {testimonials.map((test, index) => (
             <motion.div 
               key={test.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.2 }}
-              className="bg-surface-container-lowest p-10 rounded-[2rem] shadow-sm border border-moss-green/10 hover:shadow-xl transition-all duration-300 relative flex flex-col justify-between"
+              transition={{ duration: 0.4, delay: index * 0.06, ease: [0.23, 1, 0.32, 1] }}
+              className="bg-surface-container-lowest p-8 md:p-10 rounded-[2rem] shadow-sm border border-moss-green/10 hover:shadow-xl transition-shadow duration-200 relative flex flex-col justify-between card-press"
             >
               <div>
                 <div className="flex gap-1 mb-6 text-rosy-brown">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} size={18} fill="currentColor" />
+                    <Star key={i} size={17} fill="currentColor" />
                   ))}
                 </div>
-                <p className="text-midnight-green mb-8 italic text-lg leading-relaxed font-light">"{test.text}"</p>
+                <p className="text-midnight-green mb-8 italic text-base md:text-lg leading-relaxed font-light">"{test.text}"</p>
               </div>
-              <div className="border-t border-moss-green/10 pt-6">
-                <p className="font-bold text-dark-green uppercase tracking-wider text-sm">{test.name}</p>
+              <div className="border-t border-moss-green/10 pt-5">
+                <p className="font-bold text-dark-green uppercase tracking-wider text-xs md:text-sm">{test.name}</p>
                 <p className="text-xs text-moss-green uppercase tracking-widest mt-1 font-semibold">{test.service}</p>
               </div>
             </motion.div>

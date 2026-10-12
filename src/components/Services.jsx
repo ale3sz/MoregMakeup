@@ -25,7 +25,7 @@ const Services = () => {
             <button
               type="button"
               onClick={openAdminModal}
-              className="mt-2 bg-rosy-brown hover:bg-rosy-brown-dark text-dark-green hover:text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 transition-all shadow-md cursor-pointer"
+              className="mt-2 bg-rosy-brown hover:bg-rosy-brown-dark text-dark-green hover:text-white px-4 py-2 rounded-full text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-md cursor-pointer btn-press"
             >
               <Pencil size={13} />
               <span>Editar Precios & Servicios</span>
@@ -38,12 +38,12 @@ const Services = () => {
             const isFeatured = service.id === 'novias';
             return (
               <motion.div 
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 16 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
+                transition={{ duration: 0.4, delay: index * 0.08, ease: [0.23, 1, 0.32, 1] }}
                 key={service.id || index} 
-                className={`relative flex flex-col justify-between p-8 md:p-10 rounded-3xl transition-all duration-300 ${
+                className={`relative flex flex-col justify-between p-8 md:p-10 rounded-3xl transition-shadow duration-200 card-press ${
                   isFeatured 
                     ? 'bg-surface-container-lowest border-2 border-rosy-brown shadow-xl hover:shadow-2xl ring-4 ring-rosy-brown/10' 
                     : 'bg-surface-container-lowest border border-moss-green/20 shadow-sm hover:shadow-xl'
@@ -85,12 +85,12 @@ const Services = () => {
                   <Link
                     to="booking"
                     smooth={true}
-                    duration={800}
+                    duration={450}
                     offset={-70}
                     onClick={() => {
                       window.dispatchEvent(new CustomEvent('select-service', { detail: service.id }));
                     }}
-                    className={`w-full inline-flex items-center justify-center uppercase tracking-wider font-semibold px-6 py-4 rounded-xl transition-all duration-300 cursor-pointer text-xs md:text-sm ${
+                    className={`w-full inline-flex items-center justify-center uppercase tracking-wider font-semibold px-6 py-4 rounded-xl cursor-pointer text-xs md:text-sm btn-press ${
                       isFeatured
                         ? 'bg-rosy-brown hover:bg-rosy-brown-dark text-dark-green hover:text-white shadow-[0_0_20px_rgba(211,150,140,0.3)]'
                         : 'bg-transparent border-2 border-rosy-brown-dark text-rosy-brown-dark hover:bg-rosy-brown-dark hover:text-white'

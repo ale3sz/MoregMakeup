@@ -163,14 +163,14 @@ const Booking = () => {
 
           {/* Columna Derecha: Tarjeta con Tabs y Formulario */}
           <div className="w-full lg:w-7/12">
-            <div className="bg-surface-container-lowest p-6 sm:p-8 md:p-12 rounded-[2rem] shadow-2xl border border-beige/50 text-dark-green">
+            <div className="bg-surface-container-lowest p-6 sm:p-8 md:p-12 rounded-[2rem] shadow-2xl border border-beige/50 text-dark-green card-press">
               
               {/* Pestañas de Selección */}
               <div className="flex p-1.5 bg-surface rounded-2xl mb-8 border border-moss-green/15 gap-1">
                 <button 
                   type="button"
                   onClick={() => setActiveTab('booking')}
-                  className={`flex-1 py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all flex items-center justify-center gap-2 ${
+                  className={`flex-1 py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold uppercase tracking-wider flex items-center justify-center gap-2 btn-press ${
                     activeTab === 'booking'
                       ? 'bg-dark-green text-surface shadow-md'
                       : 'text-dark-green/70 hover:text-dark-green hover:bg-surface-container'
@@ -182,7 +182,7 @@ const Booking = () => {
                 <button 
                   type="button"
                   onClick={() => setActiveTab('quick')}
-                  className={`flex-1 py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold uppercase tracking-wider transition-all flex items-center justify-center gap-2 ${
+                  className={`flex-1 py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-semibold uppercase tracking-wider flex items-center justify-center gap-2 btn-press ${
                     activeTab === 'quick'
                       ? 'bg-[#25D366] text-white shadow-md'
                       : 'text-dark-green/70 hover:text-dark-green hover:bg-surface-container'
@@ -214,7 +214,7 @@ const Booking = () => {
                       value={quickData.name} 
                       onChange={handleQuickChange}
                       placeholder="Ej. Sofía"
-                      className="w-full bg-surface border border-moss-green/20 rounded-xl px-5 py-4 text-dark-green focus:outline-none focus:ring-2 focus:ring-[#25D366] transition-colors placeholder-midnight-green/40"
+                      className="w-full bg-surface border border-moss-green/20 rounded-xl px-5 py-3.5 text-dark-green focus:outline-none focus:ring-2 focus:ring-[#25D366] transition-shadow duration-150 placeholder-midnight-green/40"
                     />
                   </div>
 
@@ -228,7 +228,7 @@ const Booking = () => {
                           key={idx}
                           type="button"
                           onClick={() => handleChipClick(chip)}
-                          className="text-xs bg-surface hover:bg-rosy-brown/20 border border-moss-green/20 text-dark-green px-3 py-1.5 rounded-full transition-colors text-left"
+                          className="text-xs bg-surface hover:bg-rosy-brown/20 border border-moss-green/20 text-dark-green px-3 py-1.5 rounded-full text-left btn-press"
                         >
                           + {chip}
                         </button>
@@ -247,13 +247,13 @@ const Booking = () => {
                       required
                       rows="4"
                       placeholder="Hola Morena, quería hacerte una consulta sobre..."
-                      className="w-full bg-surface border border-moss-green/20 rounded-xl px-5 py-4 text-dark-green focus:outline-none focus:ring-2 focus:ring-[#25D366] transition-colors placeholder-midnight-green/40 resize-none"
+                      className="w-full bg-surface border border-moss-green/20 rounded-xl px-5 py-3.5 text-dark-green focus:outline-none focus:ring-2 focus:ring-[#25D366] transition-shadow duration-150 placeholder-midnight-green/40 resize-none"
                     ></textarea>
                   </div>
 
                   <button 
                     type="submit" 
-                    className="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold uppercase tracking-wider py-4 md:py-5 rounded-xl transition-all shadow-lg hover:shadow-xl mt-4 flex items-center justify-center gap-3 text-sm md:text-base cursor-pointer"
+                    className="w-full bg-[#25D366] hover:bg-[#1EBE5D] text-white font-bold uppercase tracking-wider py-4 md:py-5 rounded-xl shadow-lg hover:shadow-xl mt-4 flex items-center justify-center gap-3 text-sm md:text-base cursor-pointer btn-press"
                   >
                     <MessageCircle size={22} className="fill-current" />
                     <span>Abrir WhatsApp con Mensaje</span>
@@ -271,7 +271,7 @@ const Booking = () => {
                         value={formData.service} 
                         onChange={handleChange}
                         required
-                        className="w-full bg-surface border border-moss-green/20 rounded-xl px-5 py-4 text-dark-green focus:outline-none focus:ring-2 focus:ring-rosy-brown transition-colors appearance-none cursor-pointer"
+                        className="w-full bg-surface border border-moss-green/20 rounded-xl px-5 py-3.5 text-dark-green focus:outline-none focus:ring-2 focus:ring-rosy-brown transition-shadow duration-150 appearance-none cursor-pointer"
                       >
                         <option value="" disabled>Seleccioná un servicio</option>
                         <option value="Maquillaje Social / Evento">Maquillaje Social / Evento</option>
@@ -289,7 +289,7 @@ const Booking = () => {
                         value={formData.modality} 
                         onChange={handleChange}
                         required
-                        className="w-full bg-surface border border-moss-green/20 rounded-xl px-5 py-4 text-dark-green focus:outline-none focus:ring-2 focus:ring-rosy-brown transition-colors appearance-none cursor-pointer"
+                        className="w-full bg-surface border border-moss-green/20 rounded-xl px-5 py-3.5 text-dark-green focus:outline-none focus:ring-2 focus:ring-rosy-brown transition-shadow duration-150 appearance-none cursor-pointer"
                       >
                         <option value="estudio">En Estudio (Rosario)</option>
                         <option value="domicilio">A Domicilio / Hotel</option>
@@ -307,7 +307,7 @@ const Booking = () => {
                           onChange={handleChange}
                           required={formData.modality === 'domicilio'}
                           placeholder="Ubicación o zona aproximada"
-                          className="w-full bg-surface border border-moss-green/20 rounded-xl px-5 py-4 text-dark-green focus:outline-none focus:ring-2 focus:ring-rosy-brown transition-colors placeholder-midnight-green/40"
+                          className="w-full bg-surface border border-moss-green/20 rounded-xl px-5 py-3.5 text-dark-green focus:outline-none focus:ring-2 focus:ring-rosy-brown transition-shadow duration-150 placeholder-midnight-green/40"
                         />
                       </div>
                     )}
@@ -321,7 +321,7 @@ const Booking = () => {
                         value={formData.date} 
                         onChange={handleChange}
                         required
-                        className="w-full bg-surface border border-moss-green/20 rounded-xl px-5 py-4 text-dark-green focus:outline-none focus:ring-2 focus:ring-rosy-brown transition-colors cursor-pointer"
+                        className="w-full bg-surface border border-moss-green/20 rounded-xl px-5 py-3.5 text-dark-green focus:outline-none focus:ring-2 focus:ring-rosy-brown transition-shadow duration-150 cursor-pointer"
                       />
                     </div>
                     <div>
@@ -332,7 +332,7 @@ const Booking = () => {
                         value={formData.time} 
                         onChange={handleChange}
                         required
-                        className="w-full bg-surface border border-moss-green/20 rounded-xl px-5 py-4 text-dark-green focus:outline-none focus:ring-2 focus:ring-rosy-brown transition-colors cursor-pointer"
+                        className="w-full bg-surface border border-moss-green/20 rounded-xl px-5 py-3.5 text-dark-green focus:outline-none focus:ring-2 focus:ring-rosy-brown transition-shadow duration-150 cursor-pointer"
                       />
                     </div>
 
@@ -346,7 +346,7 @@ const Booking = () => {
                         onChange={handleChange}
                         required
                         placeholder="Nombre completo"
-                        className="w-full bg-surface border border-moss-green/20 rounded-xl px-5 py-4 text-dark-green focus:outline-none focus:ring-2 focus:ring-rosy-brown transition-colors placeholder-midnight-green/40"
+                        className="w-full bg-surface border border-moss-green/20 rounded-xl px-5 py-3.5 text-dark-green focus:outline-none focus:ring-2 focus:ring-rosy-brown transition-shadow duration-150 placeholder-midnight-green/40"
                       />
                     </div>
                     <div>
@@ -358,7 +358,7 @@ const Booking = () => {
                         onChange={handleChange}
                         required
                         placeholder="+54 9 341..."
-                        className="w-full bg-surface border border-moss-green/20 rounded-xl px-5 py-4 text-dark-green focus:outline-none focus:ring-2 focus:ring-rosy-brown transition-colors placeholder-midnight-green/40"
+                        className="w-full bg-surface border border-moss-green/20 rounded-xl px-5 py-3.5 text-dark-green focus:outline-none focus:ring-2 focus:ring-rosy-brown transition-shadow duration-150 placeholder-midnight-green/40"
                       />
                     </div>
 
@@ -371,14 +371,14 @@ const Booking = () => {
                         onChange={handleChange}
                         rows="3"
                         placeholder="Contame un poco más sobre el evento, el look que buscas o si tenés alguna duda..."
-                        className="w-full bg-surface border border-moss-green/20 rounded-xl px-5 py-4 text-dark-green focus:outline-none focus:ring-2 focus:ring-rosy-brown transition-colors placeholder-midnight-green/40 resize-none"
+                        className="w-full bg-surface border border-moss-green/20 rounded-xl px-5 py-3.5 text-dark-green focus:outline-none focus:ring-2 focus:ring-rosy-brown transition-shadow duration-150 placeholder-midnight-green/40 resize-none"
                       ></textarea>
                     </div>
                   </div>
 
                   <button 
                     type="submit" 
-                    className="w-full bg-dark-green text-surface font-bold uppercase tracking-wider py-5 rounded-xl hover:bg-moss-green transition-all shadow-lg mt-6 flex items-center justify-center gap-3 cursor-pointer"
+                    className="w-full bg-dark-green text-surface font-bold uppercase tracking-wider py-5 rounded-xl hover:bg-moss-green shadow-lg mt-6 flex items-center justify-center gap-3 cursor-pointer btn-press"
                   >
                     <span>Consultar Disponibilidad por WhatsApp</span>
                     <ArrowRight size={18} />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Leaf, Sparkles, X, ZoomIn, Play } from 'lucide-react';
 import { useContent } from '../context/ContentContext';
@@ -16,6 +16,17 @@ const About = () => {
     { type: 'image', src: `${import.meta.env.BASE_URL}assets/working_3.jpeg`, alt: 'Morena en backstage' }
   ];
 
+  // Emil rule: keyboard escape should close modals immediately
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape' && selectedMedia) {
+        setSelectedMedia(null);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedMedia]);
+
   return (
     <section id="about" className="py-24 bg-surface overflow-hidden relative">
       {/* Subtle luxury brand watermark in background */}
@@ -31,10 +42,10 @@ const About = () => {
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
           
           <motion.div 
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
             className="w-full lg:w-1/2 relative"
           >
             {/* Grid of working photos & video */}
@@ -42,21 +53,21 @@ const About = () => {
               <div className="space-y-4 mt-8">
                 {/* Photo 1 */}
                 <div 
-                  className="relative group cursor-pointer overflow-hidden rounded-[2rem] shadow-lg border-4 border-white"
+                  className="relative group cursor-pointer overflow-hidden rounded-[2rem] shadow-lg border-4 border-white card-press"
                   onClick={() => setSelectedMedia(mediaItems[0])}
                 >
-                  <img src={mediaItems[0].src} alt={mediaItems[0].alt} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-dark-green/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <img src={mediaItems[0].src} alt={mediaItems[0].alt} className="w-full h-48 object-cover transition-transform duration-500 ease-out sm:group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-dark-green/30 opacity-0 sm:group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center pointer-events-none">
                     <ZoomIn className="text-white drop-shadow-md" size={24} />
                   </div>
                 </div>
                 {/* Photo 2 */}
                 <div 
-                  className="relative group cursor-pointer overflow-hidden rounded-[2rem] shadow-lg border-4 border-white"
+                  className="relative group cursor-pointer overflow-hidden rounded-[2rem] shadow-lg border-4 border-white card-press"
                   onClick={() => setSelectedMedia(mediaItems[1])}
                 >
-                  <img src={mediaItems[1].src} alt={mediaItems[1].alt} className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-dark-green/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <img src={mediaItems[1].src} alt={mediaItems[1].alt} className="w-full h-64 object-cover transition-transform duration-500 ease-out sm:group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-dark-green/30 opacity-0 sm:group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center pointer-events-none">
                     <ZoomIn className="text-white drop-shadow-md" size={24} />
                   </div>
                 </div>
@@ -65,7 +76,7 @@ const About = () => {
               <div className="space-y-4">
                 {/* Video Reel */}
                 <div 
-                  className="relative group cursor-pointer overflow-hidden rounded-[2rem] shadow-xl border-4 border-white bg-dark-green h-64"
+                  className="relative group cursor-pointer overflow-hidden rounded-[2rem] shadow-xl border-4 border-white bg-dark-green h-64 card-press"
                   onClick={() => setSelectedMedia(mediaItems[2])}
                 >
                   <video 
@@ -73,7 +84,7 @@ const About = () => {
                     loop 
                     muted 
                     playsInline 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover transition-transform duration-500 ease-out sm:group-hover:scale-105"
                   >
                     <source src={mediaItems[2].src} type="video/mp4" />
                   </video>
@@ -85,7 +96,7 @@ const About = () => {
                   </div>
 
                   {/* Play icon overlay on hover */}
-                  <div className="absolute inset-0 bg-dark-green/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div className="absolute inset-0 bg-dark-green/30 opacity-0 sm:group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center pointer-events-none">
                     <div className="bg-white/20 backdrop-blur-sm p-3 rounded-full shadow-lg">
                       <Play className="text-white fill-white ml-0.5" size={22} />
                     </div>
@@ -94,11 +105,11 @@ const About = () => {
 
                 {/* Photo 4 */}
                 <div 
-                  className="relative group cursor-pointer overflow-hidden rounded-[2rem] shadow-lg border-4 border-white"
+                  className="relative group cursor-pointer overflow-hidden rounded-[2rem] shadow-lg border-4 border-white card-press"
                   onClick={() => setSelectedMedia(mediaItems[3])}
                 >
-                  <img src={mediaItems[3].src} alt={mediaItems[3].alt} className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-dark-green/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <img src={mediaItems[3].src} alt={mediaItems[3].alt} className="w-full h-48 object-cover transition-transform duration-500 ease-out sm:group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-dark-green/30 opacity-0 sm:group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center pointer-events-none">
                     <ZoomIn className="text-white drop-shadow-md" size={24} />
                   </div>
                 </div>
@@ -125,10 +136,10 @@ const About = () => {
           </motion.div>
           
           <motion.div 
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
             className="w-full lg:w-1/2"
           >
             <span className="text-xs uppercase tracking-[0.25em] text-moss-green font-bold block mb-3">
@@ -178,13 +189,14 @@ const About = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.18, ease: [0.23, 1, 0.32, 1] }}
             className="fixed inset-0 z-[100] bg-dark-green/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-8"
             onClick={() => setSelectedMedia(null)}
           >
             <button 
-              className="absolute top-6 right-6 text-surface-dim hover:text-white transition-colors p-3 bg-white/10 hover:bg-white/20 rounded-full cursor-pointer"
+              className="absolute top-6 right-6 text-surface-dim hover:text-white transition-colors p-3 bg-white/10 hover:bg-white/20 rounded-full cursor-pointer btn-press"
               onClick={() => setSelectedMedia(null)}
-              aria-label="Cerrar vista previa"
+              aria-label="Cerrar vista previa (Esc)"
             >
               <X size={26} />
             </button>
@@ -201,10 +213,10 @@ const About = () => {
                 </video>
               ) : (
                 <motion.img
-                  initial={{ scale: 0.9, opacity: 0 }}
+                  initial={{ scale: 0.95, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
-                  exit={{ scale: 0.9, opacity: 0 }}
-                  transition={{ type: "spring", damping: 25, stiffness: 300 }}
+                  exit={{ scale: 0.95, opacity: 0 }}
+                  transition={{ type: "spring", duration: 0.35, bounce: 0.15 }}
                   src={selectedMedia.src}
                   alt={selectedMedia.alt}
                   className="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl border border-white/20"
